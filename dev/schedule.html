@@ -4,90 +4,96 @@
 
 <p class="SectionTitle">Release Schedule</p>
 
-<p>The Net-SNMP project has adopted a provision release schedule
-policy of releasing a "leading-edge" version of the code (either
+<p>The Net-SNMP project has adopted a release schedule target
+of issuing a "leading-edge" version of the code (either
 a new branch, or a minor-number release of the most recent branch)
-approximately every three months.
-This isn't intended as a firm guarantee, and we fully expect to
-miss this timescale as often as not.  But hopefully this target
-will mean that patches, bug fixes and new features will be made
-generally available reasonably promptly.  Of course, this policy
-will not prevent releases being made more frequently, if this
-proves necessary (e.g. a security problem, or the bedding down
-of significant new features).</p>
+approximately every three months (or more quickly if this is
+deemed appropriate).
+The aim is to ensure that patches, bug fixes and new features
+will be made generally available reasonably promptly.
 
-<p>The provisional aim is to make a new branch (or "major-number")
-release probably every nine to twelve months, and certainly not more
-frequently than every six months (barring exceptional circumstances),
-with a number of branch updates (or "minor number" releases) in between.
-This should provide some measure of stability for those who need a
-solid, reliable SNMP environment, rather than the latest features.
-Again, this target is intended for guidance rather than as a rigid
-timetable, and we probably wouldn't release a new branch just for
-the sake of it.</p>
+<p>The previous two code branches will continue to see minor-number
+releases, to ensure that bug fixes on those lines also make it into
+active service.  Earlier branches will typically be marked as
+"end-of-line", and will see no further development activity
+(other than in exceptional circumstances).
 
-<p>There are several separate lines of code, although not all
-of these are actively being maintained.  The following table depicts
-our <b><font color="red">tentative</font></b> release schedule.
-If no dates are given for a particular branch, that implies that
-there is currently nothing specifically planned for that line.
-Note that the 4.2.x, 5.0.x, 5.1.x, 5.2.x and 5.3.x branches have basically been
-closed down - there will be no further work done on these
-(barring <I>very</I> exceptional circumstances).</p>
+<p>However, starting with the 5.4.x line, every third code branch
+will be designated a <B>Long Term Release</B>.  Instead of being
+marked "end-of-line" when the next-but-two branch is first released,
+such lines will continue to be maintained until the next-but-fifth
+branch appears.  Note that both of these are also Long Term Release
+branches - hence there will always be two Long Term Release, and two
+normal code branches receiving active support and development.
+
+<H3>Release Timing</H3>
+<p>As indicated above, the aim is to issue a leading-edge release every
+three months or so.  Releases on the older lines are likely to be less
+frequent, but should appear every six to nine months - although this may
+well stretch as the code matures and attention switches to the newer
+lines.  (There's no point in making a release on a new branch just for
+the sake of it, unless there are actually some changes or bug fixes to
+be made available.)
+
+<p>Note that these are general guidelines, rather than firm commitments,
+and we fully expect to miss this timescale as often as not.
+Similarly any release dates in the tables below should be regarded as
+provisional targets.
+All questions relating to schedule timelines should be sent to the
+<a
+href="mailto:net-snmp-coders@lists.sourceforge.net">net-snmp-coders</a>
 
 
-<h3>Active Branch Release Schedules</h3>
+
+<h3>Active Release Branches</h3>
 <table>
   <tr><th>Net-SNMP Branch</th>
       <th>Current Version</th>
-      <th>SVN Branch     </th>
+      <th>GIT head       </th>
       <th>Next Version   </th>
-      <th>Tentative Dates</th>
+      <th>Tentative Release Date</th>
       <th>Release Manager</th>
   </tr>
-  <tr><td>5.4.x </td>
-      <td>5.4.4  <br><i>2010-05-23</i></td>
+  <tr><td>5.4.x</td>
+      <td>5.4.4  <br><i>2011-06-24</i></td>
       <td>V5-4-patches</td>
       <td align="right"> </td>
-      <td> </td>
-      <td> </td>
+      <td align="center"> </td>
+      <td>(<i>Long Term Release</i>) </td>
   </tr>
   <tr><td>5.5.x </td>
       <td>5.5.1 <br><i>2011-03-18</i></td>
       <td>V5-5-patches</td>
-      <td> </td>
-      <td> </td>
+      <td align="right"> </td>
+      <td align="center"> </td>
       <td> </td>
   </tr>
   <tr><td>5.6.x </td>
       <td>5.6.1.1 <br><i>2011-05-26</i></td>
       <td>V5-6-patches</td>
-      <td> </td>
-      <td> </td>
+      <td align="right"> </td>
+      <td align="center"> </td>
       <td> </td>
   </tr>
   <tr><td>trunk</td>
-      <td><i>5.7.dev</i></td>
-      <td>HEAD</td>
-      <td>5.7 </td>
-      <td>July 2011 </td>
-      <td>Wes Hardaker<i>Development code</i></td>
+      <td>     </td>
+      <td>master</td>
+      <td align="right">5.7 </td>
+      <td align="center">July 2011 </td>
+      <td>Wes Hardaker<br><i>Development code</i></td>
   </tr>
 </table>
 
-<p>Note that any proposed release dates are provisional targets,
-and should not be taken as being firm in any way.
-All questions relating to schedule timelines should be sent to the
-<a
-href="mailto:net-snmp-coders@lists.sourceforge.net">net-snmp-coders</a>
-mailing list.</p>
 
-<p></p>
 <h3>Closed Branches</h3>
+
+<p>The following branches are regarded as "end-of-life".
+There will be no further work done on these (barring very
+exceptional circumstances)
 <table>
   <tr><th>Net-SNMP Branch</th>
       <th>Final Version  </th>
-      <th>SVN Branch     </th>
+      <th>GIT head</th>
   </tr>
   <tr><td>4.2.x</td>
       <td>4.2.7.1<br><i>2008-06-09</i></td>
