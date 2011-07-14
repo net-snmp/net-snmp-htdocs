@@ -1,243 +1,176 @@
-<!--#set var="section" value="development" -->
-<!--#include virtual="/page-top.html" -->
-<!-- CONTENT START -->
-  <div class="navigation" id="top">
-    <div class="tabs">
-      <ul>
-        <li><a href="index.html"><span>Main Page</span></a></li>
-
-        <li><a href="pages.html"><span>Related Pages</span></a></li>
-
-        <li><a href="modules.html"><span>Modules</span></a></li>
-
-        <li class="current"><a href="annotated.html"><span>Data Structures</span></a></li>
-
-        <li><a href="files.html"><span>Files</span></a></li>
-
-        <li><a href="examples.html"><span>Examples</span></a></li>
-      </ul>
-    </div>
-
-    <div class="tabs">
-      <ul>
-        <li><a href="annotated.html"><span>Data Structures</span></a></li>
-
-        <li><a href="functions.html"><span>Data Fields</span></a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="contents">
-    <h1>netsnmp_mib_handler_s Struct Reference<br />
-    <small>[<a class="el" href="group__handler.html">Net-SNMP Agent handler and extensibility API</a>]</small></h1>
-    <!-- doxytag: class="netsnmp_mib_handler_s" -->
-
-    <p>the mib handler structure to be registered <a href="#_details">More...</a></p>
-
-    <p><code>#include &lt;<a class="el" href="agent__handler_8h_source.html">agent_handler.h</a>&gt;</code></p>
-
-    <table border="0" cellpadding="0" cellspacing="0">
-      <tr>
-        <td colspan="2">
-          <h2>Data Fields</h2>
-        </td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5fd8ee386e8335f44f2b0d604f0f82a1" name=
-        "a5fd8ee386e8335f44f2b0d604f0f82a1"></a>
-        <!-- doxytag: member="netsnmp_mib_handler_s::handler_name" ref="a5fd8ee386e8335f44f2b0d604f0f82a1" args="" -->
-        char * </td>
-
-        <td class="memItemRight" valign="bottom"><b>handler_name</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">void * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structnetsnmp__mib__handler__s.html#a74067d02cea4a059cd0fce7790b77b18">myvoid</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">for handler's internal use <a href="#a74067d02cea4a059cd0fce7790b77b18"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">int </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structnetsnmp__mib__handler__s.html#a320fa53cc0c6edac56c54d6dcf17dfe9">flags</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">for agent_handler's internal use <a href="#a320fa53cc0c6edac56c54d6dcf17dfe9"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">int(* </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structnetsnmp__mib__handler__s.html#ae75b8ace28cb246887fa85d410fc844b">access_method</a> )(struct <a class="el" href=
-        "structnetsnmp__mib__handler__s.html">netsnmp_mib_handler_s</a> *, struct <a class="el" href=
-        "structnetsnmp__handler__registration__s.html">netsnmp_handler_registration_s</a> *, struct <a class="el" href=
-        "structnetsnmp__agent__request__info__s.html">netsnmp_agent_request_info_s</a> *, struct <a class="el" href=
-        "structnetsnmp__request__info__s.html">netsnmp_request_info_s</a> *)</td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">if you add more members, you probably also want to update <a href=
-        "#ae75b8ace28cb246887fa85d410fc844b"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">void(* </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structnetsnmp__mib__handler__s.html#ae007338d354e85a5d9bf6a918bd42469">data_free</a> )(void *<a class="el" href=
-        "structnetsnmp__mib__handler__s.html#a74067d02cea4a059cd0fce7790b77b18">myvoid</a>)</td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">data free hook for myvoid <a href="#ae007338d354e85a5d9bf6a918bd42469"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a807ca96d7508d7b1938c07fb756bde13" name=
-        "a807ca96d7508d7b1938c07fb756bde13"></a>
-        <!-- doxytag: member="netsnmp_mib_handler_s::next" ref="a807ca96d7508d7b1938c07fb756bde13" args="" -->
-        struct <a class="el" href="structnetsnmp__mib__handler__s.html">netsnmp_mib_handler_s</a> * </td>
-
-        <td class="memItemRight" valign="bottom"><b>next</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9420eeb5d1358dfb0f2548cf7acb6ac0" name=
-        "a9420eeb5d1358dfb0f2548cf7acb6ac0"></a>
-        <!-- doxytag: member="netsnmp_mib_handler_s::prev" ref="a9420eeb5d1358dfb0f2548cf7acb6ac0" args="" -->
-        struct <a class="el" href="structnetsnmp__mib__handler__s.html">netsnmp_mib_handler_s</a> * </td>
-
-        <td class="memItemRight" valign="bottom"><b>prev</b></td>
-      </tr>
-    </table>
-    <hr />
-    <a name="_details"></a>
-
-    <h2>Detailed Description</h2>
-
-    <p>the mib handler structure to be registered</p>
-
-    <dl>
-      <dt><b>Examples:</b></dt>
-
-      <dd>
-        <p><a class="el" href="delayed__instance_8c-example.html#_a2">delayed_instance.c</a>.</p>
-      </dd>
-    </dl>
-
-    <p>Definition at line <a class="el" href="agent__handler_8h_source.html#l00048">48</a> of file <a class="el" href=
-    "agent__handler_8h_source.html">agent_handler.h</a>.</p>
-    <hr />
-
-    <h2>Field Documentation</h2><a class="anchor" id="ae75b8ace28cb246887fa85d410fc844b" name=
-    "ae75b8ace28cb246887fa85d410fc844b"></a>
-    <!-- doxytag: member="netsnmp_mib_handler_s::access_method" ref="ae75b8ace28cb246887fa85d410fc844b" args=")(struct netsnmp_mib_handler_s *, struct netsnmp_handler_registration_s *, struct netsnmp_agent_request_info_s *, struct netsnmp_request_info_s *)" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">int(* <a class="el" href=
-            "structnetsnmp__mib__handler__s.html#ae75b8ace28cb246887fa85d410fc844b">netsnmp_mib_handler_s::access_method</a>)(struct
-            <a class="el" href="structnetsnmp__mib__handler__s.html">netsnmp_mib_handler_s</a> *, struct <a class="el" href=
-            "structnetsnmp__handler__registration__s.html">netsnmp_handler_registration_s</a> *, struct <a class="el" href=
-            "structnetsnmp__agent__request__info__s.html">netsnmp_agent_request_info_s</a> *, struct <a class="el" href=
-            "structnetsnmp__request__info__s.html">netsnmp_request_info_s</a> *)</td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>if you add more members, you probably also want to update</p>
-
-        <p>_clone_handler in <a class="el" href="agent__handler_8c_source.html">agent_handler.c</a>.</p>
-      </div>
-    </div><a class="anchor" id="ae007338d354e85a5d9bf6a918bd42469" name="ae007338d354e85a5d9bf6a918bd42469"></a>
-    <!-- doxytag: member="netsnmp_mib_handler_s::data_free" ref="ae007338d354e85a5d9bf6a918bd42469" args=")(void *myvoid)" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">void(* <a class="el" href=
-            "structnetsnmp__mib__handler__s.html#ae007338d354e85a5d9bf6a918bd42469">netsnmp_mib_handler_s::data_free</a>)(void
-            *<a class="el" href="structnetsnmp__mib__handler__s.html#a74067d02cea4a059cd0fce7790b77b18">myvoid</a>)</td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>data free hook for myvoid</p>
-      </div>
-    </div><a class="anchor" id="a320fa53cc0c6edac56c54d6dcf17dfe9" name="a320fa53cc0c6edac56c54d6dcf17dfe9"></a>
-    <!-- doxytag: member="netsnmp_mib_handler_s::flags" ref="a320fa53cc0c6edac56c54d6dcf17dfe9" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">int <a class="el" href=
-            "structnetsnmp__mib__handler__s.html#a320fa53cc0c6edac56c54d6dcf17dfe9">netsnmp_mib_handler_s::flags</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>for agent_handler's internal use</p>
-
-        <p>Definition at line <a class="el" href="agent__handler_8h_source.html#l00053">53</a> of file <a class="el" href=
-        "agent__handler_8h_source.html">agent_handler.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a74067d02cea4a059cd0fce7790b77b18" name="a74067d02cea4a059cd0fce7790b77b18"></a>
-    <!-- doxytag: member="netsnmp_mib_handler_s::myvoid" ref="a74067d02cea4a059cd0fce7790b77b18" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">void* <a class="el" href=
-            "structnetsnmp__mib__handler__s.html#a74067d02cea4a059cd0fce7790b77b18">netsnmp_mib_handler_s::myvoid</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>for handler's internal use</p>
-
-        <p>Definition at line <a class="el" href="agent__handler_8h_source.html#l00051">51</a> of file <a class="el" href=
-        "agent__handler_8h_source.html">agent_handler.h</a>.</p>
-      </div>
-    </div>
-    <hr />
-    The documentation for this struct was generated from the following file:
-
-    <ul>
-      <li><a class="el" href="agent__handler_8h_source.html">agent_handler.h</a></li>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>net-snmp: netsnmp_mib_handler_s Struct Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Generated by Doxygen 1.7.4 -->
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">net-snmp&#160;<span id="projectnumber">5.7</span></div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
     </ul>
   </div>
-  <hr size="1" />
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="functions.html"><span>Data&#160;Fields</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle">
+<div class="title">netsnmp_mib_handler_s Struct Reference<div class="ingroups"><a class="el" href="group__handler.html">Net-SNMP Agent handler and extensibility API</a></div></div>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="netsnmp_mib_handler_s" -->
+<p>the mib handler structure to be registered  
+ <a href="structnetsnmp__mib__handler__s.html#details">More...</a></p>
 
-  <address style="text-align: right;">
-    <small>Generated on 28 Sep 2009 for net-snmp by  <a href="http://www.doxygen.org/index.html"><img class="footer" src=
-    "doxygen.png" alt="doxygen" /></a> 1.6.1</small>
-<!-- CONTENT END -->
-<!--#include virtual="/page-bottom.html" -->
+<p><code>#include &lt;<a class="el" href="agent__handler_8h_source.html">agent_handler.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5fd8ee386e8335f44f2b0d604f0f82a1"></a><!-- doxytag: member="netsnmp_mib_handler_s::handler_name" ref="a5fd8ee386e8335f44f2b0d604f0f82a1" args="" -->
+char *&#160;</td><td class="memItemRight" valign="bottom"><b>handler_name</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnetsnmp__mib__handler__s.html#a74067d02cea4a059cd0fce7790b77b18">myvoid</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">for handler's internal use  <a href="#a74067d02cea4a059cd0fce7790b77b18"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnetsnmp__mib__handler__s.html#a320fa53cc0c6edac56c54d6dcf17dfe9">flags</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">for agent_handler's internal use  <a href="#a320fa53cc0c6edac56c54d6dcf17dfe9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnetsnmp__mib__handler__s.html#ae75b8ace28cb246887fa85d410fc844b">access_method</a> )(struct <a class="el" href="structnetsnmp__mib__handler__s.html">netsnmp_mib_handler_s</a> *, struct <a class="el" href="structnetsnmp__handler__registration__s.html">netsnmp_handler_registration_s</a> *, struct <a class="el" href="structnetsnmp__agent__request__info__s.html">netsnmp_agent_request_info_s</a> *, struct <a class="el" href="structnetsnmp__request__info__s.html">netsnmp_request_info_s</a> *)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">if you add more members, you probably also want to update  <a href="#ae75b8ace28cb246887fa85d410fc844b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnetsnmp__mib__handler__s.html#a920cb70b2ae344b1c268a5f96f4b4e59">data_clone</a> )(void *<a class="el" href="structnetsnmp__mib__handler__s.html#a74067d02cea4a059cd0fce7790b77b18">myvoid</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">data clone hook for myvoid deep copy the myvoid member - default is to copy the pointer This method is only called if myvoid != NULL myvoid is the current myvoid pointer.  <a href="#a920cb70b2ae344b1c268a5f96f4b4e59"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnetsnmp__mib__handler__s.html#ae007338d354e85a5d9bf6a918bd42469">data_free</a> )(void *<a class="el" href="structnetsnmp__mib__handler__s.html#a74067d02cea4a059cd0fce7790b77b18">myvoid</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">data free hook for myvoid delete the myvoid member - default is to do nothing This method is only called if myvoid != NULL  <a href="#ae007338d354e85a5d9bf6a918bd42469"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a807ca96d7508d7b1938c07fb756bde13"></a><!-- doxytag: member="netsnmp_mib_handler_s::next" ref="a807ca96d7508d7b1938c07fb756bde13" args="" -->
+struct <a class="el" href="structnetsnmp__mib__handler__s.html">netsnmp_mib_handler_s</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>next</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9420eeb5d1358dfb0f2548cf7acb6ac0"></a><!-- doxytag: member="netsnmp_mib_handler_s::prev" ref="a9420eeb5d1358dfb0f2548cf7acb6ac0" args="" -->
+struct <a class="el" href="structnetsnmp__mib__handler__s.html">netsnmp_mib_handler_s</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>prev</b></td></tr>
+</table>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>the mib handler structure to be registered </p>
+<dl><dt><b>Examples: </b></dt><dd>
+<p><a class="el" href="delayed_instance_8c-example.html#_a3">delayed_instance.c</a>.</p>
+</dd>
+</dl>
+<p>Definition at line <a class="el" href="agent__handler_8h_source.html#l00048">48</a> of file <a class="el" href="agent__handler_8h_source.html">agent_handler.h</a>.</p>
+</div><hr/><h2>Field Documentation</h2>
+<a class="anchor" id="ae75b8ace28cb246887fa85d410fc844b"></a><!-- doxytag: member="netsnmp_mib_handler_s::access_method" ref="ae75b8ace28cb246887fa85d410fc844b" args=")(struct netsnmp_mib_handler_s *, struct netsnmp_handler_registration_s *, struct netsnmp_agent_request_info_s *, struct netsnmp_request_info_s *)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="structnetsnmp__mib__handler__s.html#ae75b8ace28cb246887fa85d410fc844b">netsnmp_mib_handler_s::access_method</a>)(struct <a class="el" href="structnetsnmp__mib__handler__s.html">netsnmp_mib_handler_s</a> *, struct <a class="el" href="structnetsnmp__handler__registration__s.html">netsnmp_handler_registration_s</a> *, struct <a class="el" href="structnetsnmp__agent__request__info__s.html">netsnmp_agent_request_info_s</a> *, struct <a class="el" href="structnetsnmp__request__info__s.html">netsnmp_request_info_s</a> *)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
+<p>if you add more members, you probably also want to update </p>
+<p>_clone_handler in <a class="el" href="agent__handler_8c_source.html">agent_handler.c</a>. </p>
+
+<p>Definition at line <a class="el" href="agent__handler_8h_source.html#l00058">58</a> of file <a class="el" href="agent__handler_8h_source.html">agent_handler.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a920cb70b2ae344b1c268a5f96f4b4e59"></a><!-- doxytag: member="netsnmp_mib_handler_s::data_clone" ref="a920cb70b2ae344b1c268a5f96f4b4e59" args=")(void *myvoid)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void*(* <a class="el" href="structnetsnmp__mib__handler__s.html#a920cb70b2ae344b1c268a5f96f4b4e59">netsnmp_mib_handler_s::data_clone</a>)(void *<a class="el" href="structnetsnmp__mib__handler__s.html#a74067d02cea4a059cd0fce7790b77b18">myvoid</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>data clone hook for myvoid deep copy the myvoid member - default is to copy the pointer This method is only called if myvoid != NULL myvoid is the current myvoid pointer. </p>
+<p>returns NULL on failure </p>
+
+<p>Definition at line <a class="el" href="agent__handler_8h_source.html#l00070">70</a> of file <a class="el" href="agent__handler_8h_source.html">agent_handler.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae007338d354e85a5d9bf6a918bd42469"></a><!-- doxytag: member="netsnmp_mib_handler_s::data_free" ref="ae007338d354e85a5d9bf6a918bd42469" args=")(void *myvoid)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* <a class="el" href="structnetsnmp__mib__handler__s.html#ae007338d354e85a5d9bf6a918bd42469">netsnmp_mib_handler_s::data_free</a>)(void *<a class="el" href="structnetsnmp__mib__handler__s.html#a74067d02cea4a059cd0fce7790b77b18">myvoid</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>data free hook for myvoid delete the myvoid member - default is to do nothing This method is only called if myvoid != NULL </p>
+<p>data free hook for myvoid </p>
+
+<p>Definition at line <a class="el" href="agent__handler_8h_source.html#l00075">75</a> of file <a class="el" href="agent__handler_8h_source.html">agent_handler.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a320fa53cc0c6edac56c54d6dcf17dfe9"></a><!-- doxytag: member="netsnmp_mib_handler_s::flags" ref="a320fa53cc0c6edac56c54d6dcf17dfe9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structnetsnmp__mib__handler__s.html#a320fa53cc0c6edac56c54d6dcf17dfe9">netsnmp_mib_handler_s::flags</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>for agent_handler's internal use </p>
+
+<p>Definition at line <a class="el" href="agent__handler_8h_source.html#l00053">53</a> of file <a class="el" href="agent__handler_8h_source.html">agent_handler.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a74067d02cea4a059cd0fce7790b77b18"></a><!-- doxytag: member="netsnmp_mib_handler_s::myvoid" ref="a74067d02cea4a059cd0fce7790b77b18" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* <a class="el" href="structnetsnmp__mib__handler__s.html#a74067d02cea4a059cd0fce7790b77b18">netsnmp_mib_handler_s::myvoid</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>for handler's internal use </p>
+
+<p>Definition at line <a class="el" href="agent__handler_8h_source.html#l00051">51</a> of file <a class="el" href="agent__handler_8h_source.html">agent_handler.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li><a class="el" href="agent__handler_8h_source.html">agent_handler.h</a></li>
+</ul>
+</div>
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 14 2011 for net-snmp by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </small></address>
+</body>
+</html>

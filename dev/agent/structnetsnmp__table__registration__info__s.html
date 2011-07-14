@@ -1,236 +1,165 @@
-<!--#set var="section" value="development" -->
-<!--#include virtual="/page-top.html" -->
-<!-- CONTENT START -->
-  <div class="navigation" id="top">
-    <div class="tabs">
-      <ul>
-        <li><a href="index.html"><span>Main Page</span></a></li>
-
-        <li><a href="pages.html"><span>Related Pages</span></a></li>
-
-        <li><a href="modules.html"><span>Modules</span></a></li>
-
-        <li class="current"><a href="annotated.html"><span>Data Structures</span></a></li>
-
-        <li><a href="files.html"><span>Files</span></a></li>
-
-        <li><a href="examples.html"><span>Examples</span></a></li>
-      </ul>
-    </div>
-
-    <div class="tabs">
-      <ul>
-        <li><a href="annotated.html"><span>Data Structures</span></a></li>
-
-        <li><a href="functions.html"><span>Data Fields</span></a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="contents">
-    <h1>netsnmp_table_registration_info_s Struct Reference</h1><!-- doxytag: class="netsnmp_table_registration_info_s" -->
-
-    <p>Table registration structure. <a href="#_details">More...</a></p>
-
-    <p><code>#include &lt;<a class="el" href="table_8h_source.html">table.h</a>&gt;</code></p>
-
-    <table border="0" cellpadding="0" cellspacing="0">
-      <tr>
-        <td colspan="2">
-          <h2>Data Fields</h2>
-        </td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="el" href=
-        "structvariable__list.html">netsnmp_variable_list</a> * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structnetsnmp__table__registration__info__s.html#a3045fe8e402e974d840af4084b88dc2a">indexes</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">list of varbinds with only 'type' set <a href="#a3045fe8e402e974d840af4084b88dc2a"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">unsigned int </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structnetsnmp__table__registration__info__s.html#a31ac0da11dbc52abe401401df065020a">number_indexes</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">calculated automatically <a href="#a31ac0da11dbc52abe401401df065020a"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">unsigned int </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structnetsnmp__table__registration__info__s.html#ae48fd51376f573a4c4e5aede809f7092">min_column</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">the minimum columns number. <a href="#ae48fd51376f573a4c4e5aede809f7092"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">unsigned int </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structnetsnmp__table__registration__info__s.html#a4b7f37faafced959b943e974ba58e008">max_column</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">the maximum columns number <a href="#a4b7f37faafced959b943e974ba58e008"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="el" href=
-        "structnetsnmp__column__info__t.html">netsnmp_column_info</a> * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structnetsnmp__table__registration__info__s.html#aaedf72ed4f760e9926f739553da49835">valid_columns</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">more details on columns <a href="#aaedf72ed4f760e9926f739553da49835"></a><br /></td>
-      </tr>
-    </table>
-    <hr />
-    <a name="_details"></a>
-
-    <h2>Detailed Description</h2>
-
-    <p>Table registration structure.</p>
-
-    <p>Definition at line <a class="el" href="table_8h_source.html#l00080">80</a> of file <a class="el" href=
-    "table_8h_source.html">table.h</a>.</p>
-    <hr />
-
-    <h2>Field Documentation</h2><a class="anchor" id="a3045fe8e402e974d840af4084b88dc2a" name=
-    "a3045fe8e402e974d840af4084b88dc2a"></a>
-    <!-- doxytag: member="netsnmp_table_registration_info_s::indexes" ref="a3045fe8e402e974d840af4084b88dc2a" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname"><a class="el" href="structvariable__list.html">netsnmp_variable_list</a>* <a class="el" href=
-            "structnetsnmp__table__registration__info__s.html#a3045fe8e402e974d840af4084b88dc2a">netsnmp_table_registration_info_s::indexes</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>list of varbinds with only 'type' set</p>
-
-        <p>Definition at line <a class="el" href="table_8h_source.html#l00082">82</a> of file <a class="el" href=
-        "table_8h_source.html">table.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a4b7f37faafced959b943e974ba58e008" name="a4b7f37faafced959b943e974ba58e008"></a>
-    <!-- doxytag: member="netsnmp_table_registration_info_s::max_column" ref="a4b7f37faafced959b943e974ba58e008" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">unsigned int <a class="el" href=
-            "structnetsnmp__table__registration__info__s.html#a4b7f37faafced959b943e974ba58e008">netsnmp_table_registration_info_s::max_column</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>the maximum columns number</p>
-
-        <p>Definition at line <a class="el" href="table_8h_source.html#l00093">93</a> of file <a class="el" href=
-        "table_8h_source.html">table.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="ae48fd51376f573a4c4e5aede809f7092" name="ae48fd51376f573a4c4e5aede809f7092"></a>
-    <!-- doxytag: member="netsnmp_table_registration_info_s::min_column" ref="ae48fd51376f573a4c4e5aede809f7092" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">unsigned int <a class="el" href=
-            "structnetsnmp__table__registration__info__s.html#ae48fd51376f573a4c4e5aede809f7092">netsnmp_table_registration_info_s::min_column</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>the minimum columns number.</p>
-
-        <p>If there are columns in-between which are not valid, use valid_columns to get automatic column range checking.</p>
-
-        <p>Definition at line <a class="el" href="table_8h_source.html#l00091">91</a> of file <a class="el" href=
-        "table_8h_source.html">table.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a31ac0da11dbc52abe401401df065020a" name="a31ac0da11dbc52abe401401df065020a"></a>
-    <!-- doxytag: member="netsnmp_table_registration_info_s::number_indexes" ref="a31ac0da11dbc52abe401401df065020a" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">unsigned int <a class="el" href=
-            "structnetsnmp__table__registration__info__s.html#a31ac0da11dbc52abe401401df065020a">netsnmp_table_registration_info_s::number_indexes</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>calculated automatically</p>
-
-        <p>Definition at line <a class="el" href="table_8h_source.html#l00084">84</a> of file <a class="el" href=
-        "table_8h_source.html">table.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="aaedf72ed4f760e9926f739553da49835" name="aaedf72ed4f760e9926f739553da49835"></a>
-    <!-- doxytag: member="netsnmp_table_registration_info_s::valid_columns" ref="aaedf72ed4f760e9926f739553da49835" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname"><a class="el" href="structnetsnmp__column__info__t.html">netsnmp_column_info</a>* <a class="el"
-            href=
-            "structnetsnmp__table__registration__info__s.html#aaedf72ed4f760e9926f739553da49835">netsnmp_table_registration_info_s::valid_columns</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>more details on columns</p>
-
-        <p>Definition at line <a class="el" href="table_8h_source.html#l00096">96</a> of file <a class="el" href=
-        "table_8h_source.html">table.h</a>.</p>
-      </div>
-    </div>
-    <hr />
-    The documentation for this struct was generated from the following file:
-
-    <ul>
-      <li><a class="el" href="table_8h_source.html">table.h</a></li>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>net-snmp: netsnmp_table_registration_info_s Struct Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Generated by Doxygen 1.7.4 -->
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">net-snmp&#160;<span id="projectnumber">5.7</span></div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
     </ul>
   </div>
-  <hr size="1" />
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="functions.html"><span>Data&#160;Fields</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle">
+<div class="title">netsnmp_table_registration_info_s Struct Reference</div>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="netsnmp_table_registration_info_s" -->
+<p>Table registration structure.  
+ <a href="structnetsnmp__table__registration__info__s.html#details">More...</a></p>
 
-  <address style="text-align: right;">
-    <small>Generated on 28 Sep 2009 for net-snmp by  <a href="http://www.doxygen.org/index.html"><img class="footer" src=
-    "doxygen.png" alt="doxygen" /></a> 1.6.1</small>
-<!-- CONTENT END -->
-<!--#include virtual="/page-bottom.html" -->
+<p><code>#include &lt;<a class="el" href="table_8h_source.html">table.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structvariable__list.html">netsnmp_variable_list</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnetsnmp__table__registration__info__s.html#a3045fe8e402e974d840af4084b88dc2a">indexes</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">list of varbinds with only 'type' set  <a href="#a3045fe8e402e974d840af4084b88dc2a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnetsnmp__table__registration__info__s.html#a31ac0da11dbc52abe401401df065020a">number_indexes</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">calculated automatically  <a href="#a31ac0da11dbc52abe401401df065020a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnetsnmp__table__registration__info__s.html#ae48fd51376f573a4c4e5aede809f7092">min_column</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">the minimum columns number.  <a href="#ae48fd51376f573a4c4e5aede809f7092"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnetsnmp__table__registration__info__s.html#a4b7f37faafced959b943e974ba58e008">max_column</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">the maximum columns number  <a href="#a4b7f37faafced959b943e974ba58e008"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnetsnmp__column__info__t.html">netsnmp_column_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnetsnmp__table__registration__info__s.html#aaedf72ed4f760e9926f739553da49835">valid_columns</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">more details on columns  <a href="#aaedf72ed4f760e9926f739553da49835"></a><br/></td></tr>
+</table>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Table registration structure. </p>
 
+<p>Definition at line <a class="el" href="table_8h_source.html#l00080">80</a> of file <a class="el" href="table_8h_source.html">table.h</a>.</p>
+</div><hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a3045fe8e402e974d840af4084b88dc2a"></a><!-- doxytag: member="netsnmp_table_registration_info_s::indexes" ref="a3045fe8e402e974d840af4084b88dc2a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structvariable__list.html">netsnmp_variable_list</a>* <a class="el" href="structnetsnmp__table__registration__info__s.html#a3045fe8e402e974d840af4084b88dc2a">netsnmp_table_registration_info_s::indexes</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>list of varbinds with only 'type' set </p>
+
+<p>Definition at line <a class="el" href="table_8h_source.html#l00082">82</a> of file <a class="el" href="table_8h_source.html">table.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4b7f37faafced959b943e974ba58e008"></a><!-- doxytag: member="netsnmp_table_registration_info_s::max_column" ref="a4b7f37faafced959b943e974ba58e008" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int <a class="el" href="structnetsnmp__table__registration__info__s.html#a4b7f37faafced959b943e974ba58e008">netsnmp_table_registration_info_s::max_column</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>the maximum columns number </p>
+
+<p>Definition at line <a class="el" href="table_8h_source.html#l00093">93</a> of file <a class="el" href="table_8h_source.html">table.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae48fd51376f573a4c4e5aede809f7092"></a><!-- doxytag: member="netsnmp_table_registration_info_s::min_column" ref="ae48fd51376f573a4c4e5aede809f7092" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int <a class="el" href="structnetsnmp__table__registration__info__s.html#ae48fd51376f573a4c4e5aede809f7092">netsnmp_table_registration_info_s::min_column</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>the minimum columns number. </p>
+<p>If there are columns in-between which are not valid, use valid_columns to get automatic column range checking. </p>
+
+<p>Definition at line <a class="el" href="table_8h_source.html#l00091">91</a> of file <a class="el" href="table_8h_source.html">table.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a31ac0da11dbc52abe401401df065020a"></a><!-- doxytag: member="netsnmp_table_registration_info_s::number_indexes" ref="a31ac0da11dbc52abe401401df065020a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int <a class="el" href="structnetsnmp__table__registration__info__s.html#a31ac0da11dbc52abe401401df065020a">netsnmp_table_registration_info_s::number_indexes</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>calculated automatically </p>
+
+<p>Definition at line <a class="el" href="table_8h_source.html#l00084">84</a> of file <a class="el" href="table_8h_source.html">table.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaedf72ed4f760e9926f739553da49835"></a><!-- doxytag: member="netsnmp_table_registration_info_s::valid_columns" ref="aaedf72ed4f760e9926f739553da49835" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structnetsnmp__column__info__t.html">netsnmp_column_info</a>* <a class="el" href="structnetsnmp__table__registration__info__s.html#aaedf72ed4f760e9926f739553da49835">netsnmp_table_registration_info_s::valid_columns</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>more details on columns </p>
+
+<p>Definition at line <a class="el" href="table_8h_source.html#l00096">96</a> of file <a class="el" href="table_8h_source.html">table.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li><a class="el" href="table_8h_source.html">table.h</a></li>
+</ul>
+</div>
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 14 2011 for net-snmp by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </small></address>
+</body>
+</html>

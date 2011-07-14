@@ -1,1548 +1,951 @@
-<!--#set var="section" value="development" -->
-<!--#include virtual="/page-top.html" -->
-<!-- CONTENT START -->
-  <div class="navigation" id="top">
-    <div class="tabs">
-      <ul>
-        <li><a href="index.html"><span>Main Page</span></a></li>
-
-        <li><a href="pages.html"><span>Related Pages</span></a></li>
-
-        <li><a href="modules.html"><span>Modules</span></a></li>
-
-        <li class="current"><a href="annotated.html"><span>Data Structures</span></a></li>
-
-        <li><a href="files.html"><span>Files</span></a></li>
-
-        <li><a href="examples.html"><span>Examples</span></a></li>
-      </ul>
-    </div>
-
-    <div class="tabs">
-      <ul>
-        <li><a href="annotated.html"><span>Data Structures</span></a></li>
-
-        <li><a href="functions.html"><span>Data Fields</span></a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="contents">
-    <h1>snmp_session Struct Reference</h1><!-- doxytag: class="snmp_session" -->
-
-    <p>The snmp session structure. <a href="#_details">More...</a></p>
-
-    <p><code>#include &lt;<a class="el" href="types_8h_source.html">types.h</a>&gt;</code></p>
-
-    <table border="0" cellpadding="0" cellspacing="0">
-      <tr>
-        <td colspan="2">
-          <h2>Data Fields</h2>
-        </td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">long </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#ae50774f611e22f73df23e97094077e49">version</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">snmp version <a href="#ae50774f611e22f73df23e97094077e49"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">int </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#a462db7e25f876119ff965093261073ad">retries</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Number of retries before timeout. <a href="#a462db7e25f876119ff965093261073ad"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">long </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#acd498bd5db671be71adc63588b0ce72c">timeout</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Number of uS until first timeout, then exponential backoff. <a href=
-        "#acd498bd5db671be71adc63588b0ce72c"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad068f0eb85615f4f4fb7c225cc11344" name=
-        "aad068f0eb85615f4f4fb7c225cc11344"></a>
-        <!-- doxytag: member="snmp_session::flags" ref="aad068f0eb85615f4f4fb7c225cc11344" args="" -->
-        u_long </td>
-
-        <td class="memItemRight" valign="bottom"><b>flags</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a33b67b133e0ee5776b52bfbc126ec057" name=
-        "a33b67b133e0ee5776b52bfbc126ec057"></a>
-        <!-- doxytag: member="snmp_session::subsession" ref="a33b67b133e0ee5776b52bfbc126ec057" args="" -->
-        struct <a class="el" href="structsnmp__session.html">snmp_session</a> * </td>
-
-        <td class="memItemRight" valign="bottom"><b>subsession</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa0e1dde1a8a8ef65ff19db186fc86fe4" name=
-        "aa0e1dde1a8a8ef65ff19db186fc86fe4"></a>
-        <!-- doxytag: member="snmp_session::next" ref="aa0e1dde1a8a8ef65ff19db186fc86fe4" args="" -->
-        struct <a class="el" href="structsnmp__session.html">snmp_session</a> * </td>
-
-        <td class="memItemRight" valign="bottom"><b>next</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">char * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#a6651007c1d156f67f99d54d84aac09b9">peername</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">name or address of default peer (may include transport specifier and/or port number) <a href=
-        "#a6651007c1d156f67f99d54d84aac09b9"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">u_short </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#aa69bfb92a55adeb3dec474a38c33768f">remote_port</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">UDP port number of peer. <a href="#aa69bfb92a55adeb3dec474a38c33768f"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">char * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#a7fb0587d556edba815336e34bb42e088">localname</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">My Domain name or dotted IP address, 0 for default. <a href=
-        "#a7fb0587d556edba815336e34bb42e088"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">u_short </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#a0ceaa4e08dca57df14aba6499d908cd3">local_port</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">My UDP port number, 0 for default, picked randomly. <a href=
-        "#a0ceaa4e08dca57df14aba6499d908cd3"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">u_char *(* </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#acf42f8619700d1e8eeeb32d942880fbc">authenticator</a> )(u_char *, size_t *, u_char *,
-        size_t)</td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Authentication function or NULL if null authentication is used. <a href=
-        "#acf42f8619700d1e8eeeb32d942880fbc"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">netsnmp_callback </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#a3918c1cdd264f6a40ab06c457097a6d9">callback</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Function to interpret incoming data. <a href="#a3918c1cdd264f6a40ab06c457097a6d9"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">void * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#a8747794e036182a6967c3296aa5b251c">callback_magic</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Pointer to data that the callback function may consider important. <a href=
-        "#a8747794e036182a6967c3296aa5b251c"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">int </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#ac5ddc75c2505b437a505b42bcda28704">s_errno</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">copy of system errno <a href="#ac5ddc75c2505b437a505b42bcda28704"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">int </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#afb3f06f6d767a95ebd59b35d2f10faf7">s_snmp_errno</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">copy of library errno <a href="#afb3f06f6d767a95ebd59b35d2f10faf7"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">long </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#a6ba5c6460489f6b2ba6ad457e92da24a">sessid</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Session id - AgentX only. <a href="#a6ba5c6460489f6b2ba6ad457e92da24a"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">u_char * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#ac6f500fb8171149a2dee9d85c772c021">community</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">community for outgoing requests. <a href="#ac6f500fb8171149a2dee9d85c772c021"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">size_t </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#acd17283f3a20f2ca72ea44125c5015a2">community_len</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Length of community name. <a href="#acd17283f3a20f2ca72ea44125c5015a2"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">size_t </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#a7dfdc789825f12176ccf42adf60d27d8">rcvMsgMaxSize</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Largest message to try to receive. <a href="#a7dfdc789825f12176ccf42adf60d27d8"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">size_t </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#adcc833af44749944278cd3816cb28533">sndMsgMaxSize</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Largest message to try to send. <a href="#adcc833af44749944278cd3816cb28533"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">u_char </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#a9284be33e69062f7f90723a4ee04409b">isAuthoritative</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">are we the authoritative engine? <a href="#a9284be33e69062f7f90723a4ee04409b"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">u_char * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#aafffd59c5c644b1e3985eb379b6b06d1">contextEngineID</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">authoritative snmpEngineID <a href="#aafffd59c5c644b1e3985eb379b6b06d1"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">size_t </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#a1babf5a3e0b7db035f141feacf0390ba">contextEngineIDLen</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Length of contextEngineID. <a href="#a1babf5a3e0b7db035f141feacf0390ba"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">u_int </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#aa085375bfa95ac93f3496b45cc48c7c4">engineBoots</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">initial engineBoots for remote engine <a href="#aa085375bfa95ac93f3496b45cc48c7c4"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">u_int </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#a2575d19e07c2472c7d2d90b2535a048a">engineTime</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">initial engineTime for remote engine <a href="#a2575d19e07c2472c7d2d90b2535a048a"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">char * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#abed37d0c605734aa5d7d9ce667ce9497">contextName</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">authoritative contextName <a href="#abed37d0c605734aa5d7d9ce667ce9497"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">size_t </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#a63bc78b630144579567b0f8d87c54dc9">contextNameLen</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Length of contextName. <a href="#a63bc78b630144579567b0f8d87c54dc9"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">u_char * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#aa11c998a39ac508258ccf9169ea22a89">securityEngineID</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">authoritative snmpEngineID <a href="#aa11c998a39ac508258ccf9169ea22a89"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">size_t </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#a08a450c1b5acbf798b5473c36395edf5">securityEngineIDLen</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Length of contextEngineID. <a href="#a08a450c1b5acbf798b5473c36395edf5"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">char * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#a247882bf1e340be5ec1d22d41d5a0179">securityName</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">on behalf of this principal <a href="#a247882bf1e340be5ec1d22d41d5a0179"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">size_t </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#aded39fd06dcaa1159633d3783b9e4941">securityNameLen</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Length of securityName. <a href="#aded39fd06dcaa1159633d3783b9e4941"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">oid * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#acaa4215016fd2f317fbb61b4c55e66d5">securityAuthProto</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">auth protocol oid <a href="#acaa4215016fd2f317fbb61b4c55e66d5"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">size_t </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#af7a4c741fb6e45967ce17a3a6b71b740">securityAuthProtoLen</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Length of auth protocol oid. <a href="#af7a4c741fb6e45967ce17a3a6b71b740"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">u_char </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#a72b041b55b2b9ad6540644845cbe063f">securityAuthKey</a> [USM_AUTH_KU_LEN]</td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Ku for auth protocol XXX. <a href="#a72b041b55b2b9ad6540644845cbe063f"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">size_t </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#a8149ffe5cea795e5080b3cb6f322b5c5">securityAuthKeyLen</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Length of Ku for auth protocol. <a href="#a8149ffe5cea795e5080b3cb6f322b5c5"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">u_char * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#ad75654aafbe5319b63296e8413a7f817">securityAuthLocalKey</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Kul for auth protocol. <a href="#ad75654aafbe5319b63296e8413a7f817"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">size_t </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#abfeac9d37631b38284a5dbd5a0c8dd86">securityAuthLocalKeyLen</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Length of Kul for auth protocol XXX. <a href="#abfeac9d37631b38284a5dbd5a0c8dd86"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">oid * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#a065ac4c2ac34954a61cee33456cd2b55">securityPrivProto</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">priv protocol oid <a href="#a065ac4c2ac34954a61cee33456cd2b55"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">size_t </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#a2cf935eb076df4886ffaf6c5047834fb">securityPrivProtoLen</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Length of priv protocol oid. <a href="#a2cf935eb076df4886ffaf6c5047834fb"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">u_char </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#a19ec576d5360683569d1ade5c5a93031">securityPrivKey</a> [USM_PRIV_KU_LEN]</td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Ku for privacy protocol XXX. <a href="#a19ec576d5360683569d1ade5c5a93031"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">size_t </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#a146582d1c5fb7ac68cc0302c673b97bb">securityPrivKeyLen</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Length of Ku for priv protocol. <a href="#a146582d1c5fb7ac68cc0302c673b97bb"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">u_char * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#a7c38601198b252b584f77daed313280e">securityPrivLocalKey</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Kul for priv protocol. <a href="#a7c38601198b252b584f77daed313280e"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">size_t </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#a2ceedc6dca38076e132645a50afc2fbf">securityPrivLocalKeyLen</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Length of Kul for priv protocol XXX. <a href="#a2ceedc6dca38076e132645a50afc2fbf"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">int </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#a7bf36554eeaa2eedb5ba5ff7ec76f1a8">securityModel</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">snmp security model, v1, v2c, usm <a href="#a7bf36554eeaa2eedb5ba5ff7ec76f1a8"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">int </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#a5394bc51b76c7f0b46e5efb464e87feb">securityLevel</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">noAuthNoPriv, authNoPriv, authPriv <a href="#a5394bc51b76c7f0b46e5efb464e87feb"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">char * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#add5c66a71c0f1980d674b7fe7ee4fbe8">paramName</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">target param name <a href="#add5c66a71c0f1980d674b7fe7ee4fbe8"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">void * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#a562e6b7c1ca4e4e4670f1105dc522204">securityInfo</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">security <a class="el" href="structmodule.html">module</a> specific <a href=
-        "#a562e6b7c1ca4e4e4670f1105dc522204"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">void * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__session.html#aa4d7a5aac21f70379ad380b65762c81c">myvoid</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">use as you want data <a href="#aa4d7a5aac21f70379ad380b65762c81c"></a><br /></td>
-      </tr>
-    </table>
-    <hr />
-    <a name="_details"></a>
-
-    <h2>Detailed Description</h2>
-
-    <p>The snmp session structure.</p>
-
-    <p>Definition at line <a class="el" href="types_8h_source.html#l00260">260</a> of file <a class="el" href=
-    "types_8h_source.html">types.h</a>.</p>
-    <hr />
-
-    <h2>Field Documentation</h2><a class="anchor" id="acf42f8619700d1e8eeeb32d942880fbc" name=
-    "acf42f8619700d1e8eeeb32d942880fbc"></a>
-    <!-- doxytag: member="snmp_session::authenticator" ref="acf42f8619700d1e8eeeb32d942880fbc" args=")(u_char *, size_t *, u_char *, size_t)" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">u_char*(* <a class="el" href=
-            "structsnmp__session.html#acf42f8619700d1e8eeeb32d942880fbc">snmp_session::authenticator</a>)(u_char *, size_t *,
-            u_char *, size_t)</td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Authentication function or NULL if null authentication is used.</p>
-      </div>
-    </div><a class="anchor" id="a3918c1cdd264f6a40ab06c457097a6d9" name="a3918c1cdd264f6a40ab06c457097a6d9"></a>
-    <!-- doxytag: member="snmp_session::callback" ref="a3918c1cdd264f6a40ab06c457097a6d9" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">netsnmp_callback <a class="el" href=
-            "structsnmp__session.html#a3918c1cdd264f6a40ab06c457097a6d9">snmp_session::callback</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Function to interpret incoming data.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00287">287</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a8747794e036182a6967c3296aa5b251c" name="a8747794e036182a6967c3296aa5b251c"></a>
-    <!-- doxytag: member="snmp_session::callback_magic" ref="a8747794e036182a6967c3296aa5b251c" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">void* <a class="el" href=
-            "structsnmp__session.html#a8747794e036182a6967c3296aa5b251c">snmp_session::callback_magic</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Pointer to data that the callback function may consider important.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00291">291</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="ac6f500fb8171149a2dee9d85c772c021" name="ac6f500fb8171149a2dee9d85c772c021"></a>
-    <!-- doxytag: member="snmp_session::community" ref="ac6f500fb8171149a2dee9d85c772c021" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">u_char* <a class="el" href=
-            "structsnmp__session.html#ac6f500fb8171149a2dee9d85c772c021">snmp_session::community</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>community for outgoing requests.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00303">303</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="acd17283f3a20f2ca72ea44125c5015a2" name="acd17283f3a20f2ca72ea44125c5015a2"></a>
-    <!-- doxytag: member="snmp_session::community_len" ref="acd17283f3a20f2ca72ea44125c5015a2" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">size_t <a class="el" href=
-            "structsnmp__session.html#acd17283f3a20f2ca72ea44125c5015a2">snmp_session::community_len</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Length of community name.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00305">305</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="aafffd59c5c644b1e3985eb379b6b06d1" name="aafffd59c5c644b1e3985eb379b6b06d1"></a>
-    <!-- doxytag: member="snmp_session::contextEngineID" ref="aafffd59c5c644b1e3985eb379b6b06d1" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">u_char* <a class="el" href=
-            "structsnmp__session.html#aafffd59c5c644b1e3985eb379b6b06d1">snmp_session::contextEngineID</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>authoritative snmpEngineID</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00317">317</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a1babf5a3e0b7db035f141feacf0390ba" name="a1babf5a3e0b7db035f141feacf0390ba"></a>
-    <!-- doxytag: member="snmp_session::contextEngineIDLen" ref="a1babf5a3e0b7db035f141feacf0390ba" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">size_t <a class="el" href=
-            "structsnmp__session.html#a1babf5a3e0b7db035f141feacf0390ba">snmp_session::contextEngineIDLen</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Length of contextEngineID.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00319">319</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="abed37d0c605734aa5d7d9ce667ce9497" name="abed37d0c605734aa5d7d9ce667ce9497"></a>
-    <!-- doxytag: member="snmp_session::contextName" ref="abed37d0c605734aa5d7d9ce667ce9497" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">char* <a class="el" href=
-            "structsnmp__session.html#abed37d0c605734aa5d7d9ce667ce9497">snmp_session::contextName</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>authoritative contextName</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00325">325</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a63bc78b630144579567b0f8d87c54dc9" name="a63bc78b630144579567b0f8d87c54dc9"></a>
-    <!-- doxytag: member="snmp_session::contextNameLen" ref="a63bc78b630144579567b0f8d87c54dc9" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">size_t <a class="el" href=
-            "structsnmp__session.html#a63bc78b630144579567b0f8d87c54dc9">snmp_session::contextNameLen</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Length of contextName.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00327">327</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="aa085375bfa95ac93f3496b45cc48c7c4" name="aa085375bfa95ac93f3496b45cc48c7c4"></a>
-    <!-- doxytag: member="snmp_session::engineBoots" ref="aa085375bfa95ac93f3496b45cc48c7c4" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">u_int <a class="el" href=
-            "structsnmp__session.html#aa085375bfa95ac93f3496b45cc48c7c4">snmp_session::engineBoots</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>initial engineBoots for remote engine</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00321">321</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a2575d19e07c2472c7d2d90b2535a048a" name="a2575d19e07c2472c7d2d90b2535a048a"></a>
-    <!-- doxytag: member="snmp_session::engineTime" ref="a2575d19e07c2472c7d2d90b2535a048a" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">u_int <a class="el" href=
-            "structsnmp__session.html#a2575d19e07c2472c7d2d90b2535a048a">snmp_session::engineTime</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>initial engineTime for remote engine</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00323">323</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a9284be33e69062f7f90723a4ee04409b" name="a9284be33e69062f7f90723a4ee04409b"></a>
-    <!-- doxytag: member="snmp_session::isAuthoritative" ref="a9284be33e69062f7f90723a4ee04409b" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">u_char <a class="el" href=
-            "structsnmp__session.html#a9284be33e69062f7f90723a4ee04409b">snmp_session::isAuthoritative</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>are we the authoritative engine?</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00315">315</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a0ceaa4e08dca57df14aba6499d908cd3" name="a0ceaa4e08dca57df14aba6499d908cd3"></a>
-    <!-- doxytag: member="snmp_session::local_port" ref="a0ceaa4e08dca57df14aba6499d908cd3" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">u_short <a class="el" href=
-            "structsnmp__session.html#a0ceaa4e08dca57df14aba6499d908cd3">snmp_session::local_port</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>My UDP port number, 0 for default, picked randomly.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00281">281</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a7fb0587d556edba815336e34bb42e088" name="a7fb0587d556edba815336e34bb42e088"></a>
-    <!-- doxytag: member="snmp_session::localname" ref="a7fb0587d556edba815336e34bb42e088" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">char* <a class="el" href=
-            "structsnmp__session.html#a7fb0587d556edba815336e34bb42e088">snmp_session::localname</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>My Domain name or dotted IP address, 0 for default.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00279">279</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="aa4d7a5aac21f70379ad380b65762c81c" name="aa4d7a5aac21f70379ad380b65762c81c"></a>
-    <!-- doxytag: member="snmp_session::myvoid" ref="aa4d7a5aac21f70379ad380b65762c81c" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">void* <a class="el" href=
-            "structsnmp__session.html#aa4d7a5aac21f70379ad380b65762c81c">snmp_session::myvoid</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>use as you want data</p>
-
-        <p>used by 'SNMP_FLAGS_RESP_CALLBACK' handling in the agent XXX: or should we add a new field into this structure?</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00381">381</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="add5c66a71c0f1980d674b7fe7ee4fbe8" name="add5c66a71c0f1980d674b7fe7ee4fbe8"></a>
-    <!-- doxytag: member="snmp_session::paramName" ref="add5c66a71c0f1980d674b7fe7ee4fbe8" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">char* <a class="el" href=
-            "structsnmp__session.html#add5c66a71c0f1980d674b7fe7ee4fbe8">snmp_session::paramName</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>target param name</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00368">368</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a6651007c1d156f67f99d54d84aac09b9" name="a6651007c1d156f67f99d54d84aac09b9"></a>
-    <!-- doxytag: member="snmp_session::peername" ref="a6651007c1d156f67f99d54d84aac09b9" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">char* <a class="el" href=
-            "structsnmp__session.html#a6651007c1d156f67f99d54d84aac09b9">snmp_session::peername</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>name or address of default peer (may include transport specifier and/or port number)</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00275">275</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a7dfdc789825f12176ccf42adf60d27d8" name="a7dfdc789825f12176ccf42adf60d27d8"></a>
-    <!-- doxytag: member="snmp_session::rcvMsgMaxSize" ref="a7dfdc789825f12176ccf42adf60d27d8" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">size_t <a class="el" href=
-            "structsnmp__session.html#a7dfdc789825f12176ccf42adf60d27d8">snmp_session::rcvMsgMaxSize</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Largest message to try to receive.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00307">307</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="aa69bfb92a55adeb3dec474a38c33768f" name="aa69bfb92a55adeb3dec474a38c33768f"></a>
-    <!-- doxytag: member="snmp_session::remote_port" ref="aa69bfb92a55adeb3dec474a38c33768f" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">u_short <a class="el" href=
-            "structsnmp__session.html#aa69bfb92a55adeb3dec474a38c33768f">snmp_session::remote_port</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>UDP port number of peer.</p>
-
-        <p>(NO LONGER USED - USE peername INSTEAD)</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00277">277</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a462db7e25f876119ff965093261073ad" name="a462db7e25f876119ff965093261073ad"></a>
-    <!-- doxytag: member="snmp_session::retries" ref="a462db7e25f876119ff965093261073ad" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">int <a class="el" href=
-            "structsnmp__session.html#a462db7e25f876119ff965093261073ad">snmp_session::retries</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Number of retries before timeout.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00267">267</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="ac5ddc75c2505b437a505b42bcda28704" name="ac5ddc75c2505b437a505b42bcda28704"></a>
-    <!-- doxytag: member="snmp_session::s_errno" ref="ac5ddc75c2505b437a505b42bcda28704" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">int <a class="el" href=
-            "structsnmp__session.html#ac5ddc75c2505b437a505b42bcda28704">snmp_session::s_errno</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>copy of system errno</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00293">293</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="afb3f06f6d767a95ebd59b35d2f10faf7" name="afb3f06f6d767a95ebd59b35d2f10faf7"></a>
-    <!-- doxytag: member="snmp_session::s_snmp_errno" ref="afb3f06f6d767a95ebd59b35d2f10faf7" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">int <a class="el" href=
-            "structsnmp__session.html#afb3f06f6d767a95ebd59b35d2f10faf7">snmp_session::s_snmp_errno</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>copy of library errno</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00295">295</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a72b041b55b2b9ad6540644845cbe063f" name="a72b041b55b2b9ad6540644845cbe063f"></a>
-    <!-- doxytag: member="snmp_session::securityAuthKey" ref="a72b041b55b2b9ad6540644845cbe063f" args="[USM_AUTH_KU_LEN]" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">u_char <a class="el" href=
-            "structsnmp__session.html#a72b041b55b2b9ad6540644845cbe063f">snmp_session::securityAuthKey</a>[USM_AUTH_KU_LEN]</td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Ku for auth protocol XXX.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00342">342</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a8149ffe5cea795e5080b3cb6f322b5c5" name="a8149ffe5cea795e5080b3cb6f322b5c5"></a>
-    <!-- doxytag: member="snmp_session::securityAuthKeyLen" ref="a8149ffe5cea795e5080b3cb6f322b5c5" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">size_t <a class="el" href=
-            "structsnmp__session.html#a8149ffe5cea795e5080b3cb6f322b5c5">snmp_session::securityAuthKeyLen</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Length of Ku for auth protocol.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00344">344</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="ad75654aafbe5319b63296e8413a7f817" name="ad75654aafbe5319b63296e8413a7f817"></a>
-    <!-- doxytag: member="snmp_session::securityAuthLocalKey" ref="ad75654aafbe5319b63296e8413a7f817" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">u_char* <a class="el" href=
-            "structsnmp__session.html#ad75654aafbe5319b63296e8413a7f817">snmp_session::securityAuthLocalKey</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Kul for auth protocol.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00346">346</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="abfeac9d37631b38284a5dbd5a0c8dd86" name="abfeac9d37631b38284a5dbd5a0c8dd86"></a>
-    <!-- doxytag: member="snmp_session::securityAuthLocalKeyLen" ref="abfeac9d37631b38284a5dbd5a0c8dd86" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">size_t <a class="el" href=
-            "structsnmp__session.html#abfeac9d37631b38284a5dbd5a0c8dd86">snmp_session::securityAuthLocalKeyLen</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Length of Kul for auth protocol XXX.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00348">348</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="acaa4215016fd2f317fbb61b4c55e66d5" name="acaa4215016fd2f317fbb61b4c55e66d5"></a>
-    <!-- doxytag: member="snmp_session::securityAuthProto" ref="acaa4215016fd2f317fbb61b4c55e66d5" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">oid* <a class="el" href=
-            "structsnmp__session.html#acaa4215016fd2f317fbb61b4c55e66d5">snmp_session::securityAuthProto</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>auth protocol oid</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00338">338</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="af7a4c741fb6e45967ce17a3a6b71b740" name="af7a4c741fb6e45967ce17a3a6b71b740"></a>
-    <!-- doxytag: member="snmp_session::securityAuthProtoLen" ref="af7a4c741fb6e45967ce17a3a6b71b740" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">size_t <a class="el" href=
-            "structsnmp__session.html#af7a4c741fb6e45967ce17a3a6b71b740">snmp_session::securityAuthProtoLen</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Length of auth protocol oid.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00340">340</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="aa11c998a39ac508258ccf9169ea22a89" name="aa11c998a39ac508258ccf9169ea22a89"></a>
-    <!-- doxytag: member="snmp_session::securityEngineID" ref="aa11c998a39ac508258ccf9169ea22a89" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">u_char* <a class="el" href=
-            "structsnmp__session.html#aa11c998a39ac508258ccf9169ea22a89">snmp_session::securityEngineID</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>authoritative snmpEngineID</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00329">329</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a08a450c1b5acbf798b5473c36395edf5" name="a08a450c1b5acbf798b5473c36395edf5"></a>
-    <!-- doxytag: member="snmp_session::securityEngineIDLen" ref="a08a450c1b5acbf798b5473c36395edf5" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">size_t <a class="el" href=
-            "structsnmp__session.html#a08a450c1b5acbf798b5473c36395edf5">snmp_session::securityEngineIDLen</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Length of contextEngineID.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00331">331</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a562e6b7c1ca4e4e4670f1105dc522204" name="a562e6b7c1ca4e4e4670f1105dc522204"></a>
-    <!-- doxytag: member="snmp_session::securityInfo" ref="a562e6b7c1ca4e4e4670f1105dc522204" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">void* <a class="el" href=
-            "structsnmp__session.html#a562e6b7c1ca4e4e4670f1105dc522204">snmp_session::securityInfo</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>security <a class="el" href="structmodule.html">module</a> specific</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00373">373</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a5394bc51b76c7f0b46e5efb464e87feb" name="a5394bc51b76c7f0b46e5efb464e87feb"></a>
-    <!-- doxytag: member="snmp_session::securityLevel" ref="a5394bc51b76c7f0b46e5efb464e87feb" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">int <a class="el" href=
-            "structsnmp__session.html#a5394bc51b76c7f0b46e5efb464e87feb">snmp_session::securityLevel</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>noAuthNoPriv, authNoPriv, authPriv</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00366">366</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a7bf36554eeaa2eedb5ba5ff7ec76f1a8" name="a7bf36554eeaa2eedb5ba5ff7ec76f1a8"></a>
-    <!-- doxytag: member="snmp_session::securityModel" ref="a7bf36554eeaa2eedb5ba5ff7ec76f1a8" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">int <a class="el" href=
-            "structsnmp__session.html#a7bf36554eeaa2eedb5ba5ff7ec76f1a8">snmp_session::securityModel</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>snmp security model, v1, v2c, usm</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00364">364</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a247882bf1e340be5ec1d22d41d5a0179" name="a247882bf1e340be5ec1d22d41d5a0179"></a>
-    <!-- doxytag: member="snmp_session::securityName" ref="a247882bf1e340be5ec1d22d41d5a0179" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">char* <a class="el" href=
-            "structsnmp__session.html#a247882bf1e340be5ec1d22d41d5a0179">snmp_session::securityName</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>on behalf of this principal</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00333">333</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="aded39fd06dcaa1159633d3783b9e4941" name="aded39fd06dcaa1159633d3783b9e4941"></a>
-    <!-- doxytag: member="snmp_session::securityNameLen" ref="aded39fd06dcaa1159633d3783b9e4941" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">size_t <a class="el" href=
-            "structsnmp__session.html#aded39fd06dcaa1159633d3783b9e4941">snmp_session::securityNameLen</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Length of securityName.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00335">335</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a19ec576d5360683569d1ade5c5a93031" name="a19ec576d5360683569d1ade5c5a93031"></a>
-    <!-- doxytag: member="snmp_session::securityPrivKey" ref="a19ec576d5360683569d1ade5c5a93031" args="[USM_PRIV_KU_LEN]" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">u_char <a class="el" href=
-            "structsnmp__session.html#a19ec576d5360683569d1ade5c5a93031">snmp_session::securityPrivKey</a>[USM_PRIV_KU_LEN]</td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Ku for privacy protocol XXX.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00355">355</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a146582d1c5fb7ac68cc0302c673b97bb" name="a146582d1c5fb7ac68cc0302c673b97bb"></a>
-    <!-- doxytag: member="snmp_session::securityPrivKeyLen" ref="a146582d1c5fb7ac68cc0302c673b97bb" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">size_t <a class="el" href=
-            "structsnmp__session.html#a146582d1c5fb7ac68cc0302c673b97bb">snmp_session::securityPrivKeyLen</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Length of Ku for priv protocol.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00357">357</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a7c38601198b252b584f77daed313280e" name="a7c38601198b252b584f77daed313280e"></a>
-    <!-- doxytag: member="snmp_session::securityPrivLocalKey" ref="a7c38601198b252b584f77daed313280e" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">u_char* <a class="el" href=
-            "structsnmp__session.html#a7c38601198b252b584f77daed313280e">snmp_session::securityPrivLocalKey</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Kul for priv protocol.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00359">359</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a2ceedc6dca38076e132645a50afc2fbf" name="a2ceedc6dca38076e132645a50afc2fbf"></a>
-    <!-- doxytag: member="snmp_session::securityPrivLocalKeyLen" ref="a2ceedc6dca38076e132645a50afc2fbf" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">size_t <a class="el" href=
-            "structsnmp__session.html#a2ceedc6dca38076e132645a50afc2fbf">snmp_session::securityPrivLocalKeyLen</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Length of Kul for priv protocol XXX.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00361">361</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a065ac4c2ac34954a61cee33456cd2b55" name="a065ac4c2ac34954a61cee33456cd2b55"></a>
-    <!-- doxytag: member="snmp_session::securityPrivProto" ref="a065ac4c2ac34954a61cee33456cd2b55" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">oid* <a class="el" href=
-            "structsnmp__session.html#a065ac4c2ac34954a61cee33456cd2b55">snmp_session::securityPrivProto</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>priv protocol oid</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00351">351</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a2cf935eb076df4886ffaf6c5047834fb" name="a2cf935eb076df4886ffaf6c5047834fb"></a>
-    <!-- doxytag: member="snmp_session::securityPrivProtoLen" ref="a2cf935eb076df4886ffaf6c5047834fb" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">size_t <a class="el" href=
-            "structsnmp__session.html#a2cf935eb076df4886ffaf6c5047834fb">snmp_session::securityPrivProtoLen</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Length of priv protocol oid.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00353">353</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a6ba5c6460489f6b2ba6ad457e92da24a" name="a6ba5c6460489f6b2ba6ad457e92da24a"></a>
-    <!-- doxytag: member="snmp_session::sessid" ref="a6ba5c6460489f6b2ba6ad457e92da24a" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">long <a class="el" href=
-            "structsnmp__session.html#a6ba5c6460489f6b2ba6ad457e92da24a">snmp_session::sessid</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Session id - AgentX only.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00297">297</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="adcc833af44749944278cd3816cb28533" name="adcc833af44749944278cd3816cb28533"></a>
-    <!-- doxytag: member="snmp_session::sndMsgMaxSize" ref="adcc833af44749944278cd3816cb28533" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">size_t <a class="el" href=
-            "structsnmp__session.html#adcc833af44749944278cd3816cb28533">snmp_session::sndMsgMaxSize</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Largest message to try to send.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00309">309</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="acd498bd5db671be71adc63588b0ce72c" name="acd498bd5db671be71adc63588b0ce72c"></a>
-    <!-- doxytag: member="snmp_session::timeout" ref="acd498bd5db671be71adc63588b0ce72c" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">long <a class="el" href=
-            "structsnmp__session.html#acd498bd5db671be71adc63588b0ce72c">snmp_session::timeout</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Number of uS until first timeout, then exponential backoff.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00269">269</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="ae50774f611e22f73df23e97094077e49" name="ae50774f611e22f73df23e97094077e49"></a>
-    <!-- doxytag: member="snmp_session::version" ref="ae50774f611e22f73df23e97094077e49" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">long <a class="el" href=
-            "structsnmp__session.html#ae50774f611e22f73df23e97094077e49">snmp_session::version</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>snmp version</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00265">265</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div>
-    <hr />
-    The documentation for this struct was generated from the following file:
-
-    <ul>
-      <li><a class="el" href="types_8h_source.html">types.h</a></li>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>net-snmp: snmp_session Struct Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Generated by Doxygen 1.7.4 -->
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">net-snmp&#160;<span id="projectnumber">5.7</span></div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
     </ul>
   </div>
-  <hr size="1" />
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="functions.html"><span>Data&#160;Fields</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle">
+<div class="title">snmp_session Struct Reference</div>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="snmp_session" -->
+<p>The snmp session structure.  
+ <a href="structsnmp__session.html#details">More...</a></p>
 
-  <address style="text-align: right;">
-    <small>Generated on 28 Sep 2009 for net-snmp by  <a href="http://www.doxygen.org/index.html"><img class="footer" src=
-    "doxygen.png" alt="doxygen" /></a> 1.6.1</small>
-<!-- CONTENT END -->
-<!--#include virtual="/page-bottom.html" -->
+<p><code>#include &lt;<a class="el" href="types_8h_source.html">types.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#ae50774f611e22f73df23e97094077e49">version</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">snmp version  <a href="#ae50774f611e22f73df23e97094077e49"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#a462db7e25f876119ff965093261073ad">retries</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of retries before timeout.  <a href="#a462db7e25f876119ff965093261073ad"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#acd498bd5db671be71adc63588b0ce72c">timeout</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of uS until first timeout, then exponential backoff.  <a href="#acd498bd5db671be71adc63588b0ce72c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad068f0eb85615f4f4fb7c225cc11344"></a><!-- doxytag: member="snmp_session::flags" ref="aad068f0eb85615f4f4fb7c225cc11344" args="" -->
+u_long&#160;</td><td class="memItemRight" valign="bottom"><b>flags</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a33b67b133e0ee5776b52bfbc126ec057"></a><!-- doxytag: member="snmp_session::subsession" ref="a33b67b133e0ee5776b52bfbc126ec057" args="" -->
+struct <a class="el" href="structsnmp__session.html">snmp_session</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>subsession</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa0e1dde1a8a8ef65ff19db186fc86fe4"></a><!-- doxytag: member="snmp_session::next" ref="aa0e1dde1a8a8ef65ff19db186fc86fe4" args="" -->
+struct <a class="el" href="structsnmp__session.html">snmp_session</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>next</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#a6651007c1d156f67f99d54d84aac09b9">peername</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">name or address of default peer (may include transport specifier and/or port number)  <a href="#a6651007c1d156f67f99d54d84aac09b9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u_short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#aa69bfb92a55adeb3dec474a38c33768f">remote_port</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">UDP port number of peer.  <a href="#aa69bfb92a55adeb3dec474a38c33768f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#a7fb0587d556edba815336e34bb42e088">localname</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">My Domain name or dotted IP address, 0 for default.  <a href="#a7fb0587d556edba815336e34bb42e088"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u_short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#a0ceaa4e08dca57df14aba6499d908cd3">local_port</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">My UDP port number, 0 for default, picked randomly.  <a href="#a0ceaa4e08dca57df14aba6499d908cd3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u_char *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#acf42f8619700d1e8eeeb32d942880fbc">authenticator</a> )(u_char *, size_t *, u_char *, size_t)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Authentication function or NULL if null authentication is used.  <a href="#acf42f8619700d1e8eeeb32d942880fbc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">netsnmp_callback&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#a3918c1cdd264f6a40ab06c457097a6d9">callback</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to interpret incoming data.  <a href="#a3918c1cdd264f6a40ab06c457097a6d9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#a8747794e036182a6967c3296aa5b251c">callback_magic</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to data that the callback function may consider important.  <a href="#a8747794e036182a6967c3296aa5b251c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#ac5ddc75c2505b437a505b42bcda28704">s_errno</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">copy of system errno  <a href="#ac5ddc75c2505b437a505b42bcda28704"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#afb3f06f6d767a95ebd59b35d2f10faf7">s_snmp_errno</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">copy of library errno  <a href="#afb3f06f6d767a95ebd59b35d2f10faf7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#a6ba5c6460489f6b2ba6ad457e92da24a">sessid</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Session id - AgentX only.  <a href="#a6ba5c6460489f6b2ba6ad457e92da24a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u_char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#ac6f500fb8171149a2dee9d85c772c021">community</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">community for outgoing requests.  <a href="#ac6f500fb8171149a2dee9d85c772c021"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#acd17283f3a20f2ca72ea44125c5015a2">community_len</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of community name.  <a href="#acd17283f3a20f2ca72ea44125c5015a2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#a7dfdc789825f12176ccf42adf60d27d8">rcvMsgMaxSize</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Largest message to try to receive.  <a href="#a7dfdc789825f12176ccf42adf60d27d8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#adcc833af44749944278cd3816cb28533">sndMsgMaxSize</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Largest message to try to send.  <a href="#adcc833af44749944278cd3816cb28533"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u_char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#a9284be33e69062f7f90723a4ee04409b">isAuthoritative</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">are we the authoritative engine?  <a href="#a9284be33e69062f7f90723a4ee04409b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u_char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#aafffd59c5c644b1e3985eb379b6b06d1">contextEngineID</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">authoritative snmpEngineID  <a href="#aafffd59c5c644b1e3985eb379b6b06d1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#a1babf5a3e0b7db035f141feacf0390ba">contextEngineIDLen</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of contextEngineID.  <a href="#a1babf5a3e0b7db035f141feacf0390ba"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u_int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#aa085375bfa95ac93f3496b45cc48c7c4">engineBoots</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">initial engineBoots for remote engine  <a href="#aa085375bfa95ac93f3496b45cc48c7c4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u_int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#a2575d19e07c2472c7d2d90b2535a048a">engineTime</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">initial engineTime for remote engine  <a href="#a2575d19e07c2472c7d2d90b2535a048a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#abed37d0c605734aa5d7d9ce667ce9497">contextName</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">authoritative contextName  <a href="#abed37d0c605734aa5d7d9ce667ce9497"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#a63bc78b630144579567b0f8d87c54dc9">contextNameLen</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of contextName.  <a href="#a63bc78b630144579567b0f8d87c54dc9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u_char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#aa11c998a39ac508258ccf9169ea22a89">securityEngineID</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">authoritative snmpEngineID  <a href="#aa11c998a39ac508258ccf9169ea22a89"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#a08a450c1b5acbf798b5473c36395edf5">securityEngineIDLen</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of contextEngineID.  <a href="#a08a450c1b5acbf798b5473c36395edf5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#a247882bf1e340be5ec1d22d41d5a0179">securityName</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">on behalf of this principal  <a href="#a247882bf1e340be5ec1d22d41d5a0179"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#aded39fd06dcaa1159633d3783b9e4941">securityNameLen</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of securityName.  <a href="#aded39fd06dcaa1159633d3783b9e4941"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">oid *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#acaa4215016fd2f317fbb61b4c55e66d5">securityAuthProto</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">auth protocol oid  <a href="#acaa4215016fd2f317fbb61b4c55e66d5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#af7a4c741fb6e45967ce17a3a6b71b740">securityAuthProtoLen</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of auth protocol oid.  <a href="#af7a4c741fb6e45967ce17a3a6b71b740"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u_char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#a72b041b55b2b9ad6540644845cbe063f">securityAuthKey</a> [USM_AUTH_KU_LEN]</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ku for auth protocol XXX.  <a href="#a72b041b55b2b9ad6540644845cbe063f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#a8149ffe5cea795e5080b3cb6f322b5c5">securityAuthKeyLen</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of Ku for auth protocol.  <a href="#a8149ffe5cea795e5080b3cb6f322b5c5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u_char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#ad75654aafbe5319b63296e8413a7f817">securityAuthLocalKey</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Kul for auth protocol.  <a href="#ad75654aafbe5319b63296e8413a7f817"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#abfeac9d37631b38284a5dbd5a0c8dd86">securityAuthLocalKeyLen</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of Kul for auth protocol XXX.  <a href="#abfeac9d37631b38284a5dbd5a0c8dd86"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">oid *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#a065ac4c2ac34954a61cee33456cd2b55">securityPrivProto</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">priv protocol oid  <a href="#a065ac4c2ac34954a61cee33456cd2b55"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#a2cf935eb076df4886ffaf6c5047834fb">securityPrivProtoLen</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of priv protocol oid.  <a href="#a2cf935eb076df4886ffaf6c5047834fb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u_char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#a19ec576d5360683569d1ade5c5a93031">securityPrivKey</a> [USM_PRIV_KU_LEN]</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ku for privacy protocol XXX.  <a href="#a19ec576d5360683569d1ade5c5a93031"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#a146582d1c5fb7ac68cc0302c673b97bb">securityPrivKeyLen</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of Ku for priv protocol.  <a href="#a146582d1c5fb7ac68cc0302c673b97bb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u_char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#a7c38601198b252b584f77daed313280e">securityPrivLocalKey</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Kul for priv protocol.  <a href="#a7c38601198b252b584f77daed313280e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#a2ceedc6dca38076e132645a50afc2fbf">securityPrivLocalKeyLen</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of Kul for priv protocol XXX.  <a href="#a2ceedc6dca38076e132645a50afc2fbf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#a7bf36554eeaa2eedb5ba5ff7ec76f1a8">securityModel</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">snmp security model, v1, v2c, usm  <a href="#a7bf36554eeaa2eedb5ba5ff7ec76f1a8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#a5394bc51b76c7f0b46e5efb464e87feb">securityLevel</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">noAuthNoPriv, authNoPriv, authPriv  <a href="#a5394bc51b76c7f0b46e5efb464e87feb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#add5c66a71c0f1980d674b7fe7ee4fbe8">paramName</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">target param name  <a href="#add5c66a71c0f1980d674b7fe7ee4fbe8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#a562e6b7c1ca4e4e4670f1105dc522204">securityInfo</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">security module specific  <a href="#a562e6b7c1ca4e4e4670f1105dc522204"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structnetsnmp__container__s.html">netsnmp_container_s</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#a3121a4983b09bde0dbe4ab6c0271232b">transport_configuration</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">transport specific configuration  <a href="#a3121a4983b09bde0dbe4ab6c0271232b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__session.html#aa4d7a5aac21f70379ad380b65762c81c">myvoid</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">use as you want data  <a href="#aa4d7a5aac21f70379ad380b65762c81c"></a><br/></td></tr>
+</table>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>The snmp session structure. </p>
 
+<p>Definition at line <a class="el" href="types_8h_source.html#l00289">289</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+</div><hr/><h2>Field Documentation</h2>
+<a class="anchor" id="acf42f8619700d1e8eeeb32d942880fbc"></a><!-- doxytag: member="snmp_session::authenticator" ref="acf42f8619700d1e8eeeb32d942880fbc" args=")(u_char *, size_t *, u_char *, size_t)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_char*(* <a class="el" href="structsnmp__session.html#acf42f8619700d1e8eeeb32d942880fbc">snmp_session::authenticator</a>)(u_char *, size_t *, u_char *, size_t)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Authentication function or NULL if null authentication is used. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00314">314</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3918c1cdd264f6a40ab06c457097a6d9"></a><!-- doxytag: member="snmp_session::callback" ref="a3918c1cdd264f6a40ab06c457097a6d9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">netsnmp_callback <a class="el" href="structsnmp__session.html#a3918c1cdd264f6a40ab06c457097a6d9">snmp_session::callback</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Function to interpret incoming data. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00316">316</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8747794e036182a6967c3296aa5b251c"></a><!-- doxytag: member="snmp_session::callback_magic" ref="a8747794e036182a6967c3296aa5b251c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* <a class="el" href="structsnmp__session.html#a8747794e036182a6967c3296aa5b251c">snmp_session::callback_magic</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Pointer to data that the callback function may consider important. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00320">320</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac6f500fb8171149a2dee9d85c772c021"></a><!-- doxytag: member="snmp_session::community" ref="ac6f500fb8171149a2dee9d85c772c021" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_char* <a class="el" href="structsnmp__session.html#ac6f500fb8171149a2dee9d85c772c021">snmp_session::community</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>community for outgoing requests. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00332">332</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acd17283f3a20f2ca72ea44125c5015a2"></a><!-- doxytag: member="snmp_session::community_len" ref="acd17283f3a20f2ca72ea44125c5015a2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="structsnmp__session.html#acd17283f3a20f2ca72ea44125c5015a2">snmp_session::community_len</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Length of community name. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00334">334</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aafffd59c5c644b1e3985eb379b6b06d1"></a><!-- doxytag: member="snmp_session::contextEngineID" ref="aafffd59c5c644b1e3985eb379b6b06d1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_char* <a class="el" href="structsnmp__session.html#aafffd59c5c644b1e3985eb379b6b06d1">snmp_session::contextEngineID</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>authoritative snmpEngineID </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00346">346</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1babf5a3e0b7db035f141feacf0390ba"></a><!-- doxytag: member="snmp_session::contextEngineIDLen" ref="a1babf5a3e0b7db035f141feacf0390ba" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="structsnmp__session.html#a1babf5a3e0b7db035f141feacf0390ba">snmp_session::contextEngineIDLen</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Length of contextEngineID. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00348">348</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abed37d0c605734aa5d7d9ce667ce9497"></a><!-- doxytag: member="snmp_session::contextName" ref="abed37d0c605734aa5d7d9ce667ce9497" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* <a class="el" href="structsnmp__session.html#abed37d0c605734aa5d7d9ce667ce9497">snmp_session::contextName</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>authoritative contextName </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00354">354</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a63bc78b630144579567b0f8d87c54dc9"></a><!-- doxytag: member="snmp_session::contextNameLen" ref="a63bc78b630144579567b0f8d87c54dc9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="structsnmp__session.html#a63bc78b630144579567b0f8d87c54dc9">snmp_session::contextNameLen</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Length of contextName. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00356">356</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa085375bfa95ac93f3496b45cc48c7c4"></a><!-- doxytag: member="snmp_session::engineBoots" ref="aa085375bfa95ac93f3496b45cc48c7c4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_int <a class="el" href="structsnmp__session.html#aa085375bfa95ac93f3496b45cc48c7c4">snmp_session::engineBoots</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>initial engineBoots for remote engine </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00350">350</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2575d19e07c2472c7d2d90b2535a048a"></a><!-- doxytag: member="snmp_session::engineTime" ref="a2575d19e07c2472c7d2d90b2535a048a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_int <a class="el" href="structsnmp__session.html#a2575d19e07c2472c7d2d90b2535a048a">snmp_session::engineTime</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>initial engineTime for remote engine </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00352">352</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9284be33e69062f7f90723a4ee04409b"></a><!-- doxytag: member="snmp_session::isAuthoritative" ref="a9284be33e69062f7f90723a4ee04409b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_char <a class="el" href="structsnmp__session.html#a9284be33e69062f7f90723a4ee04409b">snmp_session::isAuthoritative</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>are we the authoritative engine? </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00344">344</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0ceaa4e08dca57df14aba6499d908cd3"></a><!-- doxytag: member="snmp_session::local_port" ref="a0ceaa4e08dca57df14aba6499d908cd3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_short <a class="el" href="structsnmp__session.html#a0ceaa4e08dca57df14aba6499d908cd3">snmp_session::local_port</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>My UDP port number, 0 for default, picked randomly. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00310">310</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7fb0587d556edba815336e34bb42e088"></a><!-- doxytag: member="snmp_session::localname" ref="a7fb0587d556edba815336e34bb42e088" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* <a class="el" href="structsnmp__session.html#a7fb0587d556edba815336e34bb42e088">snmp_session::localname</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>My Domain name or dotted IP address, 0 for default. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00308">308</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa4d7a5aac21f70379ad380b65762c81c"></a><!-- doxytag: member="snmp_session::myvoid" ref="aa4d7a5aac21f70379ad380b65762c81c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* <a class="el" href="structsnmp__session.html#aa4d7a5aac21f70379ad380b65762c81c">snmp_session::myvoid</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>use as you want data </p>
+<p>used by 'SNMP_FLAGS_RESP_CALLBACK' handling in the agent XXX: or should we add a new field into this structure? </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00415">415</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="add5c66a71c0f1980d674b7fe7ee4fbe8"></a><!-- doxytag: member="snmp_session::paramName" ref="add5c66a71c0f1980d674b7fe7ee4fbe8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* <a class="el" href="structsnmp__session.html#add5c66a71c0f1980d674b7fe7ee4fbe8">snmp_session::paramName</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>target param name </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00397">397</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6651007c1d156f67f99d54d84aac09b9"></a><!-- doxytag: member="snmp_session::peername" ref="a6651007c1d156f67f99d54d84aac09b9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* <a class="el" href="structsnmp__session.html#a6651007c1d156f67f99d54d84aac09b9">snmp_session::peername</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>name or address of default peer (may include transport specifier and/or port number) </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00304">304</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7dfdc789825f12176ccf42adf60d27d8"></a><!-- doxytag: member="snmp_session::rcvMsgMaxSize" ref="a7dfdc789825f12176ccf42adf60d27d8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="structsnmp__session.html#a7dfdc789825f12176ccf42adf60d27d8">snmp_session::rcvMsgMaxSize</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Largest message to try to receive. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00336">336</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa69bfb92a55adeb3dec474a38c33768f"></a><!-- doxytag: member="snmp_session::remote_port" ref="aa69bfb92a55adeb3dec474a38c33768f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_short <a class="el" href="structsnmp__session.html#aa69bfb92a55adeb3dec474a38c33768f">snmp_session::remote_port</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>UDP port number of peer. </p>
+<p>(NO LONGER USED - USE peername INSTEAD) </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00306">306</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a462db7e25f876119ff965093261073ad"></a><!-- doxytag: member="snmp_session::retries" ref="a462db7e25f876119ff965093261073ad" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structsnmp__session.html#a462db7e25f876119ff965093261073ad">snmp_session::retries</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Number of retries before timeout. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00296">296</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac5ddc75c2505b437a505b42bcda28704"></a><!-- doxytag: member="snmp_session::s_errno" ref="ac5ddc75c2505b437a505b42bcda28704" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structsnmp__session.html#ac5ddc75c2505b437a505b42bcda28704">snmp_session::s_errno</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>copy of system errno </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00322">322</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afb3f06f6d767a95ebd59b35d2f10faf7"></a><!-- doxytag: member="snmp_session::s_snmp_errno" ref="afb3f06f6d767a95ebd59b35d2f10faf7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structsnmp__session.html#afb3f06f6d767a95ebd59b35d2f10faf7">snmp_session::s_snmp_errno</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>copy of library errno </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00324">324</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a72b041b55b2b9ad6540644845cbe063f"></a><!-- doxytag: member="snmp_session::securityAuthKey" ref="a72b041b55b2b9ad6540644845cbe063f" args="[USM_AUTH_KU_LEN]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_char <a class="el" href="structsnmp__session.html#a72b041b55b2b9ad6540644845cbe063f">snmp_session::securityAuthKey</a>[USM_AUTH_KU_LEN]</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Ku for auth protocol XXX. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00371">371</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8149ffe5cea795e5080b3cb6f322b5c5"></a><!-- doxytag: member="snmp_session::securityAuthKeyLen" ref="a8149ffe5cea795e5080b3cb6f322b5c5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="structsnmp__session.html#a8149ffe5cea795e5080b3cb6f322b5c5">snmp_session::securityAuthKeyLen</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Length of Ku for auth protocol. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00373">373</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad75654aafbe5319b63296e8413a7f817"></a><!-- doxytag: member="snmp_session::securityAuthLocalKey" ref="ad75654aafbe5319b63296e8413a7f817" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_char* <a class="el" href="structsnmp__session.html#ad75654aafbe5319b63296e8413a7f817">snmp_session::securityAuthLocalKey</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Kul for auth protocol. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00375">375</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abfeac9d37631b38284a5dbd5a0c8dd86"></a><!-- doxytag: member="snmp_session::securityAuthLocalKeyLen" ref="abfeac9d37631b38284a5dbd5a0c8dd86" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="structsnmp__session.html#abfeac9d37631b38284a5dbd5a0c8dd86">snmp_session::securityAuthLocalKeyLen</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Length of Kul for auth protocol XXX. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00377">377</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acaa4215016fd2f317fbb61b4c55e66d5"></a><!-- doxytag: member="snmp_session::securityAuthProto" ref="acaa4215016fd2f317fbb61b4c55e66d5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">oid* <a class="el" href="structsnmp__session.html#acaa4215016fd2f317fbb61b4c55e66d5">snmp_session::securityAuthProto</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>auth protocol oid </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00367">367</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af7a4c741fb6e45967ce17a3a6b71b740"></a><!-- doxytag: member="snmp_session::securityAuthProtoLen" ref="af7a4c741fb6e45967ce17a3a6b71b740" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="structsnmp__session.html#af7a4c741fb6e45967ce17a3a6b71b740">snmp_session::securityAuthProtoLen</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Length of auth protocol oid. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00369">369</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa11c998a39ac508258ccf9169ea22a89"></a><!-- doxytag: member="snmp_session::securityEngineID" ref="aa11c998a39ac508258ccf9169ea22a89" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_char* <a class="el" href="structsnmp__session.html#aa11c998a39ac508258ccf9169ea22a89">snmp_session::securityEngineID</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>authoritative snmpEngineID </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00358">358</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a08a450c1b5acbf798b5473c36395edf5"></a><!-- doxytag: member="snmp_session::securityEngineIDLen" ref="a08a450c1b5acbf798b5473c36395edf5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="structsnmp__session.html#a08a450c1b5acbf798b5473c36395edf5">snmp_session::securityEngineIDLen</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Length of contextEngineID. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00360">360</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a562e6b7c1ca4e4e4670f1105dc522204"></a><!-- doxytag: member="snmp_session::securityInfo" ref="a562e6b7c1ca4e4e4670f1105dc522204" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* <a class="el" href="structsnmp__session.html#a562e6b7c1ca4e4e4670f1105dc522204">snmp_session::securityInfo</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>security module specific </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00402">402</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5394bc51b76c7f0b46e5efb464e87feb"></a><!-- doxytag: member="snmp_session::securityLevel" ref="a5394bc51b76c7f0b46e5efb464e87feb" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structsnmp__session.html#a5394bc51b76c7f0b46e5efb464e87feb">snmp_session::securityLevel</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>noAuthNoPriv, authNoPriv, authPriv </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00395">395</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7bf36554eeaa2eedb5ba5ff7ec76f1a8"></a><!-- doxytag: member="snmp_session::securityModel" ref="a7bf36554eeaa2eedb5ba5ff7ec76f1a8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structsnmp__session.html#a7bf36554eeaa2eedb5ba5ff7ec76f1a8">snmp_session::securityModel</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>snmp security model, v1, v2c, usm </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00393">393</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a247882bf1e340be5ec1d22d41d5a0179"></a><!-- doxytag: member="snmp_session::securityName" ref="a247882bf1e340be5ec1d22d41d5a0179" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* <a class="el" href="structsnmp__session.html#a247882bf1e340be5ec1d22d41d5a0179">snmp_session::securityName</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>on behalf of this principal </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00362">362</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aded39fd06dcaa1159633d3783b9e4941"></a><!-- doxytag: member="snmp_session::securityNameLen" ref="aded39fd06dcaa1159633d3783b9e4941" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="structsnmp__session.html#aded39fd06dcaa1159633d3783b9e4941">snmp_session::securityNameLen</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Length of securityName. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00364">364</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a19ec576d5360683569d1ade5c5a93031"></a><!-- doxytag: member="snmp_session::securityPrivKey" ref="a19ec576d5360683569d1ade5c5a93031" args="[USM_PRIV_KU_LEN]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_char <a class="el" href="structsnmp__session.html#a19ec576d5360683569d1ade5c5a93031">snmp_session::securityPrivKey</a>[USM_PRIV_KU_LEN]</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Ku for privacy protocol XXX. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00384">384</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a146582d1c5fb7ac68cc0302c673b97bb"></a><!-- doxytag: member="snmp_session::securityPrivKeyLen" ref="a146582d1c5fb7ac68cc0302c673b97bb" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="structsnmp__session.html#a146582d1c5fb7ac68cc0302c673b97bb">snmp_session::securityPrivKeyLen</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Length of Ku for priv protocol. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00386">386</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7c38601198b252b584f77daed313280e"></a><!-- doxytag: member="snmp_session::securityPrivLocalKey" ref="a7c38601198b252b584f77daed313280e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_char* <a class="el" href="structsnmp__session.html#a7c38601198b252b584f77daed313280e">snmp_session::securityPrivLocalKey</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Kul for priv protocol. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00388">388</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2ceedc6dca38076e132645a50afc2fbf"></a><!-- doxytag: member="snmp_session::securityPrivLocalKeyLen" ref="a2ceedc6dca38076e132645a50afc2fbf" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="structsnmp__session.html#a2ceedc6dca38076e132645a50afc2fbf">snmp_session::securityPrivLocalKeyLen</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Length of Kul for priv protocol XXX. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00390">390</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a065ac4c2ac34954a61cee33456cd2b55"></a><!-- doxytag: member="snmp_session::securityPrivProto" ref="a065ac4c2ac34954a61cee33456cd2b55" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">oid* <a class="el" href="structsnmp__session.html#a065ac4c2ac34954a61cee33456cd2b55">snmp_session::securityPrivProto</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>priv protocol oid </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00380">380</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2cf935eb076df4886ffaf6c5047834fb"></a><!-- doxytag: member="snmp_session::securityPrivProtoLen" ref="a2cf935eb076df4886ffaf6c5047834fb" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="structsnmp__session.html#a2cf935eb076df4886ffaf6c5047834fb">snmp_session::securityPrivProtoLen</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Length of priv protocol oid. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00382">382</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6ba5c6460489f6b2ba6ad457e92da24a"></a><!-- doxytag: member="snmp_session::sessid" ref="a6ba5c6460489f6b2ba6ad457e92da24a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long <a class="el" href="structsnmp__session.html#a6ba5c6460489f6b2ba6ad457e92da24a">snmp_session::sessid</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Session id - AgentX only. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00326">326</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adcc833af44749944278cd3816cb28533"></a><!-- doxytag: member="snmp_session::sndMsgMaxSize" ref="adcc833af44749944278cd3816cb28533" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="structsnmp__session.html#adcc833af44749944278cd3816cb28533">snmp_session::sndMsgMaxSize</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Largest message to try to send. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00338">338</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acd498bd5db671be71adc63588b0ce72c"></a><!-- doxytag: member="snmp_session::timeout" ref="acd498bd5db671be71adc63588b0ce72c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long <a class="el" href="structsnmp__session.html#acd498bd5db671be71adc63588b0ce72c">snmp_session::timeout</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Number of uS until first timeout, then exponential backoff. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00298">298</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3121a4983b09bde0dbe4ab6c0271232b"></a><!-- doxytag: member="snmp_session::transport_configuration" ref="a3121a4983b09bde0dbe4ab6c0271232b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structnetsnmp__container__s.html">netsnmp_container_s</a>* <a class="el" href="structsnmp__session.html#a3121a4983b09bde0dbe4ab6c0271232b">snmp_session::transport_configuration</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>transport specific configuration </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00407">407</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae50774f611e22f73df23e97094077e49"></a><!-- doxytag: member="snmp_session::version" ref="ae50774f611e22f73df23e97094077e49" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long <a class="el" href="structsnmp__session.html#ae50774f611e22f73df23e97094077e49">snmp_session::version</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>snmp version </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00294">294</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li><a class="el" href="types_8h_source.html">types.h</a></li>
+</ul>
+</div>
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 14 2011 for net-snmp by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </small></address>
+</body>
+</html>

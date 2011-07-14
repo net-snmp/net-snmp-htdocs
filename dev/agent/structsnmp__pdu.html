@@ -1,1002 +1,585 @@
-<!--#set var="section" value="development" -->
-<!--#include virtual="/page-top.html" -->
-<!-- CONTENT START -->
-  <div class="navigation" id="top">
-    <div class="tabs">
-      <ul>
-        <li><a href="index.html"><span>Main Page</span></a></li>
-
-        <li><a href="pages.html"><span>Related Pages</span></a></li>
-
-        <li><a href="modules.html"><span>Modules</span></a></li>
-
-        <li class="current"><a href="annotated.html"><span>Data Structures</span></a></li>
-
-        <li><a href="files.html"><span>Files</span></a></li>
-
-        <li><a href="examples.html"><span>Examples</span></a></li>
-      </ul>
-    </div>
-
-    <div class="tabs">
-      <ul>
-        <li><a href="annotated.html"><span>Data Structures</span></a></li>
-
-        <li><a href="functions.html"><span>Data Fields</span></a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="contents">
-    <h1>snmp_pdu Struct Reference</h1><!-- doxytag: class="snmp_pdu" -->
-
-    <p>The snmp protocol data unit. <a href="#_details">More...</a></p>
-
-    <p><code>#include &lt;<a class="el" href="types_8h_source.html">types.h</a>&gt;</code></p>
-
-    <table border="0" cellpadding="0" cellspacing="0">
-      <tr>
-        <td colspan="2">
-          <h2>Data Fields</h2>
-        </td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">long </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__pdu.html#a923d65b1202d6250bc030b6ca03e4c93">version</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">snmp version <a href="#a923d65b1202d6250bc030b6ca03e4c93"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">int </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__pdu.html#a4b4dfa4964546623586c027cf1d68ca6">command</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Type of this PDU. <a href="#a4b4dfa4964546623586c027cf1d68ca6"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">long </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__pdu.html#ad48db2c0383456117446e41e36f59b37">reqid</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Request id - note: not incremented on retries. <a href=
-        "#ad48db2c0383456117446e41e36f59b37"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">long </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__pdu.html#a528226bcca644a9d42d63392fb9e6676">msgid</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Message id for V3 messages note: incremented for each retry. <a href=
-        "#a528226bcca644a9d42d63392fb9e6676"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">long </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__pdu.html#a5369ae4a9eef5f2a3fa12d23c9d7a6b6">transid</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Unique ID for incoming transactions. <a href="#a5369ae4a9eef5f2a3fa12d23c9d7a6b6"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">long </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__pdu.html#a57d3c7d30f53f1868d8dc36ea07488cc">sessid</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Session id for AgentX messages. <a href="#a57d3c7d30f53f1868d8dc36ea07488cc"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">long </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__pdu.html#a44ff060871736e6fda87c27357f9dbc5">errstat</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Error status (non_repeaters in GetBulk). <a href=
-        "#a44ff060871736e6fda87c27357f9dbc5"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">long </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__pdu.html#ab3a133b2a800a8d56aa96fc3b67638d0">errindex</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Error index (max_repetitions in GetBulk). <a href=
-        "#ab3a133b2a800a8d56aa96fc3b67638d0"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">u_long </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__pdu.html#ae1b6388a507687c4ee97a107616a1d75">time</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Uptime. <a href="#ae1b6388a507687c4ee97a107616a1d75"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acbde144b49f827d604a8e7c97907ca8f" name=
-        "acbde144b49f827d604a8e7c97907ca8f"></a>
-        <!-- doxytag: member="snmp_pdu::flags" ref="acbde144b49f827d604a8e7c97907ca8f" args="" -->
-        u_long </td>
-
-        <td class="memItemRight" valign="bottom"><b>flags</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad6eb8c99428974f4444bcc3557b04d56" name=
-        "ad6eb8c99428974f4444bcc3557b04d56"></a>
-        <!-- doxytag: member="snmp_pdu::securityModel" ref="ad6eb8c99428974f4444bcc3557b04d56" args="" -->
-        int </td>
-
-        <td class="memItemRight" valign="bottom"><b>securityModel</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">int </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__pdu.html#a7d1db322918d6d7bc34fe1eb55301d6a">securityLevel</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">noAuthNoPriv, authNoPriv, authPriv <a href="#a7d1db322918d6d7bc34fe1eb55301d6a"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a427e63368f29d4bcdca1fe4ea34b1b8c" name=
-        "a427e63368f29d4bcdca1fe4ea34b1b8c"></a>
-        <!-- doxytag: member="snmp_pdu::msgParseModel" ref="a427e63368f29d4bcdca1fe4ea34b1b8c" args="" -->
-        int </td>
-
-        <td class="memItemRight" valign="bottom"><b>msgParseModel</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">void * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__pdu.html#a89e42cfcb542ac55880e25e3284e5d2c">transport_data</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Transport-specific opaque data. <a href="#a89e42cfcb542ac55880e25e3284e5d2c"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a487b5e1dfffbf87f8be052bb649ccf42" name=
-        "a487b5e1dfffbf87f8be052bb649ccf42"></a>
-        <!-- doxytag: member="snmp_pdu::transport_data_length" ref="a487b5e1dfffbf87f8be052bb649ccf42" args="" -->
-        int </td>
-
-        <td class="memItemRight" valign="bottom"><b>transport_data_length</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">const oid * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__pdu.html#aaf9e699bf7c25c5e2935d9c1ec0bf25e">tDomain</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">The actual transport domain. <a href="#aaf9e699bf7c25c5e2935d9c1ec0bf25e"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a287b48982bbc4c2c2edd5b6a7c015c38" name=
-        "a287b48982bbc4c2c2edd5b6a7c015c38"></a>
-        <!-- doxytag: member="snmp_pdu::tDomainLen" ref="a287b48982bbc4c2c2edd5b6a7c015c38" args="" -->
-        size_t </td>
-
-        <td class="memItemRight" valign="bottom"><b>tDomainLen</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75cd06ee5f6e3f31607968c95381ec39" name=
-        "a75cd06ee5f6e3f31607968c95381ec39"></a>
-        <!-- doxytag: member="snmp_pdu::variables" ref="a75cd06ee5f6e3f31607968c95381ec39" args="" -->
-        <a class="el" href="structvariable__list.html">netsnmp_variable_list</a> * </td>
-
-        <td class="memItemRight" valign="bottom"><b>variables</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">u_char * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__pdu.html#a0731a2d5d2cfc66c4e7f34150a5c79a3">community</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">community for outgoing requests. <a href="#a0731a2d5d2cfc66c4e7f34150a5c79a3"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">size_t </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__pdu.html#ae92f6634c376171f08b69bde084471fd">community_len</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">length of community name. <a href="#ae92f6634c376171f08b69bde084471fd"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">oid * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__pdu.html#a2383f02af1dca01a77293fdda9891548">enterprise</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">System OID. <a href="#a2383f02af1dca01a77293fdda9891548"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1886df91f93768ab28a952700e12295b" name=
-        "a1886df91f93768ab28a952700e12295b"></a>
-        <!-- doxytag: member="snmp_pdu::enterprise_length" ref="a1886df91f93768ab28a952700e12295b" args="" -->
-        size_t </td>
-
-        <td class="memItemRight" valign="bottom"><b>enterprise_length</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">long </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__pdu.html#aa5feae05656ccd581154cf005bc26749">trap_type</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">trap type <a href="#aa5feae05656ccd581154cf005bc26749"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">long </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__pdu.html#a733af2ad6e66ef3002714d9eff6fdaea">specific_type</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">specific type <a href="#a733af2ad6e66ef3002714d9eff6fdaea"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">unsigned char </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__pdu.html#a814c578dd23fcc7908f0c6b106760fda">agent_addr</a> [4]</td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">This is ONLY used for v1 TRAPs. <a href="#a814c578dd23fcc7908f0c6b106760fda"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">u_char * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__pdu.html#ad621b8f041ceaa7e62b5975480c2b5ee">contextEngineID</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">context snmpEngineID <a href="#ad621b8f041ceaa7e62b5975480c2b5ee"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">size_t </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__pdu.html#af2f219ec6cb525f3a2ed1d78d185410b">contextEngineIDLen</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Length of contextEngineID. <a href="#af2f219ec6cb525f3a2ed1d78d185410b"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">char * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__pdu.html#a8187f3828943d5a6f8b1ff8b951c7c92">contextName</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">authoritative contextName <a href="#a8187f3828943d5a6f8b1ff8b951c7c92"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">size_t </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__pdu.html#a3eb182b0a4d0f662fb9615fb89d0cc6c">contextNameLen</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Length of contextName. <a href="#a3eb182b0a4d0f662fb9615fb89d0cc6c"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">u_char * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__pdu.html#ab8d3c01cce74ca5d817ea0fe56415496">securityEngineID</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">authoritative snmpEngineID for security <a href=
-        "#ab8d3c01cce74ca5d817ea0fe56415496"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">size_t </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__pdu.html#a062bfea00b54229624376bfab3e2b31f">securityEngineIDLen</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Length of securityEngineID. <a href="#a062bfea00b54229624376bfab3e2b31f"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">char * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__pdu.html#a5baf4f82cf5507bc1314a3efc6886805">securityName</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">on behalf of this principal <a href="#a5baf4f82cf5507bc1314a3efc6886805"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">size_t </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structsnmp__pdu.html#ae64416ffa9b2a034c6e8359215f7b706">securityNameLen</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">Length of securityName. <a href="#ae64416ffa9b2a034c6e8359215f7b706"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a025c58a1158747519f513c86a4f3622a" name=
-        "a025c58a1158747519f513c86a4f3622a"></a>
-        <!-- doxytag: member="snmp_pdu::priority" ref="a025c58a1158747519f513c86a4f3622a" args="" -->
-        int </td>
-
-        <td class="memItemRight" valign="bottom"><b>priority</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a026b9ca40161a4d56ca4a729bb14eb9d" name=
-        "a026b9ca40161a4d56ca4a729bb14eb9d"></a>
-        <!-- doxytag: member="snmp_pdu::range_subid" ref="a026b9ca40161a4d56ca4a729bb14eb9d" args="" -->
-        int </td>
-
-        <td class="memItemRight" valign="bottom"><b>range_subid</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae04afa7ccd388e87cdb5fdd3634ddf28" name=
-        "ae04afa7ccd388e87cdb5fdd3634ddf28"></a>
-        <!-- doxytag: member="snmp_pdu::securityStateRef" ref="ae04afa7ccd388e87cdb5fdd3634ddf28" args="" -->
-        void * </td>
-
-        <td class="memItemRight" valign="bottom"><b>securityStateRef</b></td>
-      </tr>
-    </table>
-    <hr />
-    <a name="_details"></a>
-
-    <h2>Detailed Description</h2>
-
-    <p>The snmp protocol data unit.</p>
-
-    <p>Definition at line <a class="el" href="types_8h_source.html#l00142">142</a> of file <a class="el" href=
-    "types_8h_source.html">types.h</a>.</p>
-    <hr />
-
-    <h2>Field Documentation</h2><a class="anchor" id="a814c578dd23fcc7908f0c6b106760fda" name=
-    "a814c578dd23fcc7908f0c6b106760fda"></a>
-    <!-- doxytag: member="snmp_pdu::agent_addr" ref="a814c578dd23fcc7908f0c6b106760fda" args="[4]" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">unsigned char <a class="el" href=
-            "structsnmp__pdu.html#a814c578dd23fcc7908f0c6b106760fda">snmp_pdu::agent_addr</a>[4]</td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>This is ONLY used for v1 TRAPs.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00212">212</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a4b4dfa4964546623586c027cf1d68ca6" name="a4b4dfa4964546623586c027cf1d68ca6"></a>
-    <!-- doxytag: member="snmp_pdu::command" ref="a4b4dfa4964546623586c027cf1d68ca6" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">int <a class="el" href=
-            "structsnmp__pdu.html#a4b4dfa4964546623586c027cf1d68ca6">snmp_pdu::command</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Type of this PDU.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00153">153</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a0731a2d5d2cfc66c4e7f34150a5c79a3" name="a0731a2d5d2cfc66c4e7f34150a5c79a3"></a>
-    <!-- doxytag: member="snmp_pdu::community" ref="a0731a2d5d2cfc66c4e7f34150a5c79a3" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">u_char* <a class="el" href=
-            "structsnmp__pdu.html#a0731a2d5d2cfc66c4e7f34150a5c79a3">snmp_pdu::community</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>community for outgoing requests.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00197">197</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="ae92f6634c376171f08b69bde084471fd" name="ae92f6634c376171f08b69bde084471fd"></a>
-    <!-- doxytag: member="snmp_pdu::community_len" ref="ae92f6634c376171f08b69bde084471fd" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">size_t <a class="el" href=
-            "structsnmp__pdu.html#ae92f6634c376171f08b69bde084471fd">snmp_pdu::community_len</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>length of community name.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00199">199</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="ad621b8f041ceaa7e62b5975480c2b5ee" name="ad621b8f041ceaa7e62b5975480c2b5ee"></a>
-    <!-- doxytag: member="snmp_pdu::contextEngineID" ref="ad621b8f041ceaa7e62b5975480c2b5ee" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">u_char* <a class="el" href=
-            "structsnmp__pdu.html#ad621b8f041ceaa7e62b5975480c2b5ee">snmp_pdu::contextEngineID</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>context snmpEngineID</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00218">218</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="af2f219ec6cb525f3a2ed1d78d185410b" name="af2f219ec6cb525f3a2ed1d78d185410b"></a>
-    <!-- doxytag: member="snmp_pdu::contextEngineIDLen" ref="af2f219ec6cb525f3a2ed1d78d185410b" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">size_t <a class="el" href=
-            "structsnmp__pdu.html#af2f219ec6cb525f3a2ed1d78d185410b">snmp_pdu::contextEngineIDLen</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Length of contextEngineID.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00220">220</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a8187f3828943d5a6f8b1ff8b951c7c92" name="a8187f3828943d5a6f8b1ff8b951c7c92"></a>
-    <!-- doxytag: member="snmp_pdu::contextName" ref="a8187f3828943d5a6f8b1ff8b951c7c92" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">char* <a class="el" href=
-            "structsnmp__pdu.html#a8187f3828943d5a6f8b1ff8b951c7c92">snmp_pdu::contextName</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>authoritative contextName</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00222">222</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a3eb182b0a4d0f662fb9615fb89d0cc6c" name="a3eb182b0a4d0f662fb9615fb89d0cc6c"></a>
-    <!-- doxytag: member="snmp_pdu::contextNameLen" ref="a3eb182b0a4d0f662fb9615fb89d0cc6c" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">size_t <a class="el" href=
-            "structsnmp__pdu.html#a3eb182b0a4d0f662fb9615fb89d0cc6c">snmp_pdu::contextNameLen</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Length of contextName.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00224">224</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a2383f02af1dca01a77293fdda9891548" name="a2383f02af1dca01a77293fdda9891548"></a>
-    <!-- doxytag: member="snmp_pdu::enterprise" ref="a2383f02af1dca01a77293fdda9891548" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">oid* <a class="el" href=
-            "structsnmp__pdu.html#a2383f02af1dca01a77293fdda9891548">snmp_pdu::enterprise</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>System OID.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00205">205</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="ab3a133b2a800a8d56aa96fc3b67638d0" name="ab3a133b2a800a8d56aa96fc3b67638d0"></a>
-    <!-- doxytag: member="snmp_pdu::errindex" ref="ab3a133b2a800a8d56aa96fc3b67638d0" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">long <a class="el" href=
-            "structsnmp__pdu.html#ab3a133b2a800a8d56aa96fc3b67638d0">snmp_pdu::errindex</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Error index (max_repetitions in GetBulk).</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00165">165</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a44ff060871736e6fda87c27357f9dbc5" name="a44ff060871736e6fda87c27357f9dbc5"></a>
-    <!-- doxytag: member="snmp_pdu::errstat" ref="a44ff060871736e6fda87c27357f9dbc5" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">long <a class="el" href=
-            "structsnmp__pdu.html#a44ff060871736e6fda87c27357f9dbc5">snmp_pdu::errstat</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Error status (non_repeaters in GetBulk).</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00163">163</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a528226bcca644a9d42d63392fb9e6676" name="a528226bcca644a9d42d63392fb9e6676"></a>
-    <!-- doxytag: member="snmp_pdu::msgid" ref="a528226bcca644a9d42d63392fb9e6676" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">long <a class="el" href=
-            "structsnmp__pdu.html#a528226bcca644a9d42d63392fb9e6676">snmp_pdu::msgid</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Message id for V3 messages note: incremented for each retry.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00157">157</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="ad48db2c0383456117446e41e36f59b37" name="ad48db2c0383456117446e41e36f59b37"></a>
-    <!-- doxytag: member="snmp_pdu::reqid" ref="ad48db2c0383456117446e41e36f59b37" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">long <a class="el" href=
-            "structsnmp__pdu.html#ad48db2c0383456117446e41e36f59b37">snmp_pdu::reqid</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Request id - note: not incremented on retries.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00155">155</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="ab8d3c01cce74ca5d817ea0fe56415496" name="ab8d3c01cce74ca5d817ea0fe56415496"></a>
-    <!-- doxytag: member="snmp_pdu::securityEngineID" ref="ab8d3c01cce74ca5d817ea0fe56415496" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">u_char* <a class="el" href=
-            "structsnmp__pdu.html#ab8d3c01cce74ca5d817ea0fe56415496">snmp_pdu::securityEngineID</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>authoritative snmpEngineID for security</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00226">226</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a062bfea00b54229624376bfab3e2b31f" name="a062bfea00b54229624376bfab3e2b31f"></a>
-    <!-- doxytag: member="snmp_pdu::securityEngineIDLen" ref="a062bfea00b54229624376bfab3e2b31f" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">size_t <a class="el" href=
-            "structsnmp__pdu.html#a062bfea00b54229624376bfab3e2b31f">snmp_pdu::securityEngineIDLen</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Length of securityEngineID.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00228">228</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a7d1db322918d6d7bc34fe1eb55301d6a" name="a7d1db322918d6d7bc34fe1eb55301d6a"></a>
-    <!-- doxytag: member="snmp_pdu::securityLevel" ref="a7d1db322918d6d7bc34fe1eb55301d6a" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">int <a class="el" href=
-            "structsnmp__pdu.html#a7d1db322918d6d7bc34fe1eb55301d6a">snmp_pdu::securityLevel</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>noAuthNoPriv, authNoPriv, authPriv</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00172">172</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a5baf4f82cf5507bc1314a3efc6886805" name="a5baf4f82cf5507bc1314a3efc6886805"></a>
-    <!-- doxytag: member="snmp_pdu::securityName" ref="a5baf4f82cf5507bc1314a3efc6886805" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">char* <a class="el" href=
-            "structsnmp__pdu.html#a5baf4f82cf5507bc1314a3efc6886805">snmp_pdu::securityName</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>on behalf of this principal</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00230">230</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="ae64416ffa9b2a034c6e8359215f7b706" name="ae64416ffa9b2a034c6e8359215f7b706"></a>
-    <!-- doxytag: member="snmp_pdu::securityNameLen" ref="ae64416ffa9b2a034c6e8359215f7b706" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">size_t <a class="el" href=
-            "structsnmp__pdu.html#ae64416ffa9b2a034c6e8359215f7b706">snmp_pdu::securityNameLen</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Length of securityName.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00232">232</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a57d3c7d30f53f1868d8dc36ea07488cc" name="a57d3c7d30f53f1868d8dc36ea07488cc"></a>
-    <!-- doxytag: member="snmp_pdu::sessid" ref="a57d3c7d30f53f1868d8dc36ea07488cc" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">long <a class="el" href=
-            "structsnmp__pdu.html#a57d3c7d30f53f1868d8dc36ea07488cc">snmp_pdu::sessid</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Session id for AgentX messages.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00161">161</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a733af2ad6e66ef3002714d9eff6fdaea" name="a733af2ad6e66ef3002714d9eff6fdaea"></a>
-    <!-- doxytag: member="snmp_pdu::specific_type" ref="a733af2ad6e66ef3002714d9eff6fdaea" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">long <a class="el" href=
-            "structsnmp__pdu.html#a733af2ad6e66ef3002714d9eff6fdaea">snmp_pdu::specific_type</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>specific type</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00210">210</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="aaf9e699bf7c25c5e2935d9c1ec0bf25e" name="aaf9e699bf7c25c5e2935d9c1ec0bf25e"></a>
-    <!-- doxytag: member="snmp_pdu::tDomain" ref="aaf9e699bf7c25c5e2935d9c1ec0bf25e" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">const oid* <a class="el" href=
-            "structsnmp__pdu.html#aaf9e699bf7c25c5e2935d9c1ec0bf25e">snmp_pdu::tDomain</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>The actual transport domain.</p>
-
-        <p>This SHOULD NOT BE FREE()D.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00187">187</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="ae1b6388a507687c4ee97a107616a1d75" name="ae1b6388a507687c4ee97a107616a1d75"></a>
-    <!-- doxytag: member="snmp_pdu::time" ref="ae1b6388a507687c4ee97a107616a1d75" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">u_long <a class="el" href=
-            "structsnmp__pdu.html#ae1b6388a507687c4ee97a107616a1d75">snmp_pdu::time</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Uptime.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00167">167</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a5369ae4a9eef5f2a3fa12d23c9d7a6b6" name="a5369ae4a9eef5f2a3fa12d23c9d7a6b6"></a>
-    <!-- doxytag: member="snmp_pdu::transid" ref="a5369ae4a9eef5f2a3fa12d23c9d7a6b6" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">long <a class="el" href=
-            "structsnmp__pdu.html#a5369ae4a9eef5f2a3fa12d23c9d7a6b6">snmp_pdu::transid</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Unique ID for incoming transactions.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00159">159</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a89e42cfcb542ac55880e25e3284e5d2c" name="a89e42cfcb542ac55880e25e3284e5d2c"></a>
-    <!-- doxytag: member="snmp_pdu::transport_data" ref="a89e42cfcb542ac55880e25e3284e5d2c" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">void* <a class="el" href=
-            "structsnmp__pdu.html#a89e42cfcb542ac55880e25e3284e5d2c">snmp_pdu::transport_data</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>Transport-specific opaque data.</p>
-
-        <p>This replaces the IP-centric address field.</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00180">180</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="aa5feae05656ccd581154cf005bc26749" name="aa5feae05656ccd581154cf005bc26749"></a>
-    <!-- doxytag: member="snmp_pdu::trap_type" ref="aa5feae05656ccd581154cf005bc26749" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">long <a class="el" href=
-            "structsnmp__pdu.html#aa5feae05656ccd581154cf005bc26749">snmp_pdu::trap_type</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>trap type</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00208">208</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a923d65b1202d6250bc030b6ca03e4c93" name="a923d65b1202d6250bc030b6ca03e4c93"></a>
-    <!-- doxytag: member="snmp_pdu::version" ref="a923d65b1202d6250bc030b6ca03e4c93" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">long <a class="el" href=
-            "structsnmp__pdu.html#a923d65b1202d6250bc030b6ca03e4c93">snmp_pdu::version</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>snmp version</p>
-
-        <p>Definition at line <a class="el" href="types_8h_source.html#l00151">151</a> of file <a class="el" href=
-        "types_8h_source.html">types.h</a>.</p>
-      </div>
-    </div>
-    <hr />
-    The documentation for this struct was generated from the following file:
-
-    <ul>
-      <li><a class="el" href="types_8h_source.html">types.h</a></li>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>net-snmp: snmp_pdu Struct Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Generated by Doxygen 1.7.4 -->
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">net-snmp&#160;<span id="projectnumber">5.7</span></div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
     </ul>
   </div>
-  <hr size="1" />
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="functions.html"><span>Data&#160;Fields</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle">
+<div class="title">snmp_pdu Struct Reference</div>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="snmp_pdu" -->
+<p>The snmp protocol data unit.  
+ <a href="structsnmp__pdu.html#details">More...</a></p>
 
-  <address style="text-align: right;">
-    <small>Generated on 28 Sep 2009 for net-snmp by  <a href="http://www.doxygen.org/index.html"><img class="footer" src=
-    "doxygen.png" alt="doxygen" /></a> 1.6.1</small>
-<!-- CONTENT END -->
-<!--#include virtual="/page-bottom.html" -->
+<p><code>#include &lt;<a class="el" href="types_8h_source.html">types.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__pdu.html#a923d65b1202d6250bc030b6ca03e4c93">version</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">snmp version  <a href="#a923d65b1202d6250bc030b6ca03e4c93"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__pdu.html#a4b4dfa4964546623586c027cf1d68ca6">command</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of this PDU.  <a href="#a4b4dfa4964546623586c027cf1d68ca6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__pdu.html#ad48db2c0383456117446e41e36f59b37">reqid</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Request id - note: not incremented on retries.  <a href="#ad48db2c0383456117446e41e36f59b37"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__pdu.html#a528226bcca644a9d42d63392fb9e6676">msgid</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Message id for V3 messages note: incremented for each retry.  <a href="#a528226bcca644a9d42d63392fb9e6676"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__pdu.html#a5369ae4a9eef5f2a3fa12d23c9d7a6b6">transid</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique ID for incoming transactions.  <a href="#a5369ae4a9eef5f2a3fa12d23c9d7a6b6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__pdu.html#a57d3c7d30f53f1868d8dc36ea07488cc">sessid</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Session id for AgentX messages.  <a href="#a57d3c7d30f53f1868d8dc36ea07488cc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__pdu.html#a44ff060871736e6fda87c27357f9dbc5">errstat</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Error status (non_repeaters in GetBulk)  <a href="#a44ff060871736e6fda87c27357f9dbc5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__pdu.html#ab3a133b2a800a8d56aa96fc3b67638d0">errindex</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Error index (max_repetitions in GetBulk)  <a href="#ab3a133b2a800a8d56aa96fc3b67638d0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u_long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__pdu.html#ae1b6388a507687c4ee97a107616a1d75">time</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Uptime.  <a href="#ae1b6388a507687c4ee97a107616a1d75"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acbde144b49f827d604a8e7c97907ca8f"></a><!-- doxytag: member="snmp_pdu::flags" ref="acbde144b49f827d604a8e7c97907ca8f" args="" -->
+u_long&#160;</td><td class="memItemRight" valign="bottom"><b>flags</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad6eb8c99428974f4444bcc3557b04d56"></a><!-- doxytag: member="snmp_pdu::securityModel" ref="ad6eb8c99428974f4444bcc3557b04d56" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>securityModel</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__pdu.html#a7d1db322918d6d7bc34fe1eb55301d6a">securityLevel</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">noAuthNoPriv, authNoPriv, authPriv  <a href="#a7d1db322918d6d7bc34fe1eb55301d6a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a427e63368f29d4bcdca1fe4ea34b1b8c"></a><!-- doxytag: member="snmp_pdu::msgParseModel" ref="a427e63368f29d4bcdca1fe4ea34b1b8c" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>msgParseModel</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__pdu.html#a89e42cfcb542ac55880e25e3284e5d2c">transport_data</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Transport-specific opaque data.  <a href="#a89e42cfcb542ac55880e25e3284e5d2c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a487b5e1dfffbf87f8be052bb649ccf42"></a><!-- doxytag: member="snmp_pdu::transport_data_length" ref="a487b5e1dfffbf87f8be052bb649ccf42" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>transport_data_length</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const oid *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__pdu.html#aaf9e699bf7c25c5e2935d9c1ec0bf25e">tDomain</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The actual transport domain.  <a href="#aaf9e699bf7c25c5e2935d9c1ec0bf25e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a287b48982bbc4c2c2edd5b6a7c015c38"></a><!-- doxytag: member="snmp_pdu::tDomainLen" ref="a287b48982bbc4c2c2edd5b6a7c015c38" args="" -->
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>tDomainLen</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75cd06ee5f6e3f31607968c95381ec39"></a><!-- doxytag: member="snmp_pdu::variables" ref="a75cd06ee5f6e3f31607968c95381ec39" args="" -->
+<a class="el" href="structvariable__list.html">netsnmp_variable_list</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>variables</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u_char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__pdu.html#a0731a2d5d2cfc66c4e7f34150a5c79a3">community</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">community for outgoing requests.  <a href="#a0731a2d5d2cfc66c4e7f34150a5c79a3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__pdu.html#ae92f6634c376171f08b69bde084471fd">community_len</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">length of community name.  <a href="#ae92f6634c376171f08b69bde084471fd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">oid *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__pdu.html#a2383f02af1dca01a77293fdda9891548">enterprise</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">System OID.  <a href="#a2383f02af1dca01a77293fdda9891548"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1886df91f93768ab28a952700e12295b"></a><!-- doxytag: member="snmp_pdu::enterprise_length" ref="a1886df91f93768ab28a952700e12295b" args="" -->
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>enterprise_length</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__pdu.html#aa5feae05656ccd581154cf005bc26749">trap_type</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">trap type  <a href="#aa5feae05656ccd581154cf005bc26749"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__pdu.html#a733af2ad6e66ef3002714d9eff6fdaea">specific_type</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">specific type  <a href="#a733af2ad6e66ef3002714d9eff6fdaea"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__pdu.html#a814c578dd23fcc7908f0c6b106760fda">agent_addr</a> [4]</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This is ONLY used for v1 TRAPs.  <a href="#a814c578dd23fcc7908f0c6b106760fda"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u_char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__pdu.html#ad621b8f041ceaa7e62b5975480c2b5ee">contextEngineID</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">context snmpEngineID  <a href="#ad621b8f041ceaa7e62b5975480c2b5ee"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__pdu.html#af2f219ec6cb525f3a2ed1d78d185410b">contextEngineIDLen</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of contextEngineID.  <a href="#af2f219ec6cb525f3a2ed1d78d185410b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__pdu.html#a8187f3828943d5a6f8b1ff8b951c7c92">contextName</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">authoritative contextName  <a href="#a8187f3828943d5a6f8b1ff8b951c7c92"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__pdu.html#a3eb182b0a4d0f662fb9615fb89d0cc6c">contextNameLen</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of contextName.  <a href="#a3eb182b0a4d0f662fb9615fb89d0cc6c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">u_char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__pdu.html#ab8d3c01cce74ca5d817ea0fe56415496">securityEngineID</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">authoritative snmpEngineID for security  <a href="#ab8d3c01cce74ca5d817ea0fe56415496"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__pdu.html#a062bfea00b54229624376bfab3e2b31f">securityEngineIDLen</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of securityEngineID.  <a href="#a062bfea00b54229624376bfab3e2b31f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__pdu.html#a5baf4f82cf5507bc1314a3efc6886805">securityName</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">on behalf of this principal  <a href="#a5baf4f82cf5507bc1314a3efc6886805"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsnmp__pdu.html#ae64416ffa9b2a034c6e8359215f7b706">securityNameLen</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of securityName.  <a href="#ae64416ffa9b2a034c6e8359215f7b706"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a025c58a1158747519f513c86a4f3622a"></a><!-- doxytag: member="snmp_pdu::priority" ref="a025c58a1158747519f513c86a4f3622a" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>priority</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a026b9ca40161a4d56ca4a729bb14eb9d"></a><!-- doxytag: member="snmp_pdu::range_subid" ref="a026b9ca40161a4d56ca4a729bb14eb9d" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>range_subid</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae04afa7ccd388e87cdb5fdd3634ddf28"></a><!-- doxytag: member="snmp_pdu::securityStateRef" ref="ae04afa7ccd388e87cdb5fdd3634ddf28" args="" -->
+void *&#160;</td><td class="memItemRight" valign="bottom"><b>securityStateRef</b></td></tr>
+</table>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>The snmp protocol data unit. </p>
 
+<p>Definition at line <a class="el" href="types_8h_source.html#l00168">168</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+</div><hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a814c578dd23fcc7908f0c6b106760fda"></a><!-- doxytag: member="snmp_pdu::agent_addr" ref="a814c578dd23fcc7908f0c6b106760fda" args="[4]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char <a class="el" href="structsnmp__pdu.html#a814c578dd23fcc7908f0c6b106760fda">snmp_pdu::agent_addr</a>[4]</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>This is ONLY used for v1 TRAPs. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00238">238</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4b4dfa4964546623586c027cf1d68ca6"></a><!-- doxytag: member="snmp_pdu::command" ref="a4b4dfa4964546623586c027cf1d68ca6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structsnmp__pdu.html#a4b4dfa4964546623586c027cf1d68ca6">snmp_pdu::command</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Type of this PDU. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00179">179</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0731a2d5d2cfc66c4e7f34150a5c79a3"></a><!-- doxytag: member="snmp_pdu::community" ref="a0731a2d5d2cfc66c4e7f34150a5c79a3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_char* <a class="el" href="structsnmp__pdu.html#a0731a2d5d2cfc66c4e7f34150a5c79a3">snmp_pdu::community</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>community for outgoing requests. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00223">223</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae92f6634c376171f08b69bde084471fd"></a><!-- doxytag: member="snmp_pdu::community_len" ref="ae92f6634c376171f08b69bde084471fd" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="structsnmp__pdu.html#ae92f6634c376171f08b69bde084471fd">snmp_pdu::community_len</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>length of community name. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00225">225</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad621b8f041ceaa7e62b5975480c2b5ee"></a><!-- doxytag: member="snmp_pdu::contextEngineID" ref="ad621b8f041ceaa7e62b5975480c2b5ee" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_char* <a class="el" href="structsnmp__pdu.html#ad621b8f041ceaa7e62b5975480c2b5ee">snmp_pdu::contextEngineID</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>context snmpEngineID </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00244">244</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af2f219ec6cb525f3a2ed1d78d185410b"></a><!-- doxytag: member="snmp_pdu::contextEngineIDLen" ref="af2f219ec6cb525f3a2ed1d78d185410b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="structsnmp__pdu.html#af2f219ec6cb525f3a2ed1d78d185410b">snmp_pdu::contextEngineIDLen</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Length of contextEngineID. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00246">246</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8187f3828943d5a6f8b1ff8b951c7c92"></a><!-- doxytag: member="snmp_pdu::contextName" ref="a8187f3828943d5a6f8b1ff8b951c7c92" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* <a class="el" href="structsnmp__pdu.html#a8187f3828943d5a6f8b1ff8b951c7c92">snmp_pdu::contextName</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>authoritative contextName </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00248">248</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3eb182b0a4d0f662fb9615fb89d0cc6c"></a><!-- doxytag: member="snmp_pdu::contextNameLen" ref="a3eb182b0a4d0f662fb9615fb89d0cc6c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="structsnmp__pdu.html#a3eb182b0a4d0f662fb9615fb89d0cc6c">snmp_pdu::contextNameLen</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Length of contextName. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00250">250</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2383f02af1dca01a77293fdda9891548"></a><!-- doxytag: member="snmp_pdu::enterprise" ref="a2383f02af1dca01a77293fdda9891548" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">oid* <a class="el" href="structsnmp__pdu.html#a2383f02af1dca01a77293fdda9891548">snmp_pdu::enterprise</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>System OID. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00231">231</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab3a133b2a800a8d56aa96fc3b67638d0"></a><!-- doxytag: member="snmp_pdu::errindex" ref="ab3a133b2a800a8d56aa96fc3b67638d0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long <a class="el" href="structsnmp__pdu.html#ab3a133b2a800a8d56aa96fc3b67638d0">snmp_pdu::errindex</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Error index (max_repetitions in GetBulk) </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00191">191</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a44ff060871736e6fda87c27357f9dbc5"></a><!-- doxytag: member="snmp_pdu::errstat" ref="a44ff060871736e6fda87c27357f9dbc5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long <a class="el" href="structsnmp__pdu.html#a44ff060871736e6fda87c27357f9dbc5">snmp_pdu::errstat</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Error status (non_repeaters in GetBulk) </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00189">189</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a528226bcca644a9d42d63392fb9e6676"></a><!-- doxytag: member="snmp_pdu::msgid" ref="a528226bcca644a9d42d63392fb9e6676" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long <a class="el" href="structsnmp__pdu.html#a528226bcca644a9d42d63392fb9e6676">snmp_pdu::msgid</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Message id for V3 messages note: incremented for each retry. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00183">183</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad48db2c0383456117446e41e36f59b37"></a><!-- doxytag: member="snmp_pdu::reqid" ref="ad48db2c0383456117446e41e36f59b37" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long <a class="el" href="structsnmp__pdu.html#ad48db2c0383456117446e41e36f59b37">snmp_pdu::reqid</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Request id - note: not incremented on retries. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00181">181</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab8d3c01cce74ca5d817ea0fe56415496"></a><!-- doxytag: member="snmp_pdu::securityEngineID" ref="ab8d3c01cce74ca5d817ea0fe56415496" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_char* <a class="el" href="structsnmp__pdu.html#ab8d3c01cce74ca5d817ea0fe56415496">snmp_pdu::securityEngineID</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>authoritative snmpEngineID for security </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00252">252</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a062bfea00b54229624376bfab3e2b31f"></a><!-- doxytag: member="snmp_pdu::securityEngineIDLen" ref="a062bfea00b54229624376bfab3e2b31f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="structsnmp__pdu.html#a062bfea00b54229624376bfab3e2b31f">snmp_pdu::securityEngineIDLen</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Length of securityEngineID. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00254">254</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7d1db322918d6d7bc34fe1eb55301d6a"></a><!-- doxytag: member="snmp_pdu::securityLevel" ref="a7d1db322918d6d7bc34fe1eb55301d6a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structsnmp__pdu.html#a7d1db322918d6d7bc34fe1eb55301d6a">snmp_pdu::securityLevel</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>noAuthNoPriv, authNoPriv, authPriv </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00198">198</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5baf4f82cf5507bc1314a3efc6886805"></a><!-- doxytag: member="snmp_pdu::securityName" ref="a5baf4f82cf5507bc1314a3efc6886805" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* <a class="el" href="structsnmp__pdu.html#a5baf4f82cf5507bc1314a3efc6886805">snmp_pdu::securityName</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>on behalf of this principal </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00256">256</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae64416ffa9b2a034c6e8359215f7b706"></a><!-- doxytag: member="snmp_pdu::securityNameLen" ref="ae64416ffa9b2a034c6e8359215f7b706" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="structsnmp__pdu.html#ae64416ffa9b2a034c6e8359215f7b706">snmp_pdu::securityNameLen</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Length of securityName. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00258">258</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a57d3c7d30f53f1868d8dc36ea07488cc"></a><!-- doxytag: member="snmp_pdu::sessid" ref="a57d3c7d30f53f1868d8dc36ea07488cc" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long <a class="el" href="structsnmp__pdu.html#a57d3c7d30f53f1868d8dc36ea07488cc">snmp_pdu::sessid</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Session id for AgentX messages. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00187">187</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a733af2ad6e66ef3002714d9eff6fdaea"></a><!-- doxytag: member="snmp_pdu::specific_type" ref="a733af2ad6e66ef3002714d9eff6fdaea" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long <a class="el" href="structsnmp__pdu.html#a733af2ad6e66ef3002714d9eff6fdaea">snmp_pdu::specific_type</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>specific type </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00236">236</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaf9e699bf7c25c5e2935d9c1ec0bf25e"></a><!-- doxytag: member="snmp_pdu::tDomain" ref="aaf9e699bf7c25c5e2935d9c1ec0bf25e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const oid* <a class="el" href="structsnmp__pdu.html#aaf9e699bf7c25c5e2935d9c1ec0bf25e">snmp_pdu::tDomain</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The actual transport domain. </p>
+<p>This SHOULD NOT BE FREE()D. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00213">213</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae1b6388a507687c4ee97a107616a1d75"></a><!-- doxytag: member="snmp_pdu::time" ref="ae1b6388a507687c4ee97a107616a1d75" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_long <a class="el" href="structsnmp__pdu.html#ae1b6388a507687c4ee97a107616a1d75">snmp_pdu::time</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Uptime. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00193">193</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5369ae4a9eef5f2a3fa12d23c9d7a6b6"></a><!-- doxytag: member="snmp_pdu::transid" ref="a5369ae4a9eef5f2a3fa12d23c9d7a6b6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long <a class="el" href="structsnmp__pdu.html#a5369ae4a9eef5f2a3fa12d23c9d7a6b6">snmp_pdu::transid</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Unique ID for incoming transactions. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00185">185</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a89e42cfcb542ac55880e25e3284e5d2c"></a><!-- doxytag: member="snmp_pdu::transport_data" ref="a89e42cfcb542ac55880e25e3284e5d2c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* <a class="el" href="structsnmp__pdu.html#a89e42cfcb542ac55880e25e3284e5d2c">snmp_pdu::transport_data</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Transport-specific opaque data. </p>
+<p>This replaces the IP-centric address field. </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00206">206</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa5feae05656ccd581154cf005bc26749"></a><!-- doxytag: member="snmp_pdu::trap_type" ref="aa5feae05656ccd581154cf005bc26749" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long <a class="el" href="structsnmp__pdu.html#aa5feae05656ccd581154cf005bc26749">snmp_pdu::trap_type</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>trap type </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00234">234</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a923d65b1202d6250bc030b6ca03e4c93"></a><!-- doxytag: member="snmp_pdu::version" ref="a923d65b1202d6250bc030b6ca03e4c93" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long <a class="el" href="structsnmp__pdu.html#a923d65b1202d6250bc030b6ca03e4c93">snmp_pdu::version</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>snmp version </p>
+
+<p>Definition at line <a class="el" href="types_8h_source.html#l00177">177</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li><a class="el" href="types_8h_source.html">types.h</a></li>
+</ul>
+</div>
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 14 2011 for net-snmp by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </small></address>
+</body>
+</html>

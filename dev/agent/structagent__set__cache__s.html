@@ -1,153 +1,82 @@
-<!--#set var="section" value="development" -->
-<!--#include virtual="/page-top.html" -->
-<!-- CONTENT START -->
-  <div class="navigation" id="top">
-    <div class="tabs">
-      <ul>
-        <li><a href="index.html"><span>Main Page</span></a></li>
-
-        <li><a href="pages.html"><span>Related Pages</span></a></li>
-
-        <li><a href="modules.html"><span>Modules</span></a></li>
-
-        <li class="current"><a href="annotated.html"><span>Data Structures</span></a></li>
-
-        <li><a href="files.html"><span>Files</span></a></li>
-
-        <li><a href="examples.html"><span>Examples</span></a></li>
-      </ul>
-    </div>
-
-    <div class="tabs">
-      <ul>
-        <li><a href="annotated.html"><span>Data Structures</span></a></li>
-
-        <li><a href="functions.html"><span>Data Fields</span></a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="contents">
-    <h1>agent_set_cache_s Struct Reference<br />
-    <small>[<a class="el" href="group__snmp__agent.html">net-snmp agent related processing</a>]</small></h1>
-    <!-- doxytag: class="agent_set_cache_s" -->
-
-    <table border="0" cellpadding="0" cellspacing="0">
-      <tr>
-        <td colspan="2">
-          <h2>Data Fields</h2>
-        </td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a644b65f067aaa7c8e4ae0f22da4f24d3" name=
-        "a644b65f067aaa7c8e4ae0f22da4f24d3"></a>
-        <!-- doxytag: member="agent_set_cache_s::transID" ref="a644b65f067aaa7c8e4ae0f22da4f24d3" args="" -->
-        int </td>
-
-        <td class="memItemRight" valign="bottom"><b>transID</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af397457a36e424faa75c2a309aa02cc2" name=
-        "af397457a36e424faa75c2a309aa02cc2"></a>
-        <!-- doxytag: member="agent_set_cache_s::sess" ref="af397457a36e424faa75c2a309aa02cc2" args="" -->
-        <a class="el" href="structsnmp__session.html">netsnmp_session</a> * </td>
-
-        <td class="memItemRight" valign="bottom"><b>sess</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1d8a940e655c6f89b729aaf7ec5d7181" name=
-        "a1d8a940e655c6f89b729aaf7ec5d7181"></a>
-        <!-- doxytag: member="agent_set_cache_s::treecache" ref="a1d8a940e655c6f89b729aaf7ec5d7181" args="" -->
-        <a class="el" href="structnetsnmp__tree__cache__s.html">netsnmp_tree_cache</a> * </td>
-
-        <td class="memItemRight" valign="bottom"><b>treecache</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5759046da3477c8707b970601337161a" name=
-        "a5759046da3477c8707b970601337161a"></a>
-        <!-- doxytag: member="agent_set_cache_s::treecache_len" ref="a5759046da3477c8707b970601337161a" args="" -->
-        int </td>
-
-        <td class="memItemRight" valign="bottom"><b>treecache_len</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a24104283dd56219b0a9716fdd9f4070a" name=
-        "a24104283dd56219b0a9716fdd9f4070a"></a>
-        <!-- doxytag: member="agent_set_cache_s::treecache_num" ref="a24104283dd56219b0a9716fdd9f4070a" args="" -->
-        int </td>
-
-        <td class="memItemRight" valign="bottom"><b>treecache_num</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a56cbf5efea7994f5726fe4b9e2cc0672" name=
-        "a56cbf5efea7994f5726fe4b9e2cc0672"></a>
-        <!-- doxytag: member="agent_set_cache_s::vbcount" ref="a56cbf5efea7994f5726fe4b9e2cc0672" args="" -->
-        int </td>
-
-        <td class="memItemRight" valign="bottom"><b>vbcount</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4be830dcfba438e1b6dec45e85f8dd1d" name=
-        "a4be830dcfba438e1b6dec45e85f8dd1d"></a>
-        <!-- doxytag: member="agent_set_cache_s::requests" ref="a4be830dcfba438e1b6dec45e85f8dd1d" args="" -->
-        <a class="el" href="structnetsnmp__request__info__s.html">netsnmp_request_info</a> * </td>
-
-        <td class="memItemRight" valign="bottom"><b>requests</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a20c447353941915e274f7bb316a08875" name=
-        "a20c447353941915e274f7bb316a08875"></a>
-        <!-- doxytag: member="agent_set_cache_s::saved_vars" ref="a20c447353941915e274f7bb316a08875" args="" -->
-        <a class="el" href="structvariable__list.html">netsnmp_variable_list</a> * </td>
-
-        <td class="memItemRight" valign="bottom"><b>saved_vars</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeeb82736725e8fcbb007e3a013b7a2cd" name=
-        "aeeb82736725e8fcbb007e3a013b7a2cd"></a>
-        <!-- doxytag: member="agent_set_cache_s::agent_data" ref="aeeb82736725e8fcbb007e3a013b7a2cd" args="" -->
-        <a class="el" href="structnetsnmp__data__list__s.html">netsnmp_data_list</a> * </td>
-
-        <td class="memItemRight" valign="bottom"><b>agent_data</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab436129dfe225351d06ded183483351d" name=
-        "ab436129dfe225351d06ded183483351d"></a>
-        <!-- doxytag: member="agent_set_cache_s::next" ref="ab436129dfe225351d06ded183483351d" args="" -->
-        struct <a class="el" href="structagent__set__cache__s.html">agent_set_cache_s</a> * </td>
-
-        <td class="memItemRight" valign="bottom"><b>next</b></td>
-      </tr>
-    </table>
-    <hr />
-    <a name="_details"></a>
-
-    <h2>Detailed Description</h2>
-
-    <p>Definition at line <a class="el" href="snmp__agent_8c_source.html#l00287">287</a> of file <a class="el" href=
-    "snmp__agent_8c_source.html">snmp_agent.c</a>.</p>
-    <hr />
-    The documentation for this struct was generated from the following file:
-
-    <ul>
-      <li><a class="el" href="snmp__agent_8c_source.html">snmp_agent.c</a></li>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>net-snmp: agent_set_cache_s Struct Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Generated by Doxygen 1.7.4 -->
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">net-snmp&#160;<span id="projectnumber">5.7</span></div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
     </ul>
   </div>
-  <hr size="1" />
-
-  <address style="text-align: right;">
-    <small>Generated on 28 Sep 2009 for net-snmp by  <a href="http://www.doxygen.org/index.html"><img class="footer" src=
-    "doxygen.png" alt="doxygen" /></a> 1.6.1</small>
-<!-- CONTENT END -->
-<!--#include virtual="/page-bottom.html" -->
-
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="functions.html"><span>Data&#160;Fields</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle">
+<div class="title">agent_set_cache_s Struct Reference<div class="ingroups"><a class="el" href="group__snmp__agent.html">net-snmp agent related processing</a></div></div>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="agent_set_cache_s" --><table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a644b65f067aaa7c8e4ae0f22da4f24d3"></a><!-- doxytag: member="agent_set_cache_s::transID" ref="a644b65f067aaa7c8e4ae0f22da4f24d3" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>transID</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af397457a36e424faa75c2a309aa02cc2"></a><!-- doxytag: member="agent_set_cache_s::sess" ref="af397457a36e424faa75c2a309aa02cc2" args="" -->
+<a class="el" href="structsnmp__session.html">netsnmp_session</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>sess</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1d8a940e655c6f89b729aaf7ec5d7181"></a><!-- doxytag: member="agent_set_cache_s::treecache" ref="a1d8a940e655c6f89b729aaf7ec5d7181" args="" -->
+<a class="el" href="structnetsnmp__tree__cache__s.html">netsnmp_tree_cache</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>treecache</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5759046da3477c8707b970601337161a"></a><!-- doxytag: member="agent_set_cache_s::treecache_len" ref="a5759046da3477c8707b970601337161a" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>treecache_len</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a24104283dd56219b0a9716fdd9f4070a"></a><!-- doxytag: member="agent_set_cache_s::treecache_num" ref="a24104283dd56219b0a9716fdd9f4070a" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>treecache_num</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a56cbf5efea7994f5726fe4b9e2cc0672"></a><!-- doxytag: member="agent_set_cache_s::vbcount" ref="a56cbf5efea7994f5726fe4b9e2cc0672" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>vbcount</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4be830dcfba438e1b6dec45e85f8dd1d"></a><!-- doxytag: member="agent_set_cache_s::requests" ref="a4be830dcfba438e1b6dec45e85f8dd1d" args="" -->
+<a class="el" href="structnetsnmp__request__info__s.html">netsnmp_request_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>requests</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a20c447353941915e274f7bb316a08875"></a><!-- doxytag: member="agent_set_cache_s::saved_vars" ref="a20c447353941915e274f7bb316a08875" args="" -->
+<a class="el" href="structvariable__list.html">netsnmp_variable_list</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>saved_vars</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeeb82736725e8fcbb007e3a013b7a2cd"></a><!-- doxytag: member="agent_set_cache_s::agent_data" ref="aeeb82736725e8fcbb007e3a013b7a2cd" args="" -->
+<a class="el" href="structnetsnmp__data__list__s.html">netsnmp_data_list</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>agent_data</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab436129dfe225351d06ded183483351d"></a><!-- doxytag: member="agent_set_cache_s::next" ref="ab436129dfe225351d06ded183483351d" args="" -->
+struct <a class="el" href="structagent__set__cache__s.html">agent_set_cache_s</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>next</b></td></tr>
+</table>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="snmp__agent_8c_source.html#l00304">304</a> of file <a class="el" href="snmp__agent_8c_source.html">snmp_agent.c</a>.</p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<li><a class="el" href="snmp__agent_8c_source.html">snmp_agent.c</a></li>
+</ul>
+</div>
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 14 2011 for net-snmp by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </small></address>
+</body>
+</html>

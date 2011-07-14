@@ -1,335 +1,199 @@
-<!--#set var="section" value="development" -->
-<!--#include virtual="/page-top.html" -->
-<!-- CONTENT START -->
-  <div class="navigation" id="top">
-    <div class="tabs">
-      <ul>
-        <li><a href="index.html"><span>Main Page</span></a></li>
-
-        <li><a href="pages.html"><span>Related Pages</span></a></li>
-
-        <li><a href="modules.html"><span>Modules</span></a></li>
-
-        <li class="current"><a href="annotated.html"><span>Data Structures</span></a></li>
-
-        <li><a href="files.html"><span>Files</span></a></li>
-
-        <li><a href="examples.html"><span>Examples</span></a></li>
-      </ul>
-    </div>
-
-    <div class="tabs">
-      <ul>
-        <li><a href="annotated.html"><span>Data Structures</span></a></li>
-
-        <li><a href="functions.html"><span>Data Fields</span></a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="contents">
-    <h1>netsnmp_handler_registration_s Struct Reference<br />
-    <small>[<a class="el" href="group__handler.html">Net-SNMP Agent handler and extensibility API</a>]</small></h1>
-    <!-- doxytag: class="netsnmp_handler_registration_s" -->
-
-    <p>Root registration info. <a href="#_details">More...</a></p>
-
-    <p><code>#include &lt;<a class="el" href="agent__handler_8h_source.html">agent_handler.h</a>&gt;</code></p>
-
-    <table border="0" cellpadding="0" cellspacing="0">
-      <tr>
-        <td colspan="2">
-          <h2>Data Fields</h2>
-        </td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">char * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structnetsnmp__handler__registration__s.html#ab932303bcdd9ee47ad6cefd77d9a4123">handlerName</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">for mrTable listings, and other uses <a href="#ab932303bcdd9ee47ad6cefd77d9a4123"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">char * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structnetsnmp__handler__registration__s.html#a6e58555978e555e87b07c535eae4313d">contextName</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">NULL = default context. <a href="#a6e58555978e555e87b07c535eae4313d"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">oid * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structnetsnmp__handler__registration__s.html#a264722b6b9385237fbcb5f8bc144d470">rootoid</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">where are we registered at? <a href="#a264722b6b9385237fbcb5f8bc144d470"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a093f0b5b2e79f8be1c90f821d4aad50b" name=
-        "a093f0b5b2e79f8be1c90f821d4aad50b"></a>
-        <!-- doxytag: member="netsnmp_handler_registration_s::rootoid_len" ref="a093f0b5b2e79f8be1c90f821d4aad50b" args="" -->
-        size_t </td>
-
-        <td class="memItemRight" valign="bottom"><b>rootoid_len</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="el" href=
-        "structnetsnmp__mib__handler__s.html">netsnmp_mib_handler</a> * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structnetsnmp__handler__registration__s.html#a4ef77cb16c8094af69cdd67a654ebfa3">handler</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">handler details <a href="#a4ef77cb16c8094af69cdd67a654ebfa3"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa419c192793139e951c0b588830c426b" name=
-        "aa419c192793139e951c0b588830c426b"></a>
-        <!-- doxytag: member="netsnmp_handler_registration_s::modes" ref="aa419c192793139e951c0b588830c426b" args="" -->
-        int </td>
-
-        <td class="memItemRight" valign="bottom"><b>modes</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">int </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structnetsnmp__handler__registration__s.html#add2b82f6d87b8216afbfb56fe8821ed6">priority</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">more optional stuff <a href="#add2b82f6d87b8216afbfb56fe8821ed6"></a><br /></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a818a923db87768ffb28d3c9342c50833" name=
-        "a818a923db87768ffb28d3c9342c50833"></a>
-        <!-- doxytag: member="netsnmp_handler_registration_s::range_subid" ref="a818a923db87768ffb28d3c9342c50833" args="" -->
-        int </td>
-
-        <td class="memItemRight" valign="bottom"><b>range_subid</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad64d671b3c3990d3f6f352cb0ee811c2" name=
-        "ad64d671b3c3990d3f6f352cb0ee811c2"></a>
-        <!-- doxytag: member="netsnmp_handler_registration_s::range_ubound" ref="ad64d671b3c3990d3f6f352cb0ee811c2" args="" -->
-        oid </td>
-
-        <td class="memItemRight" valign="bottom"><b>range_ubound</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec5a689c875d47cc7a1f8f5c211cb9cf" name=
-        "aec5a689c875d47cc7a1f8f5c211cb9cf"></a>
-        <!-- doxytag: member="netsnmp_handler_registration_s::timeout" ref="aec5a689c875d47cc7a1f8f5c211cb9cf" args="" -->
-        int </td>
-
-        <td class="memItemRight" valign="bottom"><b>timeout</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5122f1f4fd71b7924373d58bfb4ffcce" name=
-        "a5122f1f4fd71b7924373d58bfb4ffcce"></a>
-        <!-- doxytag: member="netsnmp_handler_registration_s::global_cacheid" ref="a5122f1f4fd71b7924373d58bfb4ffcce" args="" -->
-        int </td>
-
-        <td class="memItemRight" valign="bottom"><b>global_cacheid</b></td>
-      </tr>
-
-      <tr>
-        <td class="memItemLeft" align="right" valign="top">void * </td>
-
-        <td class="memItemRight" valign="bottom"><a class="el" href=
-        "structnetsnmp__handler__registration__s.html#abfd9b8a1b53472a147a37aa9d98948a0">my_reg_void</a></td>
-      </tr>
-
-      <tr>
-        <td class="mdescLeft"> </td>
-
-        <td class="mdescRight">void ptr for registeree <a href="#abfd9b8a1b53472a147a37aa9d98948a0"></a><br /></td>
-      </tr>
-    </table>
-    <hr />
-    <a name="_details"></a>
-
-    <h2>Detailed Description</h2>
-
-    <p>Root registration info.</p>
-
-    <p>The variables handlerName, contextName, and rootoid need to be allocated on the heap, when the registration structure is
-    unregistered using <a class="el" href="group__agent__registry.html#ga716dbeeb93cb6de5b124e6f89eb7b38a" title=
-    "Unregisters an OID that has an associated context name value.">unregister_mib_context()</a> the code attempts to free
-    them.</p>
-
-    <dl>
-      <dt><b>Examples:</b></dt>
-
-      <dd>
-        <p><a class="el" href="delayed__instance_8c-example.html#_a0">delayed_instance.c</a>, and <a class="el" href=
-        "watched_8c-example.html#_a0">watched.c</a>.</p>
-      </dd>
-    </dl>
-
-    <p>Definition at line <a class="el" href="agent__handler_8h_source.html#l00095">95</a> of file <a class="el" href=
-    "agent__handler_8h_source.html">agent_handler.h</a>.</p>
-    <hr />
-
-    <h2>Field Documentation</h2><a class="anchor" id="a6e58555978e555e87b07c535eae4313d" name=
-    "a6e58555978e555e87b07c535eae4313d"></a>
-    <!-- doxytag: member="netsnmp_handler_registration_s::contextName" ref="a6e58555978e555e87b07c535eae4313d" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">char* <a class="el" href=
-            "structnetsnmp__handler__registration__s.html#a6e58555978e555e87b07c535eae4313d">netsnmp_handler_registration_s::contextName</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>NULL = default context.</p>
-
-        <p>Definition at line <a class="el" href="agent__handler_8h_source.html#l00100">100</a> of file <a class="el" href=
-        "agent__handler_8h_source.html">agent_handler.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a4ef77cb16c8094af69cdd67a654ebfa3" name="a4ef77cb16c8094af69cdd67a654ebfa3"></a>
-    <!-- doxytag: member="netsnmp_handler_registration_s::handler" ref="a4ef77cb16c8094af69cdd67a654ebfa3" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname"><a class="el" href="structnetsnmp__mib__handler__s.html">netsnmp_mib_handler</a>* <a class="el"
-            href=
-            "structnetsnmp__handler__registration__s.html#a4ef77cb16c8094af69cdd67a654ebfa3">netsnmp_handler_registration_s::handler</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>handler details</p>
-
-        <p>Definition at line <a class="el" href="agent__handler_8h_source.html#l00111">111</a> of file <a class="el" href=
-        "agent__handler_8h_source.html">agent_handler.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="ab932303bcdd9ee47ad6cefd77d9a4123" name="ab932303bcdd9ee47ad6cefd77d9a4123"></a>
-    <!-- doxytag: member="netsnmp_handler_registration_s::handlerName" ref="ab932303bcdd9ee47ad6cefd77d9a4123" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">char* <a class="el" href=
-            "structnetsnmp__handler__registration__s.html#ab932303bcdd9ee47ad6cefd77d9a4123">netsnmp_handler_registration_s::handlerName</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>for mrTable listings, and other uses</p>
-
-        <p>Definition at line <a class="el" href="agent__handler_8h_source.html#l00098">98</a> of file <a class="el" href=
-        "agent__handler_8h_source.html">agent_handler.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="abfd9b8a1b53472a147a37aa9d98948a0" name="abfd9b8a1b53472a147a37aa9d98948a0"></a>
-    <!-- doxytag: member="netsnmp_handler_registration_s::my_reg_void" ref="abfd9b8a1b53472a147a37aa9d98948a0" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">void* <a class="el" href=
-            "structnetsnmp__handler__registration__s.html#abfd9b8a1b53472a147a37aa9d98948a0">netsnmp_handler_registration_s::my_reg_void</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>void ptr for registeree</p>
-
-        <p>Definition at line <a class="el" href="agent__handler_8h_source.html#l00126">126</a> of file <a class="el" href=
-        "agent__handler_8h_source.html">agent_handler.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="add2b82f6d87b8216afbfb56fe8821ed6" name="add2b82f6d87b8216afbfb56fe8821ed6"></a>
-    <!-- doxytag: member="netsnmp_handler_registration_s::priority" ref="add2b82f6d87b8216afbfb56fe8821ed6" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">int <a class="el" href=
-            "structnetsnmp__handler__registration__s.html#add2b82f6d87b8216afbfb56fe8821ed6">netsnmp_handler_registration_s::priority</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>more optional stuff</p>
-
-        <p>Definition at line <a class="el" href="agent__handler_8h_source.html#l00117">117</a> of file <a class="el" href=
-        "agent__handler_8h_source.html">agent_handler.h</a>.</p>
-      </div>
-    </div><a class="anchor" id="a264722b6b9385237fbcb5f8bc144d470" name="a264722b6b9385237fbcb5f8bc144d470"></a>
-    <!-- doxytag: member="netsnmp_handler_registration_s::rootoid" ref="a264722b6b9385237fbcb5f8bc144d470" args="" -->
-
-    <div class="memitem">
-      <div class="memproto">
-        <table class="memname">
-          <tr>
-            <td class="memname">oid* <a class="el" href=
-            "structnetsnmp__handler__registration__s.html#a264722b6b9385237fbcb5f8bc144d470">netsnmp_handler_registration_s::rootoid</a></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="memdoc">
-        <p>where are we registered at?</p>
-
-        <p>Definition at line <a class="el" href="agent__handler_8h_source.html#l00105">105</a> of file <a class="el" href=
-        "agent__handler_8h_source.html">agent_handler.h</a>.</p>
-      </div>
-    </div>
-    <hr />
-    The documentation for this struct was generated from the following file:
-
-    <ul>
-      <li><a class="el" href="agent__handler_8h_source.html">agent_handler.h</a></li>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>net-snmp: netsnmp_handler_registration_s Struct Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Generated by Doxygen 1.7.4 -->
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">net-snmp&#160;<span id="projectnumber">5.7</span></div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
     </ul>
   </div>
-  <hr size="1" />
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="functions.html"><span>Data&#160;Fields</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle">
+<div class="title">netsnmp_handler_registration_s Struct Reference<div class="ingroups"><a class="el" href="group__handler.html">Net-SNMP Agent handler and extensibility API</a></div></div>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="netsnmp_handler_registration_s" -->
+<p>Root registration info.  
+ <a href="structnetsnmp__handler__registration__s.html#details">More...</a></p>
 
-  <address style="text-align: right;">
-    <small>Generated on 28 Sep 2009 for net-snmp by  <a href="http://www.doxygen.org/index.html"><img class="footer" src=
-    "doxygen.png" alt="doxygen" /></a> 1.6.1</small>
-<!-- CONTENT END -->
-<!--#include virtual="/page-bottom.html" -->
+<p><code>#include &lt;<a class="el" href="agent__handler_8h_source.html">agent_handler.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnetsnmp__handler__registration__s.html#ab932303bcdd9ee47ad6cefd77d9a4123">handlerName</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">for mrTable listings, and other uses  <a href="#ab932303bcdd9ee47ad6cefd77d9a4123"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnetsnmp__handler__registration__s.html#a6e58555978e555e87b07c535eae4313d">contextName</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">NULL = default context.  <a href="#a6e58555978e555e87b07c535eae4313d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">oid *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnetsnmp__handler__registration__s.html#a264722b6b9385237fbcb5f8bc144d470">rootoid</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">where are we registered at?  <a href="#a264722b6b9385237fbcb5f8bc144d470"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a093f0b5b2e79f8be1c90f821d4aad50b"></a><!-- doxytag: member="netsnmp_handler_registration_s::rootoid_len" ref="a093f0b5b2e79f8be1c90f821d4aad50b" args="" -->
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>rootoid_len</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnetsnmp__mib__handler__s.html">netsnmp_mib_handler</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnetsnmp__handler__registration__s.html#a4ef77cb16c8094af69cdd67a654ebfa3">handler</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">handler details  <a href="#a4ef77cb16c8094af69cdd67a654ebfa3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa419c192793139e951c0b588830c426b"></a><!-- doxytag: member="netsnmp_handler_registration_s::modes" ref="aa419c192793139e951c0b588830c426b" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>modes</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnetsnmp__handler__registration__s.html#add2b82f6d87b8216afbfb56fe8821ed6">priority</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">more optional stuff  <a href="#add2b82f6d87b8216afbfb56fe8821ed6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a818a923db87768ffb28d3c9342c50833"></a><!-- doxytag: member="netsnmp_handler_registration_s::range_subid" ref="a818a923db87768ffb28d3c9342c50833" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>range_subid</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad64d671b3c3990d3f6f352cb0ee811c2"></a><!-- doxytag: member="netsnmp_handler_registration_s::range_ubound" ref="ad64d671b3c3990d3f6f352cb0ee811c2" args="" -->
+oid&#160;</td><td class="memItemRight" valign="bottom"><b>range_ubound</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec5a689c875d47cc7a1f8f5c211cb9cf"></a><!-- doxytag: member="netsnmp_handler_registration_s::timeout" ref="aec5a689c875d47cc7a1f8f5c211cb9cf" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>timeout</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5122f1f4fd71b7924373d58bfb4ffcce"></a><!-- doxytag: member="netsnmp_handler_registration_s::global_cacheid" ref="a5122f1f4fd71b7924373d58bfb4ffcce" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>global_cacheid</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnetsnmp__handler__registration__s.html#abfd9b8a1b53472a147a37aa9d98948a0">my_reg_void</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">void ptr for registeree  <a href="#abfd9b8a1b53472a147a37aa9d98948a0"></a><br/></td></tr>
+</table>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Root registration info. </p>
+<p>The variables handlerName, contextName, and rootoid need to be allocated on the heap, when the registration structure is unregistered using <a class="el" href="group__agent__mib__registering.html#ga716dbeeb93cb6de5b124e6f89eb7b38a" title="Unregisters a module registered against a given OID (or range) in a specified context.">unregister_mib_context()</a> the code attempts to free them. </p>
+<dl><dt><b>Examples: </b></dt><dd>
+<p><a class="el" href="delayed_instance_8c-example.html#_a0">delayed_instance.c</a>, and <a class="el" href="watched_8c-example.html#_a0">watched.c</a>.</p>
+</dd>
+</dl>
+<p>Definition at line <a class="el" href="agent__handler_8h_source.html#l00106">106</a> of file <a class="el" href="agent__handler_8h_source.html">agent_handler.h</a>.</p>
+</div><hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a6e58555978e555e87b07c535eae4313d"></a><!-- doxytag: member="netsnmp_handler_registration_s::contextName" ref="a6e58555978e555e87b07c535eae4313d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* <a class="el" href="structnetsnmp__handler__registration__s.html#a6e58555978e555e87b07c535eae4313d">netsnmp_handler_registration_s::contextName</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
+<p>NULL = default context. </p>
+
+<p>Definition at line <a class="el" href="agent__handler_8h_source.html#l00111">111</a> of file <a class="el" href="agent__handler_8h_source.html">agent_handler.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4ef77cb16c8094af69cdd67a654ebfa3"></a><!-- doxytag: member="netsnmp_handler_registration_s::handler" ref="a4ef77cb16c8094af69cdd67a654ebfa3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structnetsnmp__mib__handler__s.html">netsnmp_mib_handler</a>* <a class="el" href="structnetsnmp__handler__registration__s.html#a4ef77cb16c8094af69cdd67a654ebfa3">netsnmp_handler_registration_s::handler</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>handler details </p>
+
+<p>Definition at line <a class="el" href="agent__handler_8h_source.html#l00122">122</a> of file <a class="el" href="agent__handler_8h_source.html">agent_handler.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab932303bcdd9ee47ad6cefd77d9a4123"></a><!-- doxytag: member="netsnmp_handler_registration_s::handlerName" ref="ab932303bcdd9ee47ad6cefd77d9a4123" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* <a class="el" href="structnetsnmp__handler__registration__s.html#ab932303bcdd9ee47ad6cefd77d9a4123">netsnmp_handler_registration_s::handlerName</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>for mrTable listings, and other uses </p>
+
+<p>Definition at line <a class="el" href="agent__handler_8h_source.html#l00109">109</a> of file <a class="el" href="agent__handler_8h_source.html">agent_handler.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abfd9b8a1b53472a147a37aa9d98948a0"></a><!-- doxytag: member="netsnmp_handler_registration_s::my_reg_void" ref="abfd9b8a1b53472a147a37aa9d98948a0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* <a class="el" href="structnetsnmp__handler__registration__s.html#abfd9b8a1b53472a147a37aa9d98948a0">netsnmp_handler_registration_s::my_reg_void</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>void ptr for registeree </p>
+
+<p>Definition at line <a class="el" href="agent__handler_8h_source.html#l00137">137</a> of file <a class="el" href="agent__handler_8h_source.html">agent_handler.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="add2b82f6d87b8216afbfb56fe8821ed6"></a><!-- doxytag: member="netsnmp_handler_registration_s::priority" ref="add2b82f6d87b8216afbfb56fe8821ed6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structnetsnmp__handler__registration__s.html#add2b82f6d87b8216afbfb56fe8821ed6">netsnmp_handler_registration_s::priority</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>more optional stuff </p>
+
+<p>Definition at line <a class="el" href="agent__handler_8h_source.html#l00128">128</a> of file <a class="el" href="agent__handler_8h_source.html">agent_handler.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a264722b6b9385237fbcb5f8bc144d470"></a><!-- doxytag: member="netsnmp_handler_registration_s::rootoid" ref="a264722b6b9385237fbcb5f8bc144d470" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">oid* <a class="el" href="structnetsnmp__handler__registration__s.html#a264722b6b9385237fbcb5f8bc144d470">netsnmp_handler_registration_s::rootoid</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>where are we registered at? </p>
+
+<p>Definition at line <a class="el" href="agent__handler_8h_source.html#l00116">116</a> of file <a class="el" href="agent__handler_8h_source.html">agent_handler.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li><a class="el" href="agent__handler_8h_source.html">agent_handler.h</a></li>
+</ul>
+</div>
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 14 2011 for net-snmp by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </small></address>
+</body>
+</html>
