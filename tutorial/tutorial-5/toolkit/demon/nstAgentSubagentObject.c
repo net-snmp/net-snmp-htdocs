@@ -13,7 +13,7 @@
  * * GET and SET requests to this variable changing it's value as needed.
  */
 
-static int      nstAgentSubagentObject = 2;
+static long      nstAgentSubagentObject = 2;
 
 /*
  * our initialization routine, automatically called by the agent 
@@ -36,7 +36,7 @@ init_nstAgentSubagentObject(void)
      * the line below registers our variables defined above as
      * accessible and makes it writable.  A read only version of any
      * of these registration would merely call
-     * register_read_only_int_instance() instead.  The functions
+     * register_read_only_long_instance() instead.  The functions
      * called below should be consistent with your MIB, however.
      * 
      * If we wanted a callback when the value was retrieved or set
@@ -48,7 +48,7 @@ init_nstAgentSubagentObject(void)
                 "Initalizing nstAgentSubagentObject scalar integer.  Default value = %d\n",
                 nstAgentSubagentObject));
 
-    netsnmp_register_int_instance("nstAgentSubagentObject",
+    netsnmp_register_long_instance("nstAgentSubagentObject",
                                   nstAgentSubagentObject_oid,
                                   OID_LENGTH(nstAgentSubagentObject_oid),
                                   &nstAgentSubagentObject, NULL);
