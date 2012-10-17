@@ -13,7 +13,7 @@
  * * GET and SET requests to this variable changing it's value as needed.
  */
 
-static int      nstAgentModuleObject = 1;
+static long nstAgentModuleObject = 42;
 
 /*
  * our initialization routine, automatically called by the agent 
@@ -49,7 +49,7 @@ init_nstAgentModuleObject(void)
                 "Initalizing nstAgentModuleObject scalar integer.  Default value = %d\n",
                 nstAgentModuleObject));
 
-    netsnmp_register_int_instance("nstAgentModuleObject",
+    netsnmp_register_long_instance("nstAgentModuleObject",
                                   nstAgentModuleObject_oid,
                                   OID_LENGTH(nstAgentModuleObject_oid),
                                   &nstAgentModuleObject, NULL);
