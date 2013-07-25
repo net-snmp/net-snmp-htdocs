@@ -1551,7 +1551,7 @@ is unknown or does not apply.
 
 The upper bound of the prefix length has been chosen to
 be consistent with the maximum size of an InetAddress.</pre></td></tr>
-<tr><td><a name="IANAipRouteProtocol">IANAipRouteProtocol</td><td>INTEGER<table class="enums"><tr><th>Value</th><th>Label/Meaning</th></tr><tr><td>1</td><td>other</td></tr><tr><td>2</td><td>local</td></tr><tr><td>3</td><td>netmgmt</td></tr><tr><td>4</td><td>icmp</td></tr><tr><td>5</td><td>egp</td></tr><tr><td>6</td><td>ggp</td></tr><tr><td>7</td><td>hello</td></tr><tr><td>8</td><td>rip</td></tr><tr><td>9</td><td>isIs</td></tr><tr><td>10</td><td>esIs</td></tr><tr><td>11</td><td>ciscoIgrp</td></tr><tr><td>12</td><td>bbnSpfIgp</td></tr><tr><td>13</td><td>ospf</td></tr><tr><td>14</td><td>bgp</td></tr><tr><td>15</td><td>idpr</td></tr><tr><td>16</td><td>ciscoEigrp</td></tr><tr><td>17</td><td>dvmrp</td></tr></table></td><td><pre>A mechanism for learning routes.  Inclusion of values for
+<tr><td><a name="IANAipRouteProtocol">IANAipRouteProtocol</td><td>INTEGER<table class="enums"><tr><th>Value</th><th>Label/Meaning</th></tr><tr><td>1</td><td>other</td></tr><tr><td>2</td><td>local</td></tr><tr><td>3</td><td>netmgmt</td></tr><tr><td>4</td><td>icmp</td></tr><tr><td>5</td><td>egp</td></tr><tr><td>6</td><td>ggp</td></tr><tr><td>7</td><td>hello</td></tr><tr><td>8</td><td>rip</td></tr><tr><td>9</td><td>isIs</td></tr><tr><td>10</td><td>esIs</td></tr><tr><td>11</td><td>ciscoIgrp</td></tr><tr><td>12</td><td>bbnSpfIgp</td></tr><tr><td>13</td><td>ospf</td></tr><tr><td>14</td><td>bgp</td></tr><tr><td>15</td><td>idpr</td></tr><tr><td>16</td><td>ciscoEigrp</td></tr><tr><td>17</td><td>dvmrp</td></tr><tr><td>18</td><td>rpl</td></tr><tr><td>19</td><td>dhcp</td></tr></table></td><td><pre>A mechanism for learning routes.  Inclusion of values for
 routing protocols is not intended to imply that those
 protocols need be supported.</pre></td></tr>
 <tr><td><a name="InetAddress">InetAddress</td><td>OCTETSTR</td><td><pre>Denotes a generic Internet address.
@@ -1811,7 +1811,7 @@ or when none or all interfaces need to be referenced.</pre></td></tr>
    |     |        Values: other(1), reject(2), local(3), remote(4), blackhole(5)
    |     +-- -R-- EnumVal   <a href="#inetCidrRouteProto">inetCidrRouteProto</a>(9)
    |     |        Textual Convention: <a href="#IANAipRouteProtocol">IANAipRouteProtocol</a>
-   |     |        Values: other(1), local(2), netmgmt(3), icmp(4), egp(5), ggp(6), hello(7), rip(8), isIs(9), esIs(10), ciscoIgrp(11), bbnSpfIgp(12), ospf(13), bgp(14), idpr(15), ciscoEigrp(16), dvmrp(17)
+   |     |        Values: other(1), local(2), netmgmt(3), icmp(4), egp(5), ggp(6), hello(7), rip(8), isIs(9), esIs(10), ciscoIgrp(11), bbnSpfIgp(12), ospf(13), bgp(14), idpr(15), ciscoEigrp(16), dvmrp(17), rpl(18), dhcp(19)
    |     +-- -R-- Gauge     <a href="#inetCidrRouteAge">inetCidrRouteAge</a>(10)
    |     +-- CR-- Unsigned  <a href="#inetCidrRouteNextHopAS">inetCidrRouteNextHopAS</a>(11)
    |     |        Textual Convention: <a href="#InetAutonomousSystemNumber">InetAutonomousSystemNumber</a>
