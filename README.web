@@ -106,6 +106,7 @@ Updating Documentation / MIBS
  -cp /tmp/net-snmp-5.4.1/mibs/html/*.html docs/mibs/
  -cp /tmp/net-snmp-5.4.1/mibs/*.txt docs/mibs/
  -cp /tmp/net-snmp-5.4.1/mibs/*.inc docs/mibs/
+ -chmod +x docs/mibs/*.html
 
 Updating Development / API
 --------------------------
