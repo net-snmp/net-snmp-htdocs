@@ -944,12 +944,34 @@ objects that use one of these definitions must follow its DESCRIPTION
 clause as well as the DESCRIPTION clause of the object itself.
 </p>
 <table><tr class="label"><th>Name</th><th>Type</th><th>Description</th></tr>
+<tr><td><a name="IPv6FlowLabelOrAny">IPv6FlowLabelOrAny</td><td>INTEGER32</td><td><pre>The flow identifier or Flow Label in an IPv6
+packet header that may be used to discriminate
+traffic flows.  The value of -1 is used to
+indicate a wildcard, i.e. any value.
+                  </pre></td></tr>
 <tr><td><a name="InterfaceIndex">InterfaceIndex</td><td>INTEGER32</td><td><pre>A unique value, greater than zero, for each interface or
 interface sub-layer in the managed system.  It is
 recommended that values are assigned contiguously starting
 from 1.  The value for each interface sub-layer must remain
 constant at least from one re-initialization of the entity's
 network management system to the next re-initialization.</pre></td></tr>
+<tr><td><a name="StorageType">StorageType</td><td>INTEGER<table class="enums"><tr><th>Value</th><th>Label/Meaning</th></tr><tr><td>1</td><td>other</td></tr><tr><td>2</td><td>volatile</td></tr><tr><td>3</td><td>nonVolatile</td></tr><tr><td>4</td><td>permanent</td></tr><tr><td>5</td><td>readOnly</td></tr></table></td><td><pre>Describes the memory realization of a conceptual row.  A
+row which is volatile(2) is lost upon reboot.  A row which
+is either nonVolatile(3), permanent(4) or readOnly(5), is
+backed up by stable storage.  A row which is permanent(4)
+can be changed but not deleted.  A row which is readOnly(5)
+cannot be changed nor deleted.
+
+If the value of an object with this syntax is either
+permanent(4) or readOnly(5), it cannot be written.
+Conversely, if the value is either other(1), volatile(2) or
+nonVolatile(3), it cannot be modified to be permanent(4) or
+readOnly(5).  (All illegal modifications result in a
+'wrongValue' error.)
+
+Every usage of this textual convention is required to
+specify the columnar objects which a permanent(4) row must
+at a minimum allow to be writable.</pre></td></tr>
 <tr><td><a name="InetAddress">InetAddress</td><td>OCTETSTR</td><td><pre>Denotes a generic Internet address.
 An InetAddress value is always interpreted within the context
          of an InetAddressType value.  Every usage of the InetAddress
@@ -1007,53 +1029,6 @@ Implementations must ensure that InetAddressType objects
 particular, InetAddressType/InetAddress pairs must be
          changed together if the address type changes (e.g., from
          ipv6(2) to ipv4(1)).</pre></td></tr>
-<tr><td><a name="IPv6FlowLabelOrAny">IPv6FlowLabelOrAny</td><td>INTEGER32</td><td><pre>The flow identifier or Flow Label in an IPv6
-packet header that may be used to discriminate
-traffic flows.  The value of -1 is used to
-indicate a wildcard, i.e. any value.
-                  </pre></td></tr>
-<tr><td><a name="StorageType">StorageType</td><td>INTEGER<table class="enums"><tr><th>Value</th><th>Label/Meaning</th></tr><tr><td>1</td><td>other</td></tr><tr><td>2</td><td>volatile</td></tr><tr><td>3</td><td>nonVolatile</td></tr><tr><td>4</td><td>permanent</td></tr><tr><td>5</td><td>readOnly</td></tr></table></td><td><pre>Describes the memory realization of a conceptual row.  A
-row which is volatile(2) is lost upon reboot.  A row which
-is either nonVolatile(3), permanent(4) or readOnly(5), is
-backed up by stable storage.  A row which is permanent(4)
-can be changed but not deleted.  A row which is readOnly(5)
-cannot be changed nor deleted.
-
-If the value of an object with this syntax is either
-permanent(4) or readOnly(5), it cannot be written.
-Conversely, if the value is either other(1), volatile(2) or
-nonVolatile(3), it cannot be modified to be permanent(4) or
-readOnly(5).  (All illegal modifications result in a
-'wrongValue' error.)
-
-Every usage of this textual convention is required to
-specify the columnar objects which a permanent(4) row must
-at a minimum allow to be writable.</pre></td></tr>
-<tr><td><a name="IANAtunnelType">IANAtunnelType</td><td>INTEGER<table class="enums"><tr><th>Value</th><th>Label/Meaning</th></tr><tr><td>1</td><td>other</td></tr><tr><td>2</td><td>direct</td></tr><tr><td>3</td><td>gre</td></tr><tr><td>4</td><td>minimal</td></tr><tr><td>5</td><td>l2tp</td></tr><tr><td>6</td><td>pptp</td></tr><tr><td>7</td><td>l2f</td></tr><tr><td>8</td><td>udp</td></tr><tr><td>9</td><td>atmp</td></tr><tr><td>10</td><td>msdp</td></tr><tr><td>11</td><td>sixToFour</td></tr><tr><td>12</td><td>sixOverFour</td></tr><tr><td>13</td><td>isatap</td></tr><tr><td>14</td><td>teredo</td></tr><tr><td>15</td><td>ipHttps</td></tr></table></td><td><pre>The encapsulation method used by a tunnel. The value
-direct indicates that a packet is encapsulated
-directly within a normal IP header, with no
-intermediate header, and unicast to the remote tunnel
-endpoint (e.g., an RFC 2003 IP-in-IP tunnel, or an RFC
-1933 IPv6-in-IPv4 tunnel). The value minimal indicates
-that a Minimal Forwarding Header (RFC 2004) is
-inserted between the outer header and the payload
-packet. The value UDP indicates that the payload
-packet is encapsulated within a normal UDP packet
-(e.g., RFC 1234).
-
-The values sixToFour, sixOverFour, and isatap
-indicates that an IPv6 packet is encapsulated directly
-within an IPv4 header, with no intermediate header,
-and unicast to the destination determined by the 6to4,
-6over4, or ISATAP protocol.
-
-The remaining protocol-specific values indicate that a
-header of the protocol of that name is inserted
-between the outer header and the payload header.
-
-The assignment policy for IANAtunnelType values is
-identical to the policy for assigning IANAifType
-values.</pre></td></tr>
 <tr><td><a name="RowStatus">RowStatus</td><td>INTEGER<table class="enums"><tr><th>Value</th><th>Label/Meaning</th></tr><tr><td>1</td><td>active</td></tr><tr><td>2</td><td>notInService</td></tr><tr><td>3</td><td>notReady</td></tr><tr><td>4</td><td>createAndGo</td></tr><tr><td>5</td><td>createAndWait</td></tr><tr><td>6</td><td>destroy</td></tr></table></td><td><pre>The RowStatus textual convention is used to manage the
 creation and deletion of conceptual rows, and is used as the
 value of the SYNTAX clause for the status column of a
@@ -1124,6 +1099,31 @@ information (the state column has value `notReady').
      value, the column in question may be changed if the
      RowStatus was not equal to `active' as the PDU was
      received, or if the varbind sets the status</pre></td></tr>
+<tr><td><a name="IANAtunnelType">IANAtunnelType</td><td>INTEGER<table class="enums"><tr><th>Value</th><th>Label/Meaning</th></tr><tr><td>1</td><td>other</td></tr><tr><td>2</td><td>direct</td></tr><tr><td>3</td><td>gre</td></tr><tr><td>4</td><td>minimal</td></tr><tr><td>5</td><td>l2tp</td></tr><tr><td>6</td><td>pptp</td></tr><tr><td>7</td><td>l2f</td></tr><tr><td>8</td><td>udp</td></tr><tr><td>9</td><td>atmp</td></tr><tr><td>10</td><td>msdp</td></tr><tr><td>11</td><td>sixToFour</td></tr><tr><td>12</td><td>sixOverFour</td></tr><tr><td>13</td><td>isatap</td></tr><tr><td>14</td><td>teredo</td></tr><tr><td>15</td><td>ipHttps</td></tr></table></td><td><pre>The encapsulation method used by a tunnel. The value
+direct indicates that a packet is encapsulated
+directly within a normal IP header, with no
+intermediate header, and unicast to the remote tunnel
+endpoint (e.g., an RFC 2003 IP-in-IP tunnel, or an RFC
+1933 IPv6-in-IPv4 tunnel). The value minimal indicates
+that a Minimal Forwarding Header (RFC 2004) is
+inserted between the outer header and the payload
+packet. The value UDP indicates that the payload
+packet is encapsulated within a normal UDP packet
+(e.g., RFC 1234).
+
+The values sixToFour, sixOverFour, and isatap
+indicates that an IPv6 packet is encapsulated directly
+within an IPv4 header, with no intermediate header,
+and unicast to the destination determined by the 6to4,
+6over4, or ISATAP protocol.
+
+The remaining protocol-specific values indicate that a
+header of the protocol of that name is inserted
+between the outer header and the payload header.
+
+The assignment policy for IANAtunnelType values is
+identical to the policy for assigning IANAifType
+values.</pre></td></tr>
 <tr><td><a name="InterfaceIndexOrZero">InterfaceIndexOrZero</td><td>INTEGER32</td><td><pre>This textual convention is an extension of the
 InterfaceIndex convention.  The latter defines a greater
 than zero value used to identify an interface or interface

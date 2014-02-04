@@ -1136,6 +1136,23 @@ A TAddress value is always interpreted within the context of a
           SnmpUDPAddress for snmpUDPDomain, are defined in the SNMPv2-TM
           MIB module.  Other possible textual conventions are defined in
           other MIB modules.</pre></td></tr>
+<tr><td><a name="StorageType">StorageType</td><td>INTEGER<table class="enums"><tr><th>Value</th><th>Label/Meaning</th></tr><tr><td>1</td><td>other</td></tr><tr><td>2</td><td>volatile</td></tr><tr><td>3</td><td>nonVolatile</td></tr><tr><td>4</td><td>permanent</td></tr><tr><td>5</td><td>readOnly</td></tr></table></td><td><pre>Describes the memory realization of a conceptual row.  A
+row which is volatile(2) is lost upon reboot.  A row which
+is either nonVolatile(3), permanent(4) or readOnly(5), is
+backed up by stable storage.  A row which is permanent(4)
+can be changed but not deleted.  A row which is readOnly(5)
+cannot be changed nor deleted.
+
+If the value of an object with this syntax is either
+permanent(4) or readOnly(5), it cannot be written.
+Conversely, if the value is either other(1), volatile(2) or
+nonVolatile(3), it cannot be modified to be permanent(4) or
+readOnly(5).  (All illegal modifications result in a
+'wrongValue' error.)
+
+Every usage of this textual convention is required to
+specify the columnar objects which a permanent(4) row must
+at a minimum allow to be writable.</pre></td></tr>
 <tr><td><a name="SnmpEngineID">SnmpEngineID</td><td>OCTETSTR</td><td><pre>An SNMP engine's administratively-unique identifier.
 Objects of this type are for identification, not for
 addressing, even though it is possible that an
@@ -1222,23 +1239,6 @@ engines ending up with the same ID value.
              order
 
      4     - Text, administratively a</pre></td></tr>
-<tr><td><a name="StorageType">StorageType</td><td>INTEGER<table class="enums"><tr><th>Value</th><th>Label/Meaning</th></tr><tr><td>1</td><td>other</td></tr><tr><td>2</td><td>volatile</td></tr><tr><td>3</td><td>nonVolatile</td></tr><tr><td>4</td><td>permanent</td></tr><tr><td>5</td><td>readOnly</td></tr></table></td><td><pre>Describes the memory realization of a conceptual row.  A
-row which is volatile(2) is lost upon reboot.  A row which
-is either nonVolatile(3), permanent(4) or readOnly(5), is
-backed up by stable storage.  A row which is permanent(4)
-can be changed but not deleted.  A row which is readOnly(5)
-cannot be changed nor deleted.
-
-If the value of an object with this syntax is either
-permanent(4) or readOnly(5), it cannot be written.
-Conversely, if the value is either other(1), volatile(2) or
-nonVolatile(3), it cannot be modified to be permanent(4) or
-readOnly(5).  (All illegal modifications result in a
-'wrongValue' error.)
-
-Every usage of this textual convention is required to
-specify the columnar objects which a permanent(4) row must
-at a minimum allow to be writable.</pre></td></tr>
 <tr><td><a name="DateAndTime">DateAndTime</td><td>OCTETSTR</td><td><pre>A date-time specification.
 field  octets  contents                  range
             -----  ------  --------                  -----
