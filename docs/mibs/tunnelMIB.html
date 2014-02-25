@@ -1,13 +1,6 @@
-<head>
-  <title>MIB information for tunnelMIB</title>
-<style type="text/css">
-<!--
-h2{background:#bbeebb}
-h3{background:#ccccee}
--->
-</style>
-</head>
-<body bgcolor="#ffffff">
+<!--#set var="section" value="documentation" -->
+<!--#include virtual="/page-top.html" -->
+<!-- CONTENT START -->
 <h2>INTRODUCTION</h2>
 <ul>
 <p>
@@ -22,11 +15,12 @@ document as <b>.1.3.6.1.2.1.10.131</b>.
 <ul>
 <li><a href="#scalar_current">Scalars</a></li>
   <li><a href="#tunnelIfTable">tunnelIfTable</a></li>
-  <li><a href="#tunnelConfigTable">tunnelConfigTable</a></li>
+  <li><a href="#tunnelInetConfigTable">tunnelInetConfigTable</a></li>
 </ul>
 <h3><a href="#objects_Deprecated">Deprecated Objects</a></h3>
 <ul>
 <li><a href="#scalar_notcurrent">Deprecated Scalars</a></li>
+  <li><a href="#tunnelConfigTable">tunnelConfigTable</a></li>
 </ul>
 <h3><a href="#notifications">Notifications</a></h3>
 <h3><a href="#textconventions">Textual Conventions</a></h3>
@@ -36,31 +30,31 @@ document as <b>.1.3.6.1.2.1.10.131</b>.
 <a name="scalar_current" />
 <h2>SCALAR OBJECTS</h2>
 <ul>
-<table border=2 bgcolor="#dddddd">
-<tr bgcolor="#bbbbbb"><th>Name</th><th>Type</th><th>Access</th><th>OID</th><th>Description</th></tr>
+<table>
+<tr><th>Name</th><th>Type</th><th>Access</th><th>OID</th><th>Description</th></tr>
 </table>
 </ul>
 
 <h2>TABLE OBJECTS</h2>
 <a name="tunnelIfTable" /><h3>Table tunnelIfTable</h3>
 <ul>
-  <table border=2 bgcolor="#dddddd">
-  <tr><td bgcolor="#bbbbbb">Table Name</td><td>tunnelIfTable</td></tr>
-  <tr><td bgcolor="#bbbbbb">In MIB</td><td>TUNNEL-MIB</td></tr>
-  <tr><td bgcolor="#bbbbbb">Registered at OID</td><td>.1.3.6.1.2.1.10.131.1.1.1</td></tr>
-  <tr><td bgcolor="#bbbbbb">Table Description</td>
+  <table>
+  <tr><td class="label">Table Name</td><td>tunnelIfTable</td></tr>
+  <tr><td class="label">In MIB</td><td>TUNNEL-MIB</td></tr>
+  <tr><td class="label">Registered at OID</td><td>.1.3.6.1.2.1.10.131.1.1.1</td></tr>
+  <tr><td class="label">Table Description</td>
 <td>
 <pre>
-The (conceptual) table containing information on configured
-tunnels.
+The (conceptual) table containing information on
+configured tunnels.
 </pre>
 </td>
 </tr>
-<tr><td bgcolor="#bbbbbb"><a name="tunnelIfEntry" />Row Description</td>
+<tr><td class="label"><a name="tunnelIfEntry" />Row Description</td>
 <td>
 <pre>
-An entry (conceptual row) containing the information on a
-particular configured tunnel.
+An entry (conceptual row) containing the information
+on a particular configured tunnel.
 </pre>
 </td>
 </tr>
@@ -68,8 +62,8 @@ particular configured tunnel.
 
   <h4>tunnelIfTable Indexes:</h4>
 
-<table border=2 bgcolor="#dddddd">
-<tr bgcolor="#bbbbbb"><th>Name</th><th>Type</th><th>Access</th><th>Description</th></tr>
+<table>
+<tr class="label"><th>Name</th><th>Type</th><th>Access</th><th>Description</th></tr>
   <tr>
   <td>
 <a name="ifIndex" />
@@ -78,7 +72,8 @@ particular configured tunnel.
 
 </td><td>
   INTEGER32
-
+      <br />Legal values:
+        1 .. 2147483647
  <br>
  <a href="#InterfaceIndex">InterfaceIndex</a>
 
@@ -100,43 +95,53 @@ initialization.
 </table>
 
   <h4>Other tunnelIfTable Columns:</h4>
-<table border=2 bgcolor="#dddddd">
-<tr bgcolor="#bbbbbb"><th>Name</th><th>Type</th><th>Access</th><th>Description</th></tr>
+<table>
+<tr class="label"><th>Name</th><th>Type</th><th>Access</th><th>Description</th></tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="tunnelIfLocalAddress" />
 1
 <br /><b>tunnelIfLocalAddress</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   IPADDR
-
 
   </td><td>ReadOnly</td>
 <td>
 <pre>
-The address of the local endpoint of the tunnel (i.e., the
-source address used in the outer IP header), or 0.0.0.0 if
-unknown.
+The address of the local endpoint of the tunnel
+(i.e., the source address used in the outer IP
+header), or 0.0.0.0 if unknown or if the tunnel is
+over IPv6.
+
+Since this object does not support IPv6, it is
+deprecated in favor of tunnelIfLocalInetAddress.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="tunnelIfRemoteAddress" />
 2
 <br /><b>tunnelIfRemoteAddress</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   IPADDR
-
 
   </td><td>ReadOnly</td>
 <td>
 <pre>
-The address of the remote endpoint of the tunnel (i.e., the
-destination address used in the outer IP header), or 0.0.0.0
-if unknown.
+The address of the remote endpoint of the tunnel
+(i.e., the destination address used in the outer IP
+header), or 0.0.0.0 if unknown, or an IPv6 address, or
+
+the tunnel is not a point-to-point link (e.g., if it
+is a 6to4 tunnel).
+
+Since this object does not support IPv6, it is
+deprecated in favor of tunnelIfRemoteInetAddress.
 </pre>
 </td>
   </tr>
@@ -148,35 +153,17 @@ if unknown.
 
 </td><td>
   INTEGER
-
-      <table border=2 bgcolor="#cccccc">
-      <tr><th>Value</th><th>Label/Meaning</th></tr>
-        <tr><td>1</td><td>other</td></tr>
-        <tr><td>2</td><td>direct</td></tr>
-        <tr><td>3</td><td>gre</td></tr>
-        <tr><td>4</td><td>minimal</td></tr>
-        <tr><td>5</td><td>l2tp</td></tr>
-        <tr><td>6</td><td>pptp</td></tr>
-        <tr><td>7</td><td>l2f</td></tr>
-        <tr><td>8</td><td>udp</td></tr>
-        <tr><td>9</td><td>atmp</td></tr>
-      </table>
+ <br>
+ <a href="#IANAtunnelType">IANAtunnelType</a>
+     <br>(ENUM list below)
 
   </td><td>ReadOnly</td>
 <td>
+<p>
+Note: this object is based on the <a href="#IANAtunnelType"> IANAtunnelType TEXTUAL-CONVENTION</a>.
+</p>
 <pre>
-The encapsulation method used by the tunnel. The value
-direct indicates that the packet is encapsulated directly
-within a normal IPv4 header, with no intermediate header,
-and unicast to the remote tunnel endpoint (e.g., an RFC 2003
-IP-in-IP tunnel, or an RFC 1933 IPv6-in-IPv4 tunnel). The
-value minimal indicates that a Minimal Forwarding Header
-(RFC 2004) is inserted between the outer header and the
-payload packet. The value UDP indicates that the payload
-packet is encapsulated within a normal UDP packet (e.g., RFC
-1234).  The remaining protocol-specific values indicate that
-a header of the protocol of that name is inserted between
-the outer header and the payload header.
+The encapsulation method used by the tunnel.
 </pre>
 </td>
   </tr>
@@ -188,14 +175,17 @@ the outer header and the payload header.
 
 </td><td>
   INTEGER32
-
+      <br />Legal values:
+        0
+        ,
+        1 .. 255
 
   </td><td>ReadWrite</td>
 <td>
 <pre>
-The TTL to use in the outer IP header. A value of 0
-indicates that the value is copied from the payload's
-header.
+The IPv4 TTL or IPv6 Hop Limit to use in the outer IP
+header.  A value of 0 indicates that the value is
+copied from the payload's header.
 </pre>
 </td>
   </tr>
@@ -207,8 +197,7 @@ header.
 
 </td><td>
   INTEGER
-
-      <table border=2 bgcolor="#cccccc">
+      <table class="enum">
       <tr><th>Value</th><th>Label/Meaning</th></tr>
         <tr><td>1</td><td>none</td></tr>
         <tr><td>2</td><td>ipsec</td></tr>
@@ -222,8 +211,8 @@ The method used by the tunnel to secure the outer IP
 header.  The value ipsec indicates that IPsec is used
 between the tunnel endpoints for authentication or
 encryption or both.  More specific security-related
-information may be available in a MIB for the security
-protocol in use.
+information may be available in a MIB module for the
+security protocol in use.
 </pre>
 </td>
   </tr>
@@ -235,87 +224,284 @@ protocol in use.
 
 </td><td>
   INTEGER32
-
+      <br />Legal values:
+        -2 .. 63
 
   </td><td>ReadWrite</td>
 <td>
 <pre>
-The method used to set the high 6 bits of the TOS in the
-outer IP header.  A value of -1 indicates that the bits are
-copied from the payload's header. A value of -2 indicates
-that a traffic conditioner is invoked and more information
-may be available in a traffic conditioner MIB.  A value
-between 0 and 63 inclusive indicates that the bit field is
-set to the indicated value.
+The method used to set the high 6 bits (the
+differentiated services codepoint) of the IPv4 TOS or
+            IPv6 Traffic Class in the outer IP header.  A value of
+            -1 indicates that the bits are copied from the
+            payload's header.  A value of -2 indicates that a
+            traffic conditioner is invoked and more information
+            may be available in a traffic conditioner MIB module.
+            A value between 0 and 63 inclusive indicates that the
+            bit field is set to the indicated value.
+Note: instead of the name tunnelIfTOS, a better name
+            would have been tunnelIfDSCPMethod, but the existing
+            name appeared in RFC 2667 and existing objects cannot
+            be renamed.
 </pre>
+</td>
+  </tr>
+  <tr>
+  <td>
+<a name="tunnelIfFlowLabel" />
+7
+<br /><b>tunnelIfFlowLabel</b>
+
+</td><td>
+  INTEGER32
+      <br />Legal values:
+        -1
+        ,
+        0 .. 1048575
+ <br>
+ <a href="#IPv6FlowLabelOrAny">IPv6FlowLabelOrAny</a>
+
+  </td><td>ReadWrite</td>
+<td>
+<p>
+Note: this object is based on the <a href="#IPv6FlowLabelOrAny"> IPv6FlowLabelOrAny TEXTUAL-CONVENTION</a>.
+</p>
+<pre>
+The method used to set the IPv6 Flow Label value.
+This object need not be present in rows where
+tunnelIfAddressType indicates the tunnel is not over
+IPv6.  A value of -1 indicates that a traffic
+conditioner is invoked and more information may be
+available in a traffic conditioner MIB.  Any other
+value indicates that the Flow Label field is set to
+the indicated value.
+</pre>
+</td>
+  </tr>
+  <tr>
+  <td>
+<a name="tunnelIfAddressType" />
+8
+<br /><b>tunnelIfAddressType</b>
+
+</td><td>
+  INTEGER
+ <br>
+ <a href="#InetAddressType">InetAddressType</a>
+     <br>(ENUM list below)
+
+  </td><td>ReadWrite</td>
+<td>
+<p>
+Note: this object is based on the <a href="#InetAddressType"> InetAddressType TEXTUAL-CONVENTION</a>.
+</p>
+<pre>
+The type of address in the corresponding
+tunnelIfLocalInetAddress and tunnelIfRemoteInetAddress
+objects.
+</pre>
+</td>
+  </tr>
+  <tr>
+  <td>
+<a name="tunnelIfLocalInetAddress" />
+9
+<br /><b>tunnelIfLocalInetAddress</b>
+
+</td><td>
+  OCTETSTR
+      <br />Legal Lengths:
+        0 .. 255
+ <br>
+ <a href="#InetAddress">InetAddress</a>
+
+  </td><td>ReadWrite</td>
+<td>
+<p>
+Note: this object is based on the <a href="#InetAddress"> InetAddress TEXTUAL-CONVENTION</a>.
+</p>
+<pre>
+The address of the local endpoint of the tunnel
+(i.e., the source address used in the outer IP
+header).  If the address is unknown, the value is
+
+0.0.0.0 for IPv4 or :: for IPv6.  The type of this
+object is given by tunnelIfAddressType.
+</pre>
+</td>
+  </tr>
+  <tr>
+  <td>
+<a name="tunnelIfRemoteInetAddress" />
+10
+<br /><b>tunnelIfRemoteInetAddress</b>
+
+</td><td>
+  OCTETSTR
+      <br />Legal Lengths:
+        0 .. 255
+ <br>
+ <a href="#InetAddress">InetAddress</a>
+
+  </td><td>ReadWrite</td>
+<td>
+<p>
+Note: this object is based on the <a href="#InetAddress"> InetAddress TEXTUAL-CONVENTION</a>.
+</p>
+<pre>
+The address of the remote endpoint of the tunnel
+(i.e., the destination address used in the outer IP
+header).  If the address is unknown or the tunnel is
+not a point-to-point link (e.g., if it is a 6to4
+tunnel), the value is 0.0.0.0 for tunnels over IPv4 or
+:: for tunnels over IPv6.  The type of this object is
+given by tunnelIfAddressType.
+</pre>
+</td>
+  </tr>
+  <tr>
+  <td>
+<a name="tunnelIfEncapsLimit" />
+11
+<br /><b>tunnelIfEncapsLimit</b>
+
+</td><td>
+  INTEGER32
+      <br />Legal values:
+        -1
+        ,
+        0 .. 255
+
+  </td><td>ReadWrite</td>
+<td>
+<pre>
+The maximum number of additional encapsulations
+permitted for packets undergoing encapsulation at this
+node.  A value of -1 indicates that no limit is
+present (except as a result of the packet size).
+</pre>
+<p><i>Also see Reference:
+<pre>
+RFC 2473, section 4.1.1
+</pre>
+</i></p>
 </td>
   </tr>
 </table>
 </ul>
-<a name="tunnelConfigTable" /><h3>Table tunnelConfigTable</h3>
+<a name="tunnelInetConfigTable" /><h3>Table tunnelInetConfigTable</h3>
 <ul>
-  <table border=2 bgcolor="#dddddd">
-  <tr><td bgcolor="#bbbbbb">Table Name</td><td>tunnelConfigTable</td></tr>
-  <tr><td bgcolor="#bbbbbb">In MIB</td><td>TUNNEL-MIB</td></tr>
-  <tr><td bgcolor="#bbbbbb">Registered at OID</td><td>.1.3.6.1.2.1.10.131.1.1.2</td></tr>
-  <tr><td bgcolor="#bbbbbb">Table Description</td>
+  <table>
+  <tr><td class="label">Table Name</td><td>tunnelInetConfigTable</td></tr>
+  <tr><td class="label">In MIB</td><td>TUNNEL-MIB</td></tr>
+  <tr><td class="label">Registered at OID</td><td>.1.3.6.1.2.1.10.131.1.1.3</td></tr>
+  <tr><td class="label">Table Description</td>
 <td>
 <pre>
-The (conceptual) table containing information on configured
-tunnels.  This table can be used to map a set of tunnel
-endpoints to the associated ifIndex value.  It can also be
-used for row creation.  Note that every row in the
-tunnelIfTable with a fixed destination address should have a
-corresponding row in the tunnelConfigTable, regardless of
-whether it was created via SNMP.
+The (conceptual) table containing information on
+configured tunnels.  This table can be used to map a
+set of tunnel endpoints to the associated ifIndex
+value.  It can also be used for row creation.  Note
+that every row in the tunnelIfTable with a fixed
+destination address should have a corresponding row in
+the tunnelInetConfigTable, regardless of whether it
+was created via SNMP.
 </pre>
 </td>
 </tr>
-<tr><td bgcolor="#bbbbbb"><a name="tunnelConfigEntry" />Row Description</td>
+<tr><td class="label"><a name="tunnelInetConfigEntry" />Row Description</td>
 <td>
 <pre>
-An entry (conceptual row) containing the information on a
-particular configured tunnel.
+An entry (conceptual row) containing the information
+on a particular configured tunnel.  Note that there is
+a 128 subid maximum for object OIDs.  Implementers
+need to be aware that if the total number of octets in
+tunnelInetConfigLocalAddress and
+tunnelInetConfigRemoteAddress exceeds 110 then OIDs of
+column instances in this table will have more than 128
+sub-identifiers and cannot be accessed using SNMPv1,
+SNMPv2c, or SNMPv3.  In practice this is not expected
+to be a problem since IPv4 and IPv6 addresses will not
+cause the limit to be reached, but if other types are
+supported by an agent, care must be taken to ensure
+that the sum of the lengths do not cause the limit to
+be exceeded.
 </pre>
 </td>
 </tr>
   </table>
 
-  <h4>tunnelConfigTable Indexes:</h4>
+  <h4>tunnelInetConfigTable Indexes:</h4>
 
-<table border=2 bgcolor="#dddddd">
-<tr bgcolor="#bbbbbb"><th>Name</th><th>Type</th><th>Access</th><th>Description</th></tr>
+<table>
+<tr class="label"><th>Name</th><th>Type</th><th>Access</th><th>Description</th></tr>
   <tr>
   <td>
-<a name="tunnelConfigLocalAddress" />
+<a name="tunnelInetConfigAddressType" />
 1
-<br /><b>tunnelConfigLocalAddress</b>
+<br /><b>tunnelInetConfigAddressType</b>
 
 </td><td>
-  IPADDR
-
+  INTEGER
+ <br>
+ <a href="#InetAddressType">InetAddressType</a>
+     <br>(ENUM list below)
 
   </td><td>NoAccess</td>
 <td>
+<p>
+Note: this object is based on the <a href="#InetAddressType"> InetAddressType TEXTUAL-CONVENTION</a>.
+</p>
 <pre>
-The address of the local endpoint of the tunnel, or 0.0.0.0
-if the device is free to choose any of its addresses at
-tunnel establishment time.
+The address type over which the tunnel encapsulates
+packets.
 </pre>
 </td>
   </tr>
   <tr>
   <td>
-<a name="tunnelConfigRemoteAddress" />
+<a name="tunnelInetConfigLocalAddress" />
 2
-<br /><b>tunnelConfigRemoteAddress</b>
+<br /><b>tunnelInetConfigLocalAddress</b>
 
 </td><td>
-  IPADDR
-
+  OCTETSTR
+      <br />Legal Lengths:
+        0 .. 255
+ <br>
+ <a href="#InetAddress">InetAddress</a>
 
   </td><td>NoAccess</td>
 <td>
+<p>
+Note: this object is based on the <a href="#InetAddress"> InetAddress TEXTUAL-CONVENTION</a>.
+</p>
+<pre>
+The address of the local endpoint of the tunnel, or
+0.0.0.0 (for IPv4) or :: (for IPv6) if the device is
+free to choose any of its addresses at tunnel
+establishment time.
+</pre>
+</td>
+  </tr>
+  <tr>
+  <td>
+<a name="tunnelInetConfigRemoteAddress" />
+3
+<br /><b>tunnelInetConfigRemoteAddress</b>
+
+</td><td>
+  OCTETSTR
+      <br />Legal Lengths:
+        0 .. 255
+ <br>
+ <a href="#InetAddress">InetAddress</a>
+
+  </td><td>NoAccess</td>
+<td>
+<p>
+Note: this object is based on the <a href="#InetAddress"> InetAddress TEXTUAL-CONVENTION</a>.
+</p>
 <pre>
 The address of the remote endpoint of the tunnel.
 </pre>
@@ -323,28 +509,21 @@ The address of the remote endpoint of the tunnel.
   </tr>
   <tr>
   <td>
-<a name="tunnelConfigEncapsMethod" />
-3
-<br /><b>tunnelConfigEncapsMethod</b>
+<a name="tunnelInetConfigEncapsMethod" />
+4
+<br /><b>tunnelInetConfigEncapsMethod</b>
 
 </td><td>
   INTEGER
-
-      <table border=2 bgcolor="#cccccc">
-      <tr><th>Value</th><th>Label/Meaning</th></tr>
-        <tr><td>1</td><td>other</td></tr>
-        <tr><td>2</td><td>direct</td></tr>
-        <tr><td>3</td><td>gre</td></tr>
-        <tr><td>4</td><td>minimal</td></tr>
-        <tr><td>5</td><td>l2tp</td></tr>
-        <tr><td>6</td><td>pptp</td></tr>
-        <tr><td>7</td><td>l2f</td></tr>
-        <tr><td>8</td><td>udp</td></tr>
-        <tr><td>9</td><td>atmp</td></tr>
-      </table>
+ <br>
+ <a href="#IANAtunnelType">IANAtunnelType</a>
+     <br>(ENUM list below)
 
   </td><td>NoAccess</td>
 <td>
+<p>
+Note: this object is based on the <a href="#IANAtunnelType"> IANAtunnelType TEXTUAL-CONVENTION</a>.
+</p>
 <pre>
 The encapsulation method used by the tunnel.
 </pre>
@@ -352,42 +531,47 @@ The encapsulation method used by the tunnel.
   </tr>
   <tr>
   <td>
-<a name="tunnelConfigID" />
-4
-<br /><b>tunnelConfigID</b>
+<a name="tunnelInetConfigID" />
+5
+<br /><b>tunnelInetConfigID</b>
 
 </td><td>
   INTEGER32
-
+      <br />Legal values:
+        1 .. 2147483647
 
   </td><td>NoAccess</td>
 <td>
 <pre>
-An identifier used to distinguish between multiple tunnels
-of the same encapsulation method, with the same endpoints.
-If the encapsulation protocol only allows one tunnel per set
-of endpoint addresses (such as for GRE or IP-in-IP), the
-value of this object is 1.  For encapsulation methods (such
-as L2F) which allow multiple parallel tunnels, the manager
-is responsible for choosing any ID which does not conflict
-with an existing row, such as choosing a random number.
+An identifier used to distinguish between multiple
+tunnels of the same encapsulation method, with the
+same endpoints.  If the encapsulation protocol only
+allows one tunnel per set of endpoint addresses (such
+as for GRE or IP-in-IP), the value of this object is
+1.  For encapsulation methods (such as L2F) which
+allow multiple parallel tunnels, the manager is
+responsible for choosing any ID which does not
+
+conflict with an existing row, such as choosing a
+random number.
 </pre>
 </td>
   </tr>
 </table>
 
-  <h4>Other tunnelConfigTable Columns:</h4>
-<table border=2 bgcolor="#dddddd">
-<tr bgcolor="#bbbbbb"><th>Name</th><th>Type</th><th>Access</th><th>Description</th></tr>
+  <h4>Other tunnelInetConfigTable Columns:</h4>
+<table>
+<tr class="label"><th>Name</th><th>Type</th><th>Access</th><th>Description</th></tr>
   <tr>
   <td>
-<a name="tunnelConfigIfIndex" />
-5
-<br /><b>tunnelConfigIfIndex</b>
+<a name="tunnelInetConfigIfIndex" />
+6
+<br /><b>tunnelInetConfigIfIndex</b>
 
 </td><td>
   INTEGER32
-
+      <br />Legal values:
+        0 .. 2147483647
  <br>
  <a href="#InterfaceIndexOrZero">InterfaceIndexOrZero</a>
 
@@ -397,23 +581,22 @@ with an existing row, such as choosing a random number.
 Note: this object is based on the <a href="#InterfaceIndexOrZero"> InterfaceIndexOrZero TEXTUAL-CONVENTION</a>.
 </p>
 <pre>
-If the value of tunnelConfigStatus for this row is active,
-then this object contains the value of ifIndex corresponding
-to the tunnel interface.  A value of 0 is not legal in the
-active state, and means that the interface index has not yet
-been assigned.
+If the value of tunnelInetConfigStatus for this row
+is active, then this object contains the value of
+ifIndex corresponding to the tunnel interface.  A
+value of 0 is not legal in the active state, and means
+that the interface index has not yet been assigned.
 </pre>
 </td>
   </tr>
   <tr>
   <td>
-<a name="tunnelConfigStatus" />
-6
-<br /><b>tunnelConfigStatus</b>
+<a name="tunnelInetConfigStatus" />
+7
+<br /><b>tunnelInetConfigStatus</b>
 
 </td><td>
   INTEGER
-
  <br>
  <a href="#RowStatus">RowStatus</a>
      <br>(ENUM list below)
@@ -425,36 +608,64 @@ Note: this object is based on the <a href="#RowStatus"> RowStatus TEXTUAL-CONVEN
 </p>
 <pre>
 The status of this row, by which new entries may be
-created, or old entries deleted from this table. The agent
-need not support setting this object to createAndWait or
-notInService since there are no other writable objects in
-this table, and writable objects in rows of corresponding
-tables such as the tunnelIfTable may be modified while this
-row is active.
+created, or old entries deleted from this table.  The
+agent need not support setting this object to
+createAndWait or notInService since there are no other
+writable objects in this table, and writable objects
+in rows of corresponding tables such as the
+tunnelIfTable may be modified while this row is
+active.
 
-To create a row in this table for an encapsulation method
-which does not support multiple parallel tunnels with the
-same endpoints, the management station should simply use a
-tunnelConfigID of 1, and set tunnelConfigStatus to
-createAndGo.  For encapsulation methods such as L2F which
-allow multiple parallel tunnels, the management station may
-select a pseudo-random number to use as the tunnelConfigID
-and set tunnelConfigStatus to createAndGo.  In the event
-that this ID is already in use and an inconsistentValue is
-returned in response to the set operation, the management
-station should simply select a new pseudo-random number and
-retry the operation.
+To create a row in this table for an encapsulation
+method which does not support multiple parallel
+tunnels with the same endpoints, the management
+station should simply use a tunnelInetConfigID of 1,
+and set tunnelInetConfigStatus to createAndGo.  For
+encapsulation methods such as L2F which allow multiple
+parallel tunnels, the management station may select a
+pseudo-random number to use as the tunnelInetConfigID
+and set tunnelInetConfigStatus to createAndGo.  In the
+event that this ID is already in use and an
+inconsistentValue is returned in response to the set
+operation, the management station should simply select
+a new pseudo-random number and retry the operation.
 
-Creating a row in this table will cause an interface index
-to be assigned by the agent in an implementation-dependent
-manner, and corresponding rows will be instantiated in the
-ifTable and the tunnelIfTable.  The status of this row will
-become active as soon as the agent assigns the interface
-index, regardless of whether the interface is operationally
-up.
+Creating a row in this table will cause an interface
+index to be assigned by the agent in an
+implementation-dependent manner, and corresponding
+rows will be instantiated in the ifTable and the
+
+tunnelIfTable.  The status of this row will become
+active as soon as the agent assigns the interface
+index, regardless of whether the interface is
+operationally up.
 
 Deleting a row in this table will likewise delete the
-corresponding row in the ifTable and in the tunnelIfTable.
+corresponding row in the ifTable and in the
+tunnelIfTable.
+</pre>
+</td>
+  </tr>
+  <tr>
+  <td>
+<a name="tunnelInetConfigStorageType" />
+8
+<br /><b>tunnelInetConfigStorageType</b>
+
+</td><td>
+  INTEGER
+ <br>
+ <a href="#StorageType">StorageType</a>
+     <br>(ENUM list below)
+
+  </td><td>Create</td>
+<td>
+<p>
+Note: this object is based on the <a href="#StorageType"> StorageType TEXTUAL-CONVENTION</a>.
+</p>
+<pre>
+The storage type of this row.  If the row is
+permanent(4), no objects in the row need be writable.
 </pre>
 </td>
   </tr>
@@ -463,18 +674,256 @@ corresponding row in the ifTable and in the tunnelIfTable.
 <a name="objects_Deprecated" />
   <hr />
   <h1><font color="red">DEPRECATED OR OBSOLETE OR HISTORIC OBJECTS</font></h1>
-  <hr />
+  <br>
+  <table class="deprecated"><tr><td>
 <a name="scalar_notcurrent" />
 <h2>SCALAR OBJECTS</h2>
 <ul>
-<table border=2 bgcolor="#dddddd">
-<tr bgcolor="#bbbbbb"><th>Name</th><th>Type</th><th>Access</th><th>OID</th><th>Description</th></tr>
+<table>
+<tr><th>Name</th><th>Type</th><th>Access</th><th>OID</th><th>Description</th></tr>
 </table>
 </ul>
 
 <h2>TABLE OBJECTS</h2>
+<a name="tunnelConfigTable" /><h3>Table tunnelConfigTable</h3>
+<ul>
+  <table>
+  <tr><td class="label">Table Name</td><td>tunnelConfigTable</td></tr>
+  <tr><td class="label">In MIB</td><td>TUNNEL-MIB</td></tr>
+  <tr><td class="label">Registered at OID</td><td>.1.3.6.1.2.1.10.131.1.1.2</td></tr>
+  <tr><td class="label">Table Description</td>
+<td>
+<pre>
+The (conceptual) table containing information on
+configured tunnels.  This table can be used to map a
+set of tunnel endpoints to the associated ifIndex
+value.  It can also be used for row creation.  Note
+that every row in the tunnelIfTable with a fixed IPv4
+destination address should have a corresponding row in
+the tunnelConfigTable, regardless of whether it was
+created via SNMP.
+
+Since this table does not support IPv6, it is
+deprecated in favor of tunnelInetConfigTable.
+</pre>
+</td>
+</tr>
+<tr><td class="label"><a name="tunnelConfigEntry" />Row Description</td>
+<td>
+<pre>
+An entry (conceptual row) containing the information
+on a particular configured tunnel.
+
+Since this entry does not support IPv6, it is
+deprecated in favor of tunnelInetConfigEntry.
+</pre>
+</td>
+</tr>
+  </table>
+
+  <h4>tunnelConfigTable Indexes:</h4>
+
+<table>
+<tr class="label"><th>Name</th><th>Type</th><th>Access</th><th>Description</th></tr>
+  <tr>
+  <td class="deprecated">
+<a name="tunnelConfigLocalAddress" />
+1
+<br /><b>tunnelConfigLocalAddress</b>
+
+</td><td>
+<font color="red">DEPRECATED</font><br />
+  IPADDR
+
+  </td><td>NoAccess</td>
+<td>
+<pre>
+The address of the local endpoint of the tunnel, or
+0.0.0.0 if the device is free to choose any of its
+addresses at tunnel establishment time.
+
+Since this object does not support IPv6, it is
+deprecated in favor of tunnelInetConfigLocalAddress.
+</pre>
+</td>
+  </tr>
+  <tr>
+  <td class="deprecated">
+<a name="tunnelConfigRemoteAddress" />
+2
+<br /><b>tunnelConfigRemoteAddress</b>
+
+</td><td>
+<font color="red">DEPRECATED</font><br />
+  IPADDR
+
+  </td><td>NoAccess</td>
+<td>
+<pre>
+The address of the remote endpoint of the tunnel.
+Since this object does not support IPv6, it is
+            deprecated in favor of tunnelInetConfigRemoteAddress.
+</pre>
+</td>
+  </tr>
+  <tr>
+  <td class="deprecated">
+<a name="tunnelConfigEncapsMethod" />
+3
+<br /><b>tunnelConfigEncapsMethod</b>
+
+</td><td>
+<font color="red">DEPRECATED</font><br />
+  INTEGER
+ <br>
+ <a href="#IANAtunnelType">IANAtunnelType</a>
+     <br>(ENUM list below)
+
+  </td><td>NoAccess</td>
+<td>
+<p>
+Note: this object is based on the <a href="#IANAtunnelType"> IANAtunnelType TEXTUAL-CONVENTION</a>.
+</p>
+<pre>
+The encapsulation method used by the tunnel.
+Since this object does not support IPv6, it is
+            deprecated in favor of tunnelInetConfigEncapsMethod.
+</pre>
+</td>
+  </tr>
+  <tr>
+  <td class="deprecated">
+<a name="tunnelConfigID" />
+4
+<br /><b>tunnelConfigID</b>
+
+</td><td>
+<font color="red">DEPRECATED</font><br />
+  INTEGER32
+      <br />Legal values:
+        1 .. 2147483647
+
+  </td><td>NoAccess</td>
+<td>
+<pre>
+An identifier used to distinguish between multiple
+tunnels of the same encapsulation method, with the
+same endpoints.  If the encapsulation protocol only
+allows one tunnel per set of endpoint addresses (such
+as for GRE or IP-in-IP), the value of this object is
+1.  For encapsulation methods (such as L2F) which
+allow multiple parallel tunnels, the manager is
+responsible for choosing any ID which does not
+conflict with an existing row, such as choosing a
+random number.
+
+Since this object does not support IPv6, it is
+deprecated in favor of tunnelInetConfigID.
+</pre>
+</td>
+  </tr>
+</table>
+
+  <h4>Other tunnelConfigTable Columns:</h4>
+<table>
+<tr class="label"><th>Name</th><th>Type</th><th>Access</th><th>Description</th></tr>
+  <tr>
+  <td class="deprecated">
+<a name="tunnelConfigIfIndex" />
+5
+<br /><b>tunnelConfigIfIndex</b>
+
+</td><td>
+<font color="red">DEPRECATED</font><br />
+  INTEGER32
+      <br />Legal values:
+        0 .. 2147483647
+ <br>
+ <a href="#InterfaceIndexOrZero">InterfaceIndexOrZero</a>
+
+  </td><td>ReadOnly</td>
+<td>
+<p>
+Note: this object is based on the <a href="#InterfaceIndexOrZero"> InterfaceIndexOrZero TEXTUAL-CONVENTION</a>.
+</p>
+<pre>
+If the value of tunnelConfigStatus for this row is
+active, then this object contains the value of ifIndex
+corresponding to the tunnel interface.  A value of 0
+is not legal in the active state, and means that the
+interface index has not yet been assigned.
+
+Since this object does not support IPv6, it is
+deprecated in favor of tunnelInetConfigIfIndex.
+</pre>
+</td>
+  </tr>
+  <tr>
+  <td class="deprecated">
+<a name="tunnelConfigStatus" />
+6
+<br /><b>tunnelConfigStatus</b>
+
+</td><td>
+<font color="red">DEPRECATED</font><br />
+  INTEGER
+ <br>
+ <a href="#RowStatus">RowStatus</a>
+     <br>(ENUM list below)
+
+  </td><td>Create</td>
+<td>
+<p>
+Note: this object is based on the <a href="#RowStatus"> RowStatus TEXTUAL-CONVENTION</a>.
+</p>
+<pre>
+The status of this row, by which new entries may be
+created, or old entries deleted from this table.  The
+agent need not support setting this object to
+createAndWait or notInService since there are no other
+writable objects in this table, and writable objects
+in rows of corresponding tables such as the
+tunnelIfTable may be modified while this row is
+active.
+
+To create a row in this table for an encapsulation
+method which does not support multiple parallel
+tunnels with the same endpoints, the management
+station should simply use a tunnelConfigID of 1, and
+set tunnelConfigStatus to createAndGo.  For
+encapsulation methods such as L2F which allow multiple
+parallel tunnels, the management station may select a
+pseudo-random number to use as the tunnelConfigID and
+set tunnelConfigStatus to createAndGo.  In the event
+that this ID is already in use and an
+inconsistentValue is returned in response to the set
+operation, the management station should simply select
+a new pseudo-random number and retry the operation.
+
+Creating a row in this table will cause an interface
+index to be assigned by the agent in an
+implementation-dependent manner, and corresponding
+rows will be instantiated in the ifTable and the
+tunnelIfTable.  The status of this row will become
+active as soon as the agent assigns the interface
+index, regardless of whether the interface is
+operationally up.
+
+Deleting a row in this table will likewise delete the
+corresponding row in the ifTable and in the
+tunnelIfTable.
+
+Since this object does not support IPv6, it is
+deprecated in favor of tunnelInetConfigStatus.
+</pre>
+</td>
+  </tr>
+</table>
+</ul>
 
 <br>
+  </table>
+<hr />
 <a name="notifications" />
 <h2>NOTIFICATIONS</h2>
 <ul>
@@ -483,6 +932,7 @@ corresponding row in the ifTable and in the tunnelIfTable.
 
 
 <br>
+<hr />
 <a name="textconventions" />
 <h2>TEXTUAL CONVENTIONS</h2>
 <ul>
@@ -493,10 +943,196 @@ repeatedly by other MIB objects.  Any implementation implementing
 objects that use one of these definitions must follow its DESCRIPTION
 clause as well as the DESCRIPTION clause of the object itself.
 </p>
-<table border=2 bgcolor="#dddddd"><tr bgcolor="bbbbbb"><th>Name</th><th>Type</th><th>Description</th></tr>
-<tr><td><a name="RowStatus">RowStatus</td><td>INTEGER<table border=2 bgcolor="#cccccc"><tr><th>Value</th><th>Label/Meaning</th></tr><tr><td>1</td><td>active</td></tr><tr><td>2</td><td>notInService</td></tr><tr><td>3</td><td>notReady</td></tr><tr><td>4</td><td>createAndGo</td></tr><tr><td>5</td><td>createAndWait</td></tr><tr><td>6</td><td>destroy</td></tr></table></td><td><pre></pre></td></tr>
-<tr><td><a name="InterfaceIndexOrZero">InterfaceIndexOrZero</td><td>INTEGER32</td><td><pre></pre></td></tr>
-<tr><td><a name="InterfaceIndex">InterfaceIndex</td><td>INTEGER32</td><td><pre></pre></td></tr>
+<table><tr class="label"><th>Name</th><th>Type</th><th>Description</th></tr>
+<tr><td><a name="IPv6FlowLabelOrAny">IPv6FlowLabelOrAny</td><td>INTEGER32</td><td><pre>The flow identifier or Flow Label in an IPv6
+packet header that may be used to discriminate
+traffic flows.  The value of -1 is used to
+indicate a wildcard, i.e. any value.
+                  </pre></td></tr>
+<tr><td><a name="InterfaceIndex">InterfaceIndex</td><td>INTEGER32</td><td><pre>A unique value, greater than zero, for each interface or
+interface sub-layer in the managed system.  It is
+recommended that values are assigned contiguously starting
+from 1.  The value for each interface sub-layer must remain
+constant at least from one re-initialization of the entity's
+network management system to the next re-initialization.</pre></td></tr>
+<tr><td><a name="StorageType">StorageType</td><td>INTEGER<table class="enums"><tr><th>Value</th><th>Label/Meaning</th></tr><tr><td>1</td><td>other</td></tr><tr><td>2</td><td>volatile</td></tr><tr><td>3</td><td>nonVolatile</td></tr><tr><td>4</td><td>permanent</td></tr><tr><td>5</td><td>readOnly</td></tr></table></td><td><pre>Describes the memory realization of a conceptual row.  A
+row which is volatile(2) is lost upon reboot.  A row which
+is either nonVolatile(3), permanent(4) or readOnly(5), is
+backed up by stable storage.  A row which is permanent(4)
+can be changed but not deleted.  A row which is readOnly(5)
+cannot be changed nor deleted.
+
+If the value of an object with this syntax is either
+permanent(4) or readOnly(5), it cannot be written.
+Conversely, if the value is either other(1), volatile(2) or
+nonVolatile(3), it cannot be modified to be permanent(4) or
+readOnly(5).  (All illegal modifications result in a
+'wrongValue' error.)
+
+Every usage of this textual convention is required to
+specify the columnar objects which a permanent(4) row must
+at a minimum allow to be writable.</pre></td></tr>
+<tr><td><a name="InetAddress">InetAddress</td><td>OCTETSTR</td><td><pre>Denotes a generic Internet address.
+An InetAddress value is always interpreted within the context
+         of an InetAddressType value.  Every usage of the InetAddress
+         textual convention is required to specify the InetAddressType
+         object that provides the context.  It is suggested that the
+         InetAddressType object be logically registered before the
+         object(s) that use the InetAddress textual convention, if
+         they appear in the same logical row.
+The value of an InetAddress object must always be
+         consistent with the value of the associated InetAddressType
+         object.  Attempts to set an InetAddress object to a value
+         inconsistent with the associated InetAddressType
+         must fail with an inconsistentValue error.
+When this textual convention is used as the syntax of an
+         index object, there may be issues with the limit of 128
+         sub-identifiers specified in SMIv2, STD 58.  In this case,
+         the object definition MUST include a 'SIZE' clause to
+         limit the number of potential instance sub-identifiers;
+         otherwise the applicable constraints MUST be stated in
+         the appropriate conceptual row DESCRIPTION clauses, or
+         in the surrounding documentation if there is no single
+         DESCRIPTION clause that is appropriate.</pre></td></tr>
+<tr><td><a name="InetAddressType">InetAddressType</td><td>INTEGER<table class="enums"><tr><th>Value</th><th>Label/Meaning</th></tr><tr><td>0</td><td>unknown</td></tr><tr><td>1</td><td>ipv4</td></tr><tr><td>2</td><td>ipv6</td></tr><tr><td>3</td><td>ipv4z</td></tr><tr><td>4</td><td>ipv6z</td></tr><tr><td>16</td><td>dns</td></tr></table></td><td><pre>A value that represents a type of Internet address.
+unknown(0)  An unknown address type.  This value MUST
+                     be used if the value of the corresponding
+                     InetAddress object is a zero-length string.
+                     It may also be used to indicate an IP address
+                     that is not in one of the formats defined
+                     below.
+ipv4(1)     An IPv4 address as defined by the
+                     InetAddressIPv4 textual convention.
+ipv6(2)     An IPv6 address as defined by the
+                     InetAddressIPv6 textual convention.
+ipv4z(3)    A non-global IPv4 address including a zone
+                     index as defined by the InetAddressIPv4z
+                     textual convention.
+ipv6z(4)    A non-global IPv6 address including a zone
+                     index as defined by the InetAddressIPv6z
+                     textual convention.
+dns(16)     A DNS domain name as defined by the
+                     InetAddressDNS textual convention.
+Each definition of a concrete InetAddressType value must be
+         accompanied by a definition of a textual convention for use
+         with that InetAddressType.
+To support future extensions, the InetAddressType textual
+         convention SHOULD NOT be sub-typed in object type definitions.
+         It MAY be sub-typed in compliance statements in order to
+         require only a subset of these address types for a compliant
+         implementation.
+Implementations must ensure that InetAddressType objects
+         and any dependent objects (e.g., InetAddress objects) are
+         consistent.  An inconsistentValue error must be generated
+         if an attempt to change an InetAddressType object would,
+         for example, lead to an undefined InetAddress value.  In
+particular, InetAddressType/InetAddress pairs must be
+         changed together if the address type changes (e.g., from
+         ipv6(2) to ipv4(1)).</pre></td></tr>
+<tr><td><a name="RowStatus">RowStatus</td><td>INTEGER<table class="enums"><tr><th>Value</th><th>Label/Meaning</th></tr><tr><td>1</td><td>active</td></tr><tr><td>2</td><td>notInService</td></tr><tr><td>3</td><td>notReady</td></tr><tr><td>4</td><td>createAndGo</td></tr><tr><td>5</td><td>createAndWait</td></tr><tr><td>6</td><td>destroy</td></tr></table></td><td><pre>The RowStatus textual convention is used to manage the
+creation and deletion of conceptual rows, and is used as the
+value of the SYNTAX clause for the status column of a
+conceptual row (as described in Section 7.7.1 of [2].)
+
+The status column has six defined values:
+
+     - `active', which indicates that the conceptual row is
+     available for use by the managed device;
+
+     - `notInService', which indicates that the conceptual
+     row exists in the agent, but is unavailable for use by
+     the managed device (see NOTE below); 'notInService' has
+     no implication regarding the internal consistency of
+     the row, availability of resources, or consistency with
+     the current state of the managed device;
+
+     - `notReady', which indicates that the conceptual row
+     exists in the agent, but is missing information
+     necessary in order to be available for use by the
+     managed device (i.e., one or more required columns in
+     the conceptual row have not been instanciated);
+
+     - `createAndGo', which is supplied by a management
+     station wishing to create a new instance of a
+     conceptual row and to have its status automatically set
+     to active, making it available for use by the managed
+     device;
+
+     - `createAndWait', which is supplied by a management
+     station wishing to create a new instance of a
+     conceptual row (but not make it available for use by
+     the managed device); and,
+     - `destroy', which is supplied by a management station
+     wishing to delete all of the instances associated with
+     an existing conceptual row.
+
+Whereas five of the six values (all except `notReady') may
+be specified in a management protocol set operation, only
+three values will be returned in response to a management
+protocol retrieval operation:  `notReady', `notInService' or
+`active'.  That is, when queried, an existing conceptual row
+has only three states:  it is either available for use by
+the managed device (the status column has value `active');
+it is not available for use by the managed device, though
+the agent has sufficient information to attempt to make it
+so (the status column has value `notInService'); or, it is
+not available for use by the managed device, and an attempt
+to make it so would fail because the agent has insufficient
+information (the state column has value `notReady').
+
+                         NOTE WELL
+
+     This textual convention may be used for a MIB table,
+     irrespective of whether the values of that table's
+     conceptual rows are able to be modified while it is
+     active, or whether its conceptual rows must be taken
+     out of service in order to be modified.  That is, it is
+     the responsibility of the DESCRIPTION clause of the
+     status column to specify whether the status column must
+     not be `active' in order for the value of some other
+     column of the same conceptual row to be modified.  If
+     such a specification is made, affected columns may be
+     changed by an SNMP set PDU if the RowStatus would not
+     be equal to `active' either immediately before or after
+     processing the PDU.  In other words, if the PDU also
+     contained a varbind that would change the RowStatus
+     value, the column in question may be changed if the
+     RowStatus was not equal to `active' as the PDU was
+     received, or if the varbind sets the status</pre></td></tr>
+<tr><td><a name="IANAtunnelType">IANAtunnelType</td><td>INTEGER<table class="enums"><tr><th>Value</th><th>Label/Meaning</th></tr><tr><td>1</td><td>other</td></tr><tr><td>2</td><td>direct</td></tr><tr><td>3</td><td>gre</td></tr><tr><td>4</td><td>minimal</td></tr><tr><td>5</td><td>l2tp</td></tr><tr><td>6</td><td>pptp</td></tr><tr><td>7</td><td>l2f</td></tr><tr><td>8</td><td>udp</td></tr><tr><td>9</td><td>atmp</td></tr><tr><td>10</td><td>msdp</td></tr><tr><td>11</td><td>sixToFour</td></tr><tr><td>12</td><td>sixOverFour</td></tr><tr><td>13</td><td>isatap</td></tr><tr><td>14</td><td>teredo</td></tr><tr><td>15</td><td>ipHttps</td></tr></table></td><td><pre>The encapsulation method used by a tunnel. The value
+direct indicates that a packet is encapsulated
+directly within a normal IP header, with no
+intermediate header, and unicast to the remote tunnel
+endpoint (e.g., an RFC 2003 IP-in-IP tunnel, or an RFC
+1933 IPv6-in-IPv4 tunnel). The value minimal indicates
+that a Minimal Forwarding Header (RFC 2004) is
+inserted between the outer header and the payload
+packet. The value UDP indicates that the payload
+packet is encapsulated within a normal UDP packet
+(e.g., RFC 1234).
+
+The values sixToFour, sixOverFour, and isatap
+indicates that an IPv6 packet is encapsulated directly
+within an IPv4 header, with no intermediate header,
+and unicast to the destination determined by the 6to4,
+6over4, or ISATAP protocol.
+
+The remaining protocol-specific values indicate that a
+header of the protocol of that name is inserted
+between the outer header and the payload header.
+
+The assignment policy for IANAtunnelType values is
+identical to the policy for assigning IANAifType
+values.</pre></td></tr>
+<tr><td><a name="InterfaceIndexOrZero">InterfaceIndexOrZero</td><td>INTEGER32</td><td><pre>This textual convention is an extension of the
+InterfaceIndex convention.  The latter defines a greater
+than zero value used to identify an interface or interface
+sub-layer in the managed system.  This extension permits the
+additional value of zero.  the value zero is object-specific
+and must therefore be defined as part of the description of
+any object which uses this syntax.  Examples of the usage of
+zero might include situations where interface was unknown,
+or when none or all interfaces need to be referenced.</pre></td></tr>
 </table></ul>
 
 <a name="treeview" />
@@ -517,39 +1153,90 @@ clause as well as the DESCRIPTION clause of the object itself.
    |     |     +-- -R-- IpAddr    <a href="#tunnelIfLocalAddress">tunnelIfLocalAddress</a>(1)
    |     |     +-- -R-- IpAddr    <a href="#tunnelIfRemoteAddress">tunnelIfRemoteAddress</a>(2)
    |     |     +-- -R-- EnumVal   <a href="#tunnelIfEncapsMethod">tunnelIfEncapsMethod</a>(3)
-   |     |     |        Values: other(1), direct(2), gre(3), minimal(4), l2tp(5), pptp(6), l2f(7), udp(8), atmp(9)
+   |     |     |        Textual Convention: <a href="#IANAtunnelType">IANAtunnelType</a>
+   |     |     |        Values: other(1), direct(2), gre(3), minimal(4), l2tp(5), pptp(6), l2f(7), udp(8), atmp(9), msdp(10), sixToFour(11), sixOverFour(12), isatap(13), teredo(14), ipHttps(15)
    |     |     +-- -RW- Integer32 <a href="#tunnelIfHopLimit">tunnelIfHopLimit</a>(4)
-   |     |     |        Range: 0..255
+   |     |     |        Range: 0 | 1..255
    |     |     +-- -R-- EnumVal   <a href="#tunnelIfSecurity">tunnelIfSecurity</a>(5)
    |     |     |        Values: none(1), ipsec(2), other(3)
    |     |     +-- -RW- Integer32 <a href="#tunnelIfTOS">tunnelIfTOS</a>(6)
-   |     |              Range: -2..63
+   |     |     |        Range: -2..63
+   |     |     +-- -RW- Integer32 <a href="#tunnelIfFlowLabel">tunnelIfFlowLabel</a>(7)
+   |     |     |        Textual Convention: <a href="#IPv6FlowLabelOrAny">IPv6FlowLabelOrAny</a>
+   |     |     |        Range: -1 | 0..1048575
+   |     |     +-- -RW- EnumVal   <a href="#tunnelIfAddressType">tunnelIfAddressType</a>(8)
+   |     |     |        Textual Convention: <a href="#InetAddressType">InetAddressType</a>
+   |     |     |        Values: unknown(0), ipv4(1), ipv6(2), ipv4z(3), ipv6z(4), dns(16)
+   |     |     +-- -RW- String    <a href="#tunnelIfLocalInetAddress">tunnelIfLocalInetAddress</a>(9)
+   |     |     |        Textual Convention: <a href="#InetAddress">InetAddress</a>
+   |     |     |        Size: 0..255
+   |     |     +-- -RW- String    <a href="#tunnelIfRemoteInetAddress">tunnelIfRemoteInetAddress</a>(10)
+   |     |     |        Textual Convention: <a href="#InetAddress">InetAddress</a>
+   |     |     |        Size: 0..255
+   |     |     +-- -RW- Integer32 <a href="#tunnelIfEncapsLimit">tunnelIfEncapsLimit</a>(11)
+   |     |              Range: -1 | 0..255
    |     |
    |     +--<a href="#tunnelConfigTable">tunnelConfigTable</a>(2)
+   |     |  |
+   |     |  +--<a href="#tunnelConfigEntry">tunnelConfigEntry</a>(1)
+   |     |     |  Index: tunnelConfigLocalAddress, tunnelConfigRemoteAddress, tunnelConfigEncapsMethod, tunnelConfigID
+   |     |     |
+   |     |     +-- ---- IpAddr    <a href="#tunnelConfigLocalAddress">tunnelConfigLocalAddress</a>(1)
+   |     |     +-- ---- IpAddr    <a href="#tunnelConfigRemoteAddress">tunnelConfigRemoteAddress</a>(2)
+   |     |     +-- ---- EnumVal   <a href="#tunnelConfigEncapsMethod">tunnelConfigEncapsMethod</a>(3)
+   |     |     |        Textual Convention: <a href="#IANAtunnelType">IANAtunnelType</a>
+   |     |     |        Values: other(1), direct(2), gre(3), minimal(4), l2tp(5), pptp(6), l2f(7), udp(8), atmp(9), msdp(10), sixToFour(11), sixOverFour(12), isatap(13), teredo(14), ipHttps(15)
+   |     |     +-- ---- Integer32 <a href="#tunnelConfigID">tunnelConfigID</a>(4)
+   |     |     |        Range: 1..2147483647
+   |     |     +-- -R-- Integer32 <a href="#tunnelConfigIfIndex">tunnelConfigIfIndex</a>(5)
+   |     |     |        Textual Convention: <a href="#InterfaceIndexOrZero">InterfaceIndexOrZero</a>
+   |     |     |        Range: 0..2147483647
+   |     |     +-- CR-- EnumVal   <a href="#tunnelConfigStatus">tunnelConfigStatus</a>(6)
+   |     |              Textual Convention: <a href="#RowStatus">RowStatus</a>
+   |     |              Values: active(1), notInService(2), notReady(3), createAndGo(4), createAndWait(5), destroy(6)
+   |     |
+   |     +--<a href="#tunnelInetConfigTable">tunnelInetConfigTable</a>(3)
    |        |
-   |        +--<a href="#tunnelConfigEntry">tunnelConfigEntry</a>(1)
-   |           |  Index: tunnelConfigLocalAddress, tunnelConfigRemoteAddress, tunnelConfigEncapsMethod, tunnelConfigID
+   |        +--<a href="#tunnelInetConfigEntry">tunnelInetConfigEntry</a>(1)
+   |           |  Index: tunnelInetConfigAddressType, tunnelInetConfigLocalAddress, tunnelInetConfigRemoteAddress, tunnelInetConfigEncapsMethod, tunnelInetConfigID
    |           |
-   |           +-- ---- IpAddr    <a href="#tunnelConfigLocalAddress">tunnelConfigLocalAddress</a>(1)
-   |           +-- ---- IpAddr    <a href="#tunnelConfigRemoteAddress">tunnelConfigRemoteAddress</a>(2)
-   |           +-- ---- EnumVal   <a href="#tunnelConfigEncapsMethod">tunnelConfigEncapsMethod</a>(3)
-   |           |        Values: other(1), direct(2), gre(3), minimal(4), l2tp(5), pptp(6), l2f(7), udp(8), atmp(9)
-   |           +-- ---- Integer32 <a href="#tunnelConfigID">tunnelConfigID</a>(4)
+   |           +-- ---- EnumVal   <a href="#tunnelInetConfigAddressType">tunnelInetConfigAddressType</a>(1)
+   |           |        Textual Convention: <a href="#InetAddressType">InetAddressType</a>
+   |           |        Values: unknown(0), ipv4(1), ipv6(2), ipv4z(3), ipv6z(4), dns(16)
+   |           +-- ---- String    <a href="#tunnelInetConfigLocalAddress">tunnelInetConfigLocalAddress</a>(2)
+   |           |        Textual Convention: <a href="#InetAddress">InetAddress</a>
+   |           |        Size: 0..255
+   |           +-- ---- String    <a href="#tunnelInetConfigRemoteAddress">tunnelInetConfigRemoteAddress</a>(3)
+   |           |        Textual Convention: <a href="#InetAddress">InetAddress</a>
+   |           |        Size: 0..255
+   |           +-- ---- EnumVal   <a href="#tunnelInetConfigEncapsMethod">tunnelInetConfigEncapsMethod</a>(4)
+   |           |        Textual Convention: <a href="#IANAtunnelType">IANAtunnelType</a>
+   |           |        Values: other(1), direct(2), gre(3), minimal(4), l2tp(5), pptp(6), l2f(7), udp(8), atmp(9), msdp(10), sixToFour(11), sixOverFour(12), isatap(13), teredo(14), ipHttps(15)
+   |           +-- ---- Integer32 <a href="#tunnelInetConfigID">tunnelInetConfigID</a>(5)
    |           |        Range: 1..2147483647
-   |           +-- -R-- Integer32 <a href="#tunnelConfigIfIndex">tunnelConfigIfIndex</a>(5)
+   |           +-- -R-- Integer32 <a href="#tunnelInetConfigIfIndex">tunnelInetConfigIfIndex</a>(6)
    |           |        Textual Convention: <a href="#InterfaceIndexOrZero">InterfaceIndexOrZero</a>
    |           |        Range: 0..2147483647
-   |           +-- CR-- EnumVal   <a href="#tunnelConfigStatus">tunnelConfigStatus</a>(6)
-   |                    Textual Convention: <a href="#RowStatus">RowStatus</a>
-   |                    Values: active(1), notInService(2), notReady(3), createAndGo(4), createAndWait(5), destroy(6)
+   |           +-- CR-- EnumVal   <a href="#tunnelInetConfigStatus">tunnelInetConfigStatus</a>(7)
+   |           |        Textual Convention: <a href="#RowStatus">RowStatus</a>
+   |           |        Values: active(1), notInService(2), notReady(3), createAndGo(4), createAndWait(5), destroy(6)
+   |           +-- CR-- EnumVal   <a href="#tunnelInetConfigStorageType">tunnelInetConfigStorageType</a>(8)
+   |                    Textual Convention: <a href="#StorageType">StorageType</a>
+   |                    Values: other(1), volatile(2), nonVolatile(3), permanent(4), readOnly(5)
    |
    +--<a href="#tunnelMIBConformance">tunnelMIBConformance</a>(2)
       |
       +--<a href="#tunnelMIBCompliances">tunnelMIBCompliances</a>(1)
       |  |
       |  +--<a href="#tunnelMIBCompliance">tunnelMIBCompliance</a>(1)
+      |  +--<a href="#tunnelMIBInetFullCompliance">tunnelMIBInetFullCompliance</a>(2)
+      |  +--<a href="#tunnelMIBInetReadOnlyCompliance">tunnelMIBInetReadOnlyCompliance</a>(3)
       |
       +--<a href="#tunnelMIBGroups">tunnelMIBGroups</a>(2)
          |
          +--<a href="#tunnelMIBBasicGroup">tunnelMIBBasicGroup</a>(1)
+         +--<a href="#tunnelMIBInetGroup">tunnelMIBInetGroup</a>(2)
 </pre>
+<!-- CONTENT END -->
+<!--#include virtual="/page-bottom.html" -->
+
