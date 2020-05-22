@@ -21,11 +21,13 @@
       which we'll then compile into a dynamic module.
 
       For example purposes, we'll refer to some example MIB objects
-      and code: the <a
-      href="../mib_module/NET-SNMP-TUTORIAL-MIB.txt">NET-SNMP-TUTORIAL-MIB</a>
-      MIB, and the <a href="nstAgentPluginObject.c">example mib
-      module</a> and it's <a href="nstAgentPluginObject.h">header
-      file</a>.
+      and code: the
+      <a href="https://github.com/net-snmp/subagent-example/blob/master/NET-SNMP-TUTORIAL-MIB.txt"
+	 >NET-SNMP-TUTORIAL-MIB</a> MIB, and the
+      <a href="https://github.com/net-snmp/subagent-example/blob/master/nstAgentPluginObject.c"
+	 >example mib module</a> and it's
+      <a href="https://github.com/net-snmp/subagent-example/blob/master/nstAgentPluginObject.h"
+	 >header file</a>.
 
     <p><b>Note:</b> For this to work, you must have compiled the
       net-snmp package with dynamicly loadable module support turned
@@ -42,25 +44,8 @@
     course, must have a matching /usr/local/share/snmp/snmpd.conf file 
     (or equivalent).
 
-    <p>
-      Here are the files discussed in this example so you can download
-      them:
-      <center>
-      <table border=1>
-	<tr><th>File</th><th>Description</th></tr>
-	<tr><td><a
-	href="../demoapp/Makefile">Makefile</a></td><td>A simple makefile 
-	used to build the projects</td>
-	<tr><td><a
-	href="../mib_module/NET-SNMP-TUTORIAL-MIB.txt">NET-SNMP-TUTORIAL-MIB.txt</a></td><td>The MIB we'll be writing
-	code for</td>
-	<tr><td><a
-	href="nstAgentPluginObject.h">nstAgentPluginObject.h</a></td><td>The mib module's header file</td>
-	<tr><td><a
-	href="nstAgentPluginObject.c">nstAgentPluginObject.c</a></td><td>The mib module's C source code</td>
-      </table>
-      </center>
-      <hr>
+    <p>Download the example files as follows:
+      <pre>git clone https://github.com/net-snmp/subagent-example.git</pre></p>
     <p>
       The shared object loader calls the "init_nstAgentPluginObject()"
       function in the above code when it gets loaded, and calls the
@@ -69,14 +54,7 @@
       shared object's module name (UCD-DLMOD-MIB::dlmodName) to the
       `init_' and `deinit_' prefixes.
       <p>
-      Steps to build the shared object:
-      <ol>
-	<li>First off we must get the 
-<a href="../demoapp/Makefile">Makefile</a> file, the <a
-href="nstAgentPluginObject.h">nstAgentPluginObject.h</a> file, and the <a
-href="nstAgentPluginObject.c">nstAgentPluginObject.c</a> file.
-	<li><b>make nstAgentPluginObject.so</b>
-    </ol>
+      Build the shared object as follows: <b>make nstAgentPluginObject.so</b>.
     <p>
       Steps to test the shared object:
       <ol>

@@ -38,11 +38,14 @@
 
     <p>
       For example purposes, we'll refer to some example MIB objects
-      and code: the <a
-      href="../mib_module/NET-SNMP-TUTORIAL-MIB.txt">NET-SNMP-TUTORIAL-MIB</a>
-      MIB, and the <a href="nstAgentSubagentObject.c">example mib
-      module</a> and it's <a href="nstAgentSubagentObject.h">header
-      file</a>.
+      and code: the
+      <a href="https://github.com/net-snmp/subagent-example/blob/master/NET-SNMP-TUTORIAL-MIB.txt"
+	 >NET-SNMP-TUTORIAL-MIB</a>
+      MIB, and the
+      <a href="https://github.com/net-snmp/subagent-example/blob/master/nstAgentSubagentObject.c"
+	 >example mib module</a> and it's
+      <a href="https://github.com/net-snmp/subagent-example/blob/master/nstAgentSubagentObject.h"
+	 >header file</a>.
 
     <p>
       There are two ways to compile a mib module into a subagent.
@@ -118,22 +121,8 @@ NET-SNMP-TUTORIAL-MIB::nstAgentSubagentObject.0 = INTEGER: 5
       <b>net-snmp-config --compile-subagent</b> script is doing for
       you above.
     <p>
-      First, the example files you'll need:
-      <center><table border=1>
-	<tr><th>File</th><th>Description</th></tr>
-	<tr><td><a
-	href="../demoapp/Makefile">Makefile</a></td><td>A simple makefile 
-	used to build the demon</td>
-	<tr><td><a
-	href="example-demon.c">example-demon.c</a></td><td>The
-	main() code for our demon</td></tr>
-	<tr><td><a
-	href="nstAgentSubagentObject.c">nstAgentSubagentObject.c</a></td><td>The
-	nstAgentSubagentObject.c mib C code file</td></tr>
-	<tr><td><a
-	href="nstAgentSubagentObject.h">nstAgentSubagentObject.h</a></td><td>The
-	nstAgentSubagentObject.h mib code header file</td></tr>
-      </table></center>
+      First, download the example files as follows:
+      <pre>git clone https://github.com/net-snmp/subagent-example.git</pre></p>
     <p>
       Build the example demon using the Makefile, as shown below.
       Note that to compile it, the Makefile uses the net-snmp-config
