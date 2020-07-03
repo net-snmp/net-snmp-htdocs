@@ -109,7 +109,7 @@ ifTable_init_data(ifTable_registration_ptr ifTable_reg)
     valid_columns.isRange = 0;
     valid_columns.details.list = my_columns;
     valid_columns.list_count = sizeof(my_columns)/sizeof(int);
-    ifTable_valid_columns_set(&valid_columns);
+    ifTable_valid_columns_set(&amp;valid_columns);
 
     _choose_proc_format();</font>
     /*
