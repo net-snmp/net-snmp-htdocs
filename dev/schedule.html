@@ -4,123 +4,35 @@
 
 <p class="SectionTitle">Release Schedule</p>
 
-<p>The Net-SNMP project has adopted a release schedule target
-of issuing a "leading-edge" version of the code (either
-a new branch, or a minor-number release of the most recent branch)
-approximately every three months (or more quickly if this is
-deemed appropriate).
-The aim is to ensure that patches, bug fixes and new features
-will be made generally available reasonably promptly.
-
-<p>The previous two code branches will continue to see minor-number
-releases, to ensure that bug fixes on those lines also make it into
-active service.  Earlier branches will typically be marked as
-"end-of-line", and will see no further development activity
-(other than in exceptional circumstances).
-
-<p>However, starting with the 5.4.x line, every third code branch
-will be designated a <B>Long Term Release</B>.  Instead of being
-marked "end-of-line" when the next-but-two branch is first released,
-such lines will continue to be maintained until the next-but-fifth
-branch appears.  Note that both of these are also Long Term Release
-branches - hence there will always be two Long Term Release, and two
-normal code branches receiving active support and development.
-
-<H3>Release Timing</H3>
-<p>As indicated above, the aim is to issue a leading-edge release every
-three months or so.  Releases on the older lines are likely to be less
-frequent, but should appear every six to nine months - although this may
-well stretch as the code matures and attention switches to the newer
-lines.  (There's no point in making a release on a new branch just for
-the sake of it, unless there are actually some changes or bug fixes to
-be made available.)
-
-<p>Note that these are general guidelines, rather than firm commitments,
-and we fully expect to miss this timescale as often as not.
-Similarly any release dates in the tables below should be regarded as
-provisional targets.
-All questions relating to schedule timelines should be sent to the
-<a
-href="mailto:net-snmp-coders@lists.sourceforge.net">net-snmp-coders</a>
-
-
+<p>The Net-SNMP project releases patch releases off of a git branch
+  named <em>V5-9-patches</em> (for example) and full releases off of
+  the <em>master</em> branch.  All changes to the patches branch are
+  regularly rolled into the master branch.</p>
+  
+<p>Any code changes implementing new features or requiring API
+  updates, etc, must only go into the master branch.  Patches branches
+  are for bug fixes only.</p>
 
 <h3>Active Release Branches</h3>
 <table>
   <tr><th>Net-SNMP Branch</th>
-      <th>Current Version</th>
       <th>GIT head       </th>
       <th>Next Version   </th>
       <th>Tentative Release Date</th>
       <th>Release Manager</th>
   </tr>
-  <tr><td>5.4.x</td>
-      <td>5.4.4  <br><i>2011-06-24</i></td>
-      <td>V5-4-patches</td>
-      <td align="right"> </td>
-      <td align="center"> </td>
-      <td>(<i>Long Term Release</i>) </td>
-  </tr>
-  <tr><td>5.5.x </td>
-      <td>5.5.2 <br><i>2012-07-18</i></td>
-      <td>V5-5-patches</td>
-      <td align="right">5.5.3 </td>
-      <td align="center">? </td>
-      <td>Dave Shield </td>
-  </tr>
-  <tr><td>5.6.x </td>
-      <td>5.6.2 <br><i>2012-07-19</i></td>
-      <td>V5-6-patches</td>
-      <td align="right">5.6.3 </td>
-      <td align="center">? </td>
-      <td>Dave Shield </td>
-  </tr>
-  <tr><td>5.7.x </td>
-      <td>5.7.2 <br><i>2012-10-10</i></td>
-      <td>V5-7-patches</td>
-      <td align="right"> 5.7.3 </td>
+  <tr><td>5.9.x </td>
+      <td>V5-9-patches</td>
+      <td align="right"> 5.9.1 </td>
       <td align="center">? </td>
       <td>Wes Hardaker</td>
   </tr>
-  <tr><td>trunk</td>
+  <tr><td>master</td>
       <td>     </td>
       <td>master</td>
       <td align="right"> </td>
       <td align="center"> </td>
       <td><i>Development code</i></td>
-  </tr>
-</table>
-
-
-<h3>Closed Branches</h3>
-
-<p>The following branches are regarded as "end-of-life".
-There will be no further work done on these (barring very
-exceptional circumstances)
-<table>
-  <tr><th>Net-SNMP Branch</th>
-      <th>Final Version  </th>
-      <th>GIT head</th>
-  </tr>
-  <tr><td>4.2.x</td>
-      <td>4.2.7.1<br><i>2008-06-09</i></td>
-      <td>V4-2-patches</td>
-  </tr>
-  <tr><td>5.0.x</td>
-      <td>5.0.11.2<br><i>2008-06-19</i></td>
-      <td>V5-0-patches</td>
-  </tr>
-  <tr><td>5.1.x</td>
-      <td>5.1.4.2<br><i>2008-06-19</i></td>
-      <td>V5-1-patches</td>
-  </tr>
-  <tr><td>5.2.x</td>
-      <td>5.2.6<br><i>2010-05-23</i></td>
-      <td>V5-2-patches</td>
-  </tr>
-  <tr><td>5.3.x</td>
-      <td>5.3.4<br><i>2011-06-22</i></td>
-      <td>V5-3-patches</td>
   </tr>
 </table>
 
