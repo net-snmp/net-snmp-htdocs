@@ -14,16 +14,16 @@ document as <b>.1.3.6.1.2.1.55</b>.
 <h3><a href="#objects_Current">Current Objects</a></h3>
 <ul>
 <li><a href="#scalar_current">Scalars</a></li>
+</ul>
+<h3><a href="#objects_Deprecated">Deprecated Objects</a></h3>
+<ul>
+<li><a href="#scalar_notcurrent">Deprecated Scalars</a></li>
   <li><a href="#ipv6IfTable">ipv6IfTable</a></li>
   <li><a href="#ipv6IfStatsTable">ipv6IfStatsTable</a></li>
   <li><a href="#ipv6AddrPrefixTable">ipv6AddrPrefixTable</a></li>
   <li><a href="#ipv6AddrTable">ipv6AddrTable</a></li>
   <li><a href="#ipv6RouteTable">ipv6RouteTable</a></li>
   <li><a href="#ipv6NetToMediaTable">ipv6NetToMediaTable</a></li>
-</ul>
-<h3><a href="#objects_Deprecated">Deprecated Objects</a></h3>
-<ul>
-<li><a href="#scalar_notcurrent">Deprecated Scalars</a></li>
 </ul>
 <h3><a href="#notifications">Notifications</a></h3>
 <h3><a href="#textconventions">Textual Conventions</a></h3>
@@ -35,13 +35,28 @@ document as <b>.1.3.6.1.2.1.55</b>.
 <ul>
 <table>
 <tr><th>Name</th><th>Type</th><th>Access</th><th>OID</th><th>Description</th></tr>
+</table>
+</ul>
+
+<h2>TABLE OBJECTS</h2>
+<a name="objects_Deprecated" />
+  <hr />
+  <h1><font color="red">DEPRECATED OR OBSOLETE OR HISTORIC OBJECTS</font></h1>
+  <br>
+  <table class="deprecated"><tr><td>
+<a name="scalar_notcurrent" />
+<h2>SCALAR OBJECTS</h2>
+<ul>
+<table>
+<tr><th>Name</th><th>Type</th><th>Access</th><th>OID</th><th>Description</th></tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6Forwarding" />
 1
 <br /><b>ipv6Forwarding</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   INTEGER
       <table class="enum">
       <tr><th>Value</th><th>Label/Meaning</th></tr>
@@ -50,7 +65,6 @@ document as <b>.1.3.6.1.2.1.55</b>.
       </table>
 
   </td><td>ReadWrite</td>
-    <td>.1.3.6.1.2.1.55.1.1</td>
 <td>
 <pre>
 The indication of whether this entity is acting
@@ -66,62 +80,70 @@ Accordingly, it is appropriate for an agent to
 return a `wrongValue' response if a management
 station attempts to change this object to an
 inappropriate value.
+
+This object is obsoleted by IP-MIB::ipv6IpForwarding.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6DefaultHopLimit" />
 2
 <br /><b>ipv6DefaultHopLimit</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   INTEGER
       <br />Legal values:
         0 .. 255
 
   </td><td>ReadWrite</td>
-    <td>.1.3.6.1.2.1.55.1.2</td>
 <td>
 <pre>
 The default value inserted into the Hop Limit
 field of the IPv6 header of datagrams originated
 at this entity, whenever a Hop Limit value is not
 supplied by the transport layer protocol.
+
+This object is obsoleted by IP-MIB::ipv6IpDefaultHopLimit.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6Interfaces" />
 3
 <br /><b>ipv6Interfaces</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   UNSIGNED32
 
   </td><td>ReadOnly</td>
-    <td>.1.3.6.1.2.1.55.1.3</td>
 <td>
 <pre>
 The number of IPv6 interfaces (regardless of
 their current state) present on this system.
+
+This object is obsolete; there is no direct replacement,
+but its value can be derived from the number of rows
+in the IP-MIB::ipv6InterfaceTable.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfTableLastChange" />
 4
 <br /><b>ipv6IfTableLastChange</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   TICKS
  <br>
  <a href="#TimeStamp">TimeStamp</a>
 
   </td><td>ReadOnly</td>
-    <td>.1.3.6.1.2.1.55.1.4</td>
 <td>
 <p>
 Note: this object is based on the <a href="#TimeStamp"> TimeStamp TEXTUAL-CONVENTION</a>.
@@ -129,50 +151,57 @@ Note: this object is based on the <a href="#TimeStamp"> TimeStamp TEXTUAL-CONVEN
 <pre>
 The value of sysUpTime at the time of the last
 insertion or removal of an entry in the
-ipv6IfTable. If the number of entries has been
+ipv6IfTable.  If the number of entries has been
 unchanged since the last re-initialization of
 the local network management subsystem, then this
 object contains a zero value.
+
+This object is obsoleted by
+IP-MIB::ipv6InterfaceTableLastChange.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6RouteNumber" />
 9
 <br /><b>ipv6RouteNumber</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   GAUGE
 
   </td><td>ReadOnly</td>
-    <td>.1.3.6.1.2.1.55.1.9</td>
 <td>
 <pre>
 The number of current ipv6RouteTable entries.
 This is primarily to avoid having to read
 the table in order to determine this number.
+
+This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteNumber.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6DiscardedRoutes" />
 10
 <br /><b>ipv6DiscardedRoutes</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   COUNTER
 
   </td><td>ReadOnly</td>
-    <td>.1.3.6.1.2.1.55.1.10</td>
 <td>
 <pre>
 The number of routing entries which were chosen
 to be discarded even though they are valid.  One
-possible reason for discarding such an entry could
-be to free-up buffer space for other routing
-entries.
+        possible reason for discarding such an entry could
+        be to free-up buffer space for other routing
+        entries.
+This object is obsoleted by
+        IP-FORWARD-MIB::inetCidrRouteDiscards.
 </pre>
 </td>
   </tr>
@@ -196,6 +225,8 @@ layer attachment to the layer immediately below
 
 IPv6 including internet layer 'tunnels', such as
 tunnels over IPv4 or IPv6 itself.
+
+This table is obsoleted by IP-MIB::ipv6InterfaceTable.
 </pre>
 </td>
 </tr>
@@ -204,6 +235,8 @@ tunnels over IPv4 or IPv6 itself.
 <pre>
 An interface entry containing objects
 about a particular IPv6 interface.
+
+This object is obsoleted by IP-MIB::ipv6InterfaceEntry.
 </pre>
 </td>
 </tr>
@@ -214,12 +247,13 @@ about a particular IPv6 interface.
 <table>
 <tr class="label"><th>Name</th><th>Type</th><th>Access</th><th>Description</th></tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfIndex" />
 1
 <br /><b>ipv6IfIndex</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   INTEGER32
       <br />Legal values:
         1 .. 2147483647
@@ -234,6 +268,9 @@ Note: this object is based on the <a href="#Ipv6IfIndex"> Ipv6IfIndex TEXTUAL-CO
 <pre>
 A unique non-zero value identifying
 the particular IPv6 interface.
+
+This object is obsoleted.  In the IP-MIB,
+interfaces are simply identified by IfIndex.
 </pre>
 </td>
   </tr>
@@ -243,12 +280,13 @@ the particular IPv6 interface.
 <table>
 <tr class="label"><th>Name</th><th>Type</th><th>Access</th><th>Description</th></tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfDescr" />
 2
 <br /><b>ipv6IfDescr</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   OCTETSTR
       <br />Legal Lengths:
         0 .. 255
@@ -264,16 +302,19 @@ Note: this object is based on the <a href="#DisplayString"> DisplayString TEXTUA
 A textual string containing information about the
 interface.  This string may be set by the network
 management system.
+
+This object is obsoleted by IF-MIB::ifDescr.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfLowerLayer" />
 3
 <br /><b>ipv6IfLowerLayer</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   OBJECTID
  <br>
  <a href="#VariablePointer">VariablePointer</a>
@@ -288,9 +329,9 @@ This object identifies the protocol layer over
 which this network interface operates.  If this
 network interface operates over the data-link
 layer, then the value of this object refers to an
-instance of ifIndex [6]. If this network interface
+instance of ifIndex [RFC1573].  If this network interface
 operates over an IPv4 interface, the value of this
-object refers to an instance of ipAdEntAddr [3].
+object refers to an instance of ipAdEntAddr [RFC1213].
 
 If this network interface operates over another
 IPv6 interface, the value of this object refers to
@@ -298,16 +339,20 @@ an instance of ipv6IfIndex.  If this network
 interface is not currently operating over an active
 protocol layer, then the value of this object
 should be set to the OBJECT ID { 0 0 }.
+
+This object is obsolete.  The IF-STACK-TABLE may
+be used to express relationships between interfaces.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfEffectiveMtu" />
 4
 <br /><b>ipv6IfEffectiveMtu</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   UNSIGNED32
 
   </td><td>ReadOnly</td>
@@ -316,16 +361,21 @@ should be set to the OBJECT ID { 0 0 }.
 The size of the largest IPv6 packet which can be
 sent/received on the interface, specified in
 octets.
+
+This object is obsolete.  The value of IF-MIB::ifMtu
+for the corresponding value of ifIndex represents the
+MTU of the interface.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfReasmMaxSize" />
 5
 <br /><b>ipv6IfReasmMaxSize</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   UNSIGNED32
       <br />Legal values:
         0 .. 65535
@@ -336,16 +386,19 @@ octets.
 The size of the largest IPv6 datagram which this
 entity can re-assemble from incoming IPv6 fragmented
 datagrams received on this interface.
+
+This object is obsoleted by IP-MIB::ipv6InterfaceReasmMaxSize.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfIdentifier" />
 6
 <br /><b>ipv6IfIdentifier</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   OCTETSTR
       <br />Legal Lengths:
         0 .. 8
@@ -360,21 +413,25 @@ Note: this object is based on the <a href="#Ipv6AddressIfIdentifier"> Ipv6Addres
 <pre>
 The Interface Identifier for this interface that
 is (at least) unique on the link this interface is
-        attached to. The Interface Identifier is combined
-        with an address prefix to form an interface address.
+attached to.  The Interface Identifier is combined
+with an address prefix to form an interface address.
+
 By default, the Interface Identifier is autoconfigured
-        according to the rules of the link type this
-        interface is attached to.
+according to the rules of the link type this
+interface is attached to.
+
+This object is obsoleted by IP-MIB::ipv6InterfaceIdentifier.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfIdentifierLength" />
 7
 <br /><b>ipv6IfIdentifierLength</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   INTEGER
       <br />Legal values:
         0 .. 64
@@ -383,16 +440,20 @@ By default, the Interface Identifier is autoconfigured
 <td>
 <pre>
 The length of the Interface Identifier in bits.
+This object is obsolete.  It can be derived from the length
+       of IP-MIB::ipv6InterfaceIdentifier; Interface Identifiers
+       that are not an even number of octets are not supported.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfPhysicalAddress" />
 8
 <br /><b>ipv6IfPhysicalAddress</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   OCTETSTR
  <br>
  <a href="#PhysAddress">PhysAddress</a>
@@ -403,26 +464,29 @@ The length of the Interface Identifier in bits.
 Note: this object is based on the <a href="#PhysAddress"> PhysAddress TEXTUAL-CONVENTION</a>.
 </p>
 <pre>
-The interface's physical address. For example, for
+The interface's physical address.  For example, for
 an IPv6 interface attached to an 802.x link, this
-object normally contains a MAC address. Note that
+object normally contains a MAC address.  Note that
 in some cases this address may differ from the
 address of the interface's protocol sub-layer.  The
 interface's media-specific MIB must define the bit
 and byte ordering and the format of the value of
-this object. For interfaces which do not have such
+this object.  For interfaces which do not have such
 an address (e.g., a serial line), this object should
 contain an octet string of zero length.
+
+This object is obsoleted by IF-MIB::ifPhysAddress.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfAdminStatus" />
 9
 <br /><b>ipv6IfAdminStatus</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   INTEGER
       <table class="enum">
       <tr><th>Value</th><th>Label/Meaning</th></tr>
@@ -434,23 +498,27 @@ contain an octet string of zero length.
 <td>
 <pre>
 The desired state of the interface.  When a managed
-system initializes,  all IPv6 interfaces start with
+system initializes, all IPv6 interfaces start with
 ipv6IfAdminStatus in the down(2) state.  As a result
 of either explicit management action or per
 configuration information retained by the managed
-
-system,  ipv6IfAdminStatus is then changed to
+system, ipv6IfAdminStatus is then changed to
 the up(1) state (or remains in the down(2) state).
+
+This object is obsolete.  IPv6 does not have a
+separate admin status; the admin status of the
+interface is represented by IF-MIB::ifAdminStatus.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfOperStatus" />
 10
 <br /><b>ipv6IfOperStatus</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   INTEGER
       <table class="enum">
       <tr><th>Value</th><th>Label/Meaning</th></tr>
@@ -479,16 +547,21 @@ fault that prevents it from going to the up(1) state;
 it should remain in the notPresent(5) state if
 the interface has missing (typically, lower layer)
 components.
+
+This object is obsolete.  IPv6 does not have a
+separate operational status; the operational status of the
+interface is represented by IF-MIB::ifOperStatus.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfLastChange" />
 11
 <br /><b>ipv6IfLastChange</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   TICKS
  <br>
  <a href="#TimeStamp">TimeStamp</a>
@@ -503,9 +576,11 @@ The value of sysUpTime at the time the interface
 entered its current operational state.  If the
 current state was entered prior to the last
 re-initialization of the local network management
-
 subsystem, then this object contains a zero
 value.
+
+This object is obsolete.  The last change of
+IF-MIB::ifOperStatus is represented by IF-MIB::ifLastChange.
 </pre>
 </td>
   </tr>
@@ -521,6 +596,7 @@ value.
 <td>
 <pre>
 IPv6 interface traffic statistics.
+This table is obsoleted by the IP-MIB::ipIfStatsTable.
 </pre>
 </td>
 </tr>
@@ -529,6 +605,8 @@ IPv6 interface traffic statistics.
 <pre>
 An interface statistics entry containing objects
 at a particular IPv6 interface.
+
+This object is obsoleted by the IP-MIB::ipIfStatsEntry.
 </pre>
 </td>
 </tr>
@@ -539,12 +617,13 @@ at a particular IPv6 interface.
 <table>
 <tr class="label"><th>Name</th><th>Type</th><th>Access</th><th>Description</th></tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfIndex" />
 1
 <br /><b>ipv6IfIndex</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   INTEGER32
       <br />Legal values:
         1 .. 2147483647
@@ -559,6 +638,9 @@ Note: this object is based on the <a href="#Ipv6IfIndex"> Ipv6IfIndex TEXTUAL-CO
 <pre>
 A unique non-zero value identifying
 the particular IPv6 interface.
+
+This object is obsoleted.  In the IP-MIB,
+interfaces are simply identified by IfIndex.
 </pre>
 </td>
   </tr>
@@ -568,12 +650,13 @@ the particular IPv6 interface.
 <table>
 <tr class="label"><th>Name</th><th>Type</th><th>Access</th><th>Description</th></tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfStatsInReceives" />
 1
 <br /><b>ipv6IfStatsInReceives</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   COUNTER
 
   </td><td>ReadOnly</td>
@@ -581,16 +664,19 @@ the particular IPv6 interface.
 <pre>
 The total number of input datagrams received by
 the interface, including those received in error.
+
+This object is obsoleted by IP-MIB::ipIfStatsHCInReceives.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfStatsInHdrErrors" />
 2
 <br /><b>ipv6IfStatsInHdrErrors</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   COUNTER
 
   </td><td>ReadOnly</td>
@@ -601,16 +687,19 @@ errors in their IPv6 headers, including version
 number mismatch, other format errors, hop count
 exceeded, errors discovered in processing their
 IPv6 options, etc.
+
+This object is obsoleted by IP-MIB::ipIfStatsInHdrErrors.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfStatsInTooBigErrors" />
 3
 <br /><b>ipv6IfStatsInTooBigErrors</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   COUNTER
 
   </td><td>ReadOnly</td>
@@ -618,17 +707,21 @@ IPv6 options, etc.
 <pre>
 The number of input datagrams that could not be
 forwarded because their size exceeded the link MTU
-of outgoing interface.
+       of outgoing interface.
+This object is obsoleted.  It was not replicated in the
+       IP-MIB due to feedback that systems did not retain the
+       incoming interface of a packet that failed fragmentation.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfStatsInNoRoutes" />
 4
 <br /><b>ipv6IfStatsInNoRoutes</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   COUNTER
 
   </td><td>ReadOnly</td>
@@ -637,16 +730,19 @@ of outgoing interface.
 The number of input datagrams discarded because no
 route could be found to transmit them to their
 destination.
+
+This object is obsoleted by IP-MIB::ipIfStatsInNoRoutes.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfStatsInAddrErrors" />
 5
 <br /><b>ipv6IfStatsInAddrErrors</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   COUNTER
 
   </td><td>ReadOnly</td>
@@ -662,16 +758,19 @@ entities which are not IPv6 routers and therefore
 do not forward datagrams, this counter includes
 datagrams discarded because the destination address
 was not a local address.
+
+This object is obsoleted by IP-MIB::ipIfStatsInAddrErrors.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfStatsInUnknownProtos" />
 6
 <br /><b>ipv6IfStatsInUnknownProtos</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   COUNTER
 
   </td><td>ReadOnly</td>
@@ -679,21 +778,25 @@ was not a local address.
 <pre>
 The number of locally-addressed datagrams
 received successfully but discarded because of an
-unknown or unsupported protocol. This counter is
+unknown or unsupported protocol.  This counter is
 incremented at the interface to which these
+
 datagrams were addressed which might not be
 necessarily the input interface for some of
 the datagrams.
+
+This object is obsoleted by IP-MIB::ipIfStatsInUnknownProtos.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfStatsInTruncatedPkts" />
 7
 <br /><b>ipv6IfStatsInTruncatedPkts</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   COUNTER
 
   </td><td>ReadOnly</td>
@@ -701,16 +804,19 @@ the datagrams.
 <pre>
 The number of input datagrams discarded because
 datagram frame didn't carry enough data.
+
+This object is obsoleted by IP-MIB::ipIfStatsInTruncatedPkts.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfStatsInDiscards" />
 8
 <br /><b>ipv6IfStatsInDiscards</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   COUNTER
 
   </td><td>ReadOnly</td>
@@ -722,16 +828,19 @@ continued processing, but which were discarded
 (e.g., for lack of buffer space).  Note that this
 counter does not include any datagrams discarded
 while awaiting re-assembly.
+
+This object is obsoleted by IP-MIB::ipIfStatsInDiscards.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfStatsInDelivers" />
 9
 <br /><b>ipv6IfStatsInDelivers</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   COUNTER
 
   </td><td>ReadOnly</td>
@@ -743,16 +852,19 @@ This counter is incremented at the interface to
 which these datagrams were addressed which might
 not be necessarily the input interface for some of
 the datagrams.
+
+This object is obsoleted by IP-MIB::ipIfStatsHCInDelivers.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfStatsOutForwDatagrams" />
 10
 <br /><b>ipv6IfStatsOutForwDatagrams</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   COUNTER
 
   </td><td>ReadOnly</td>
@@ -767,16 +879,20 @@ via this entity, and the Source-Route
 processing was successful.  Note that for
 a successfully forwarded datagram the counter
 of the outgoing interface is incremented.
+
+This object is obsoleted by
+IP-MIB::ipIfStatsHCOutForwDatagrams.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfStatsOutRequests" />
 11
 <br /><b>ipv6IfStatsOutRequests</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   COUNTER
 
   </td><td>ReadOnly</td>
@@ -787,16 +903,19 @@ user-protocols (including ICMP) supplied to IPv6 in
 requests for transmission.  Note that this counter
 does not include any datagrams counted in
 ipv6IfStatsOutForwDatagrams.
+
+This object is obsoleted by IP-MIB::ipIfStatsHCOutRequests.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfStatsOutDiscards" />
 12
 <br /><b>ipv6IfStatsOutDiscards</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   COUNTER
 
   </td><td>ReadOnly</td>
@@ -809,16 +928,19 @@ discarded (e.g., for lack of buffer space).  Note
 that this counter would include datagrams counted
 in ipv6IfStatsOutForwDatagrams if any such packets
 met this (discretionary) discard criterion.
+
+This object is obsoleted by IP-MIB::ipIfStatsOutDiscards.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfStatsOutFragOKs" />
 13
 <br /><b>ipv6IfStatsOutFragOKs</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   COUNTER
 
   </td><td>ReadOnly</td>
@@ -826,16 +948,19 @@ met this (discretionary) discard criterion.
 <pre>
 The number of IPv6 datagrams that have been
 successfully fragmented at this output interface.
+
+This object is obsoleted by IP-MIB::ipIfStatsOutFragOKs.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfStatsOutFragFails" />
 14
 <br /><b>ipv6IfStatsOutFragFails</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   COUNTER
 
   </td><td>ReadOnly</td>
@@ -844,16 +969,19 @@ successfully fragmented at this output interface.
 The number of IPv6 datagrams that have been
 discarded because they needed to be fragmented
 at this output interface but could not be.
+
+This object is obsoleted by IP-MIB::ipIfStatsOutFragFails.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfStatsOutFragCreates" />
 15
 <br /><b>ipv6IfStatsOutFragCreates</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   COUNTER
 
   </td><td>ReadOnly</td>
@@ -862,16 +990,19 @@ at this output interface but could not be.
 The number of output datagram fragments that have
 been generated as a result of fragmentation at
 this output interface.
+
+This object is obsoleted by IP-MIB::ipIfStatsOutFragCreates.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfStatsReasmReqds" />
 16
 <br /><b>ipv6IfStatsReasmReqds</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   COUNTER
 
   </td><td>ReadOnly</td>
@@ -883,16 +1014,19 @@ counter is incremented at the interface to which
 these fragments were addressed which might not
 be necessarily the input interface for some of
 the fragments.
+
+This object is obsoleted by IP-MIB::ipIfStatsReasmReqds.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfStatsReasmOKs" />
 17
 <br /><b>ipv6IfStatsReasmOKs</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   COUNTER
 
   </td><td>ReadOnly</td>
@@ -903,16 +1037,19 @@ reassembled.  Note that this counter is incremented
 at the interface to which these datagrams were
 addressed which might not be necessarily the input
 interface for some of the fragments.
+
+This object is obsoleted by IP-MIB::ipIfStatsReasmOKs.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfStatsReasmFails" />
 18
 <br /><b>ipv6IfStatsReasmFails</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   COUNTER
 
   </td><td>ReadOnly</td>
@@ -929,16 +1066,19 @@ This counter is incremented at the interface to which
 these fragments were addressed which might not be
 necessarily the input interface for some of the
 fragments.
+
+This object is obsoleted by IP-MIB::ipIfStatsReasmFails.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfStatsInMcastPkts" />
 19
 <br /><b>ipv6IfStatsInMcastPkts</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   COUNTER
 
   </td><td>ReadOnly</td>
@@ -946,16 +1086,19 @@ fragments.
 <pre>
 The number of multicast packets received
 by the interface
+
+This object is obsoleted by IP-MIB::ipIfStatsHCInMcastPkts.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfStatsOutMcastPkts" />
 20
 <br /><b>ipv6IfStatsOutMcastPkts</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   COUNTER
 
   </td><td>ReadOnly</td>
@@ -963,6 +1106,8 @@ by the interface
 <pre>
 The number of multicast packets transmitted
 by the interface
+
+This object is obsoleted by IP-MIB::ipIfStatsHCOutMcastPkts.
 </pre>
 </td>
   </tr>
@@ -979,6 +1124,8 @@ by the interface
 <pre>
 The list of IPv6 address prefixes of
 IPv6 interfaces.
+
+This table is obsoleted by IP-MIB::ipAddressPrefixTable.
 </pre>
 </td>
 </tr>
@@ -987,6 +1134,8 @@ IPv6 interfaces.
 <pre>
 An interface entry containing objects of
 a particular IPv6 address prefix.
+
+This entry is obsoleted by IP-MIB::ipAddressPrefixEntry.
 </pre>
 </td>
 </tr>
@@ -997,12 +1146,13 @@ a particular IPv6 address prefix.
 <table>
 <tr class="label"><th>Name</th><th>Type</th><th>Access</th><th>Description</th></tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfIndex" />
 1
 <br /><b>ipv6IfIndex</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   INTEGER32
       <br />Legal values:
         1 .. 2147483647
@@ -1017,16 +1167,20 @@ Note: this object is based on the <a href="#Ipv6IfIndex"> Ipv6IfIndex TEXTUAL-CO
 <pre>
 A unique non-zero value identifying
 the particular IPv6 interface.
+
+This object is obsoleted.  In the IP-MIB,
+interfaces are simply identified by IfIndex.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6AddrPrefix" />
 1
 <br /><b>ipv6AddrPrefix</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   OCTETSTR
       <br />Legal Lengths:
         0 .. 16
@@ -1040,16 +1194,18 @@ Note: this object is based on the <a href="#Ipv6AddressPrefix"> Ipv6AddressPrefi
 </p>
 <pre>
 The prefix associated with the this interface.
+This object is obsoleted by IP-MIB::ipAddressPrefixPrefix.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6AddrPrefixLength" />
 2
 <br /><b>ipv6AddrPrefixLength</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   INTEGER
       <br />Legal values:
         0 .. 128
@@ -1058,6 +1214,7 @@ The prefix associated with the this interface.
 <td>
 <pre>
 The length of the prefix (in bits).
+This object is obsoleted by IP-MIB::ipAddressPrefixLength.
 </pre>
 </td>
   </tr>
@@ -1067,12 +1224,13 @@ The length of the prefix (in bits).
 <table>
 <tr class="label"><th>Name</th><th>Type</th><th>Access</th><th>Description</th></tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6AddrPrefixOnLinkFlag" />
 3
 <br /><b>ipv6AddrPrefixOnLinkFlag</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   INTEGER
  <br>
  <a href="#TruthValue">TruthValue</a>
@@ -1085,18 +1243,21 @@ Note: this object is based on the <a href="#TruthValue"> TruthValue TEXTUAL-CONV
 </p>
 <pre>
 This object has the value 'true(1)', if this
-prefix can be used  for on-link determination
+prefix can be used for on-link determination
 and the value 'false(2)' otherwise.
+
+This object is obsoleted by IP-MIB::ipAddressPrefixOnLinkFlag.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6AddrPrefixAutonomousFlag" />
 4
 <br /><b>ipv6AddrPrefixAutonomousFlag</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   INTEGER
  <br>
  <a href="#TruthValue">TruthValue</a>
@@ -1108,22 +1269,27 @@ and the value 'false(2)' otherwise.
 Note: this object is based on the <a href="#TruthValue"> TruthValue TEXTUAL-CONVENTION</a>.
 </p>
 <pre>
-Autonomous address configuration flag. When
+Autonomous address configuration flag.  When
 true(1), indicates that this prefix can be used
 for autonomous address configuration (i.e. can
 be used to form a local interface address).
 If false(2), it is not used to autoconfigure
 a local interface address.
+
+This object is obsoleted by
+
+IP-MIB::ipAddressPrefixAutonomousFlag.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6AddrPrefixAdvPreferredLifetime" />
 5
 <br /><b>ipv6AddrPrefixAdvPreferredLifetime</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   UNSIGNED32
 
   </td><td>ReadOnly</td>
@@ -1138,16 +1304,20 @@ The address generated from a deprecated prefix
 should no longer be used as a source address in
 new communications, but packets received on such
 an interface are processed as expected.
+
+This object is obsoleted by
+IP-MIB::ipAddressPrefixAdvPreferredLifetime.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6AddrPrefixAdvValidLifetime" />
 6
 <br /><b>ipv6AddrPrefixAdvValidLifetime</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   UNSIGNED32
 
   </td><td>ReadOnly</td>
@@ -1161,6 +1331,9 @@ infinity.
 The address generated from an invalidated prefix
 should not appear as the destination or source
 address of a packet.
+
+This object is obsoleted by
+IP-MIB::ipAddressPrefixAdvValidLifetime.
 </pre>
 </td>
   </tr>
@@ -1177,6 +1350,8 @@ address of a packet.
 <pre>
 The table of addressing information relevant to
 this node's interface addresses.
+
+This table is obsoleted by IP-MIB::ipAddressTable.
 </pre>
 </td>
 </tr>
@@ -1185,6 +1360,8 @@ this node's interface addresses.
 <pre>
 The addressing information for one of this
 node's interface addresses.
+
+This entry is obsoleted by IP-MIB::ipAddressEntry.
 </pre>
 </td>
 </tr>
@@ -1195,12 +1372,13 @@ node's interface addresses.
 <table>
 <tr class="label"><th>Name</th><th>Type</th><th>Access</th><th>Description</th></tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfIndex" />
 1
 <br /><b>ipv6IfIndex</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   INTEGER32
       <br />Legal values:
         1 .. 2147483647
@@ -1215,16 +1393,20 @@ Note: this object is based on the <a href="#Ipv6IfIndex"> Ipv6IfIndex TEXTUAL-CO
 <pre>
 A unique non-zero value identifying
 the particular IPv6 interface.
+
+This object is obsoleted.  In the IP-MIB,
+interfaces are simply identified by IfIndex.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6AddrAddress" />
 1
 <br /><b>ipv6AddrAddress</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   OCTETSTR
       <br />Legal Lengths:
         16
@@ -1239,6 +1421,8 @@ Note: this object is based on the <a href="#Ipv6Address"> Ipv6Address TEXTUAL-CO
 <pre>
 The IPv6 address to which this entry's addressing
 information pertains.
+
+This object is obsoleted by IP-MIB::ipAddressAddr.
 </pre>
 </td>
   </tr>
@@ -1248,12 +1432,13 @@ information pertains.
 <table>
 <tr class="label"><th>Name</th><th>Type</th><th>Access</th><th>Description</th></tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6AddrPfxLength" />
 2
 <br /><b>ipv6AddrPfxLength</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   INTEGER
       <br />Legal values:
         0 .. 128
@@ -1263,16 +1448,21 @@ information pertains.
 <pre>
 The length of the prefix (in bits) associated with
 the IPv6 address of this entry.
+
+This object is obsoleted by the IP-MIB::ipAddressPrefixLength
+in the row of the IP-MIB::ipAddressPrefixTable to which the
+IP-MIB::ipAddressPrefix points.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6AddrType" />
 3
 <br /><b>ipv6AddrType</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   INTEGER
       <table class="enum">
       <tr><th>Value</th><th>Label/Meaning</th></tr>
@@ -1284,21 +1474,24 @@ the IPv6 address of this entry.
   </td><td>ReadOnly</td>
 <td>
 <pre>
-The type of address. Note that 'stateless(1)'
+The type of address.  Note that 'stateless(1)'
 refers to an address that was statelessly
 autoconfigured; 'stateful(2)' refers to a address
 which was acquired by via a stateful protocol
 (e.g. DHCPv6, manual configuration).
+
+This object is obsoleted by IP-MIB::ipAddressOrigin.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6AddrAnycastFlag" />
 4
 <br /><b>ipv6AddrAnycastFlag</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   INTEGER
  <br>
  <a href="#TruthValue">TruthValue</a>
@@ -1313,16 +1506,20 @@ Note: this object is based on the <a href="#TruthValue"> TruthValue TEXTUAL-CONV
 This object has the value 'true(1)', if this
 address is an anycast address and the value
 'false(2)' otherwise.
+
+This object is obsoleted by a value of 'anycast(2)'
+in IP-MIB::ipAddressType.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6AddrStatus" />
 5
 <br /><b>ipv6AddrStatus</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   INTEGER
       <table class="enum">
       <tr><th>Value</th><th>Label/Meaning</th></tr>
@@ -1343,13 +1540,14 @@ The deprecated(2) state indicates that this is
 a valid but deprecated address that should no longer
 be used as a source address in new communications,
 but packets addressed to such an address are
-processed as expected. The invalid(3) state indicates
+processed as expected.  The invalid(3) state indicates
 that this is not valid address which should not
-
 appear as the destination or source address of
-a packet. The inaccessible(4) state indicates that
+a packet.  The inaccessible(4) state indicates that
 the address is not accessible because the interface
 to which this address is assigned is not operational.
+
+This object is obsoleted by IP-MIB::ipAddressStatus.
 </pre>
 </td>
   </tr>
@@ -1364,10 +1562,12 @@ to which this address is assigned is not operational.
   <tr><td class="label">Table Description</td>
 <td>
 <pre>
-IPv6 Routing table. This table contains
+IPv6 Routing table.  This table contains
 an entry for each valid IPv6 unicast route
 that can be used for packet forwarding
 determination.
+
+This table is obsoleted by IP-FORWARD-MIB::inetCidrRouteTable.
 </pre>
 </td>
 </tr>
@@ -1375,6 +1575,8 @@ determination.
 <td>
 <pre>
 A routing entry.
+This entry is obsoleted by
+             IP-FORWARD-MIB::inetCidrRouteEntry.
 </pre>
 </td>
 </tr>
@@ -1385,12 +1587,13 @@ A routing entry.
 <table>
 <tr class="label"><th>Name</th><th>Type</th><th>Access</th><th>Description</th></tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6RouteDest" />
 1
 <br /><b>ipv6RouteDest</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   OCTETSTR
       <br />Legal Lengths:
         16
@@ -1406,16 +1609,19 @@ Note: this object is based on the <a href="#Ipv6Address"> Ipv6Address TEXTUAL-CO
 The destination IPv6 address of this route.
 This object may not take a Multicast address
 value.
+
+This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteDest.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6RoutePfxLength" />
 2
 <br /><b>ipv6RoutePfxLength</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   INTEGER
       <br />Legal values:
         0 .. 128
@@ -1425,16 +1631,19 @@ value.
 <pre>
 Indicates the prefix length of the destination
 address.
+
+This object is obsoleted by IP-FORWARD-MIB::inetCidrRoutePfxLen.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6RouteIndex" />
 3
 <br /><b>ipv6RouteIndex</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   UNSIGNED32
 
   </td><td>NoAccess</td>
@@ -1446,6 +1655,8 @@ destination.  The way this value is chosen is
 implementation specific but it must be unique for
 ipv6RouteDest/ipv6RoutePfxLength pair and remain
 constant for the life of the route.
+
+This object is obsoleted by IP-FORWARD-MIB::inetCidrRoutePolicy.
 </pre>
 </td>
   </tr>
@@ -1455,12 +1666,13 @@ constant for the life of the route.
 <table>
 <tr class="label"><th>Name</th><th>Type</th><th>Access</th><th>Description</th></tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6RouteIfIndex" />
 4
 <br /><b>ipv6RouteIfIndex</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   INTEGER32
       <br />Legal values:
         0 .. 2147483647
@@ -1480,16 +1692,20 @@ by a particular value of this index is the same
 interface as identified by the same value of
 ipv6IfIndex.  For routes of the discard type this
 value can be zero.
+
+This object is obsoleted by
+IP-FORWARD-MIB::inetCidrRouteIfIndex.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6RouteNextHop" />
 5
 <br /><b>ipv6RouteNextHop</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   OCTETSTR
       <br />Legal Lengths:
         16
@@ -1506,16 +1722,20 @@ On remote routes, the address of the next
 system en route;  otherwise, ::0
 ('00000000000000000000000000000000'H in ASN.1
 string representation).
+
+This object is obsoleted by
+IP-FORWARD-MIB::inetCidrRouteNextHop.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6RouteType" />
 6
 <br /><b>ipv6RouteType</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   INTEGER
       <table class="enum">
       <tr><th>Value</th><th>Label/Meaning</th></tr>
@@ -1528,24 +1748,27 @@ string representation).
   </td><td>ReadOnly</td>
 <td>
 <pre>
-The type of route. Note that 'local(3)' refers
+The type of route.  Note that 'local(3)' refers
 to a route for which the next hop is the final
 destination; 'remote(4)' refers to a route for
-which  the  next  hop is not the final
+which the next hop is not the final
 destination; 'discard(2)' refers to a route
 indicating that packets to destinations matching
 this route are to be discarded (sometimes called
 black-hole route).
+
+This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteType.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6RouteProtocol" />
 7
 <br /><b>ipv6RouteProtocol</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   INTEGER
       <table class="enum">
       <tr><th>Value</th><th>Label/Meaning</th></tr>
@@ -1565,16 +1788,19 @@ black-hole route).
 <pre>
 The routing mechanism via which this route was
 learned.
+
+This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteProto.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6RoutePolicy" />
 8
 <br /><b>ipv6RoutePolicy</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   INTEGER32
 
   </td><td>ReadOnly</td>
@@ -1591,18 +1817,21 @@ that is zero extended at the left to a 32-bit value.
 Protocols defining 'policy' otherwise must either
 define a set of values which are valid for
 this object or must implement an integer-
-instanced  policy table for which this object's
+instanced policy table for which this object's
 value acts as an index.
+
+This object is obsoleted by IP-FORWARD-MIB::inetCidrRoutePolicy.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6RouteAge" />
 9
 <br /><b>ipv6RouteAge</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   UNSIGNED32
 
   </td><td>ReadOnly</td>
@@ -1613,59 +1842,70 @@ updated or otherwise determined to be correct.
 Note that no semantics of `too old' can be implied
 except through knowledge of the routing protocol
 by which the route was learned.
+
+This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteAge.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6RouteNextHopRDI" />
 10
 <br /><b>ipv6RouteNextHopRDI</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   UNSIGNED32
 
   </td><td>ReadOnly</td>
 <td>
 <pre>
 The Routing Domain ID of the Next Hop.
-The  semantics of this object are determined by
-the routing-protocol specified in  the  route's
-ipv6RouteProtocol value.   When  this object is
+The semantics of this object are determined by
+the routing-protocol specified in the route's
+ipv6RouteProtocol value.  When this object is
 unknown or not relevant its value should be set
 to zero.
+
+This object is obsolete, and it has no replacement.
+The Routing Domain ID concept did not catch on.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6RouteMetric" />
 11
 <br /><b>ipv6RouteMetric</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   UNSIGNED32
 
   </td><td>ReadOnly</td>
 <td>
 <pre>
-The routing metric for this route. The
+The routing metric for this route.  The
 semantics of this metric are determined by the
 routing protocol specified in the route's
 ipv6RouteProtocol value.  When this is unknown
 or not relevant to the protocol indicated by
 ipv6RouteProtocol, the object value should be
 set to its maximum value (4,294,967,295).
+
+This object is obsoleted by
+IP-FORWARD-MIB::inetCidrRouteMetric1.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6RouteWeight" />
 12
 <br /><b>ipv6RouteWeight</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   UNSIGNED32
 
   </td><td>ReadOnly</td>
@@ -1673,20 +1913,23 @@ set to its maximum value (4,294,967,295).
 <pre>
 The system internal weight value for this route.
 The semantics of this value are determined by
-the implementation specific rules. Generally,
+the implementation specific rules.  Generally,
 within routes with the same ipv6RoutePolicy value,
 the lower the weight value the more preferred is
 the route.
+
+This object is obsoleted, and it has not been replaced.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6RouteInfo" />
 13
 <br /><b>ipv6RouteInfo</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   OBJECTID
  <br>
  <a href="#RowPointer">RowPointer</a>
@@ -1699,24 +1942,27 @@ Note: this object is based on the <a href="#RowPointer"> RowPointer TEXTUAL-CONV
 <pre>
 A reference to MIB definitions specific to the
 particular routing protocol which is responsible
-for this route, as determined by the  value
-specified  in the route's ipv6RouteProto value.
-If this information is not present,  its  value
+for this route, as determined by the value
+specified in the route's ipv6RouteProto value.
+If this information is not present, its value
 should be set to the OBJECT ID { 0 0 },
-which is a syntactically valid object  identifier,
+which is a syntactically valid object identifier,
 and any implementation conforming to ASN.1
-and the Basic Encoding Rules must  be  able  to
+and the Basic Encoding Rules must be able to
 generate and recognize this value.
+
+This object is obsoleted, and it has not been replaced.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6RouteValid" />
 14
 <br /><b>ipv6RouteValid</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   INTEGER
  <br>
  <a href="#TruthValue">TruthValue</a>
@@ -1732,7 +1978,6 @@ Setting this object to the value 'false(2)' has
 the effect of invalidating the corresponding entry
 in the ipv6RouteTable object.  That is, it
 effectively disassociates the destination
-
 identified with said entry from the route
 identified with said entry.  It is an
 implementation-specific matter as to whether the
@@ -1743,6 +1988,9 @@ corresponds to entries not currently in use.
 Proper interpretation of such entries requires
 examination of the relevant ipv6RouteValid
 object.
+
+This object is obsoleted by
+IP-FORWARD-MIB::inetCidrRouteStatus.
 </pre>
 </td>
   </tr>
@@ -1767,6 +2015,8 @@ for determining address equivalencies; if all
 interfaces are of this type, then the Address
 Translation table is empty, i.e., has zero
 entries.
+
+This table is obsoleted by IP-MIB::ipNetToPhysicalTable.
 </pre>
 </td>
 </tr>
@@ -1775,6 +2025,8 @@ entries.
 <pre>
 Each entry contains one IPv6 address to `physical'
 address equivalence.
+
+This entry is obsoleted by IP-MIB::ipNetToPhysicalEntry.
 </pre>
 </td>
 </tr>
@@ -1785,12 +2037,13 @@ address equivalence.
 <table>
 <tr class="label"><th>Name</th><th>Type</th><th>Access</th><th>Description</th></tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfIndex" />
 1
 <br /><b>ipv6IfIndex</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   INTEGER32
       <br />Legal values:
         1 .. 2147483647
@@ -1805,16 +2058,20 @@ Note: this object is based on the <a href="#Ipv6IfIndex"> Ipv6IfIndex TEXTUAL-CO
 <pre>
 A unique non-zero value identifying
 the particular IPv6 interface.
+
+This object is obsoleted.  In the IP-MIB,
+interfaces are simply identified by IfIndex.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6NetToMediaNetAddress" />
 1
 <br /><b>ipv6NetToMediaNetAddress</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   OCTETSTR
       <br />Legal Lengths:
         16
@@ -1829,6 +2086,8 @@ Note: this object is based on the <a href="#Ipv6Address"> Ipv6Address TEXTUAL-CO
 <pre>
 The IPv6 Address corresponding to
 the media-dependent `physical' address.
+
+This object is obsoleted by IP-MIB::ipNetToPhysicalNetAddress.
 </pre>
 </td>
   </tr>
@@ -1838,12 +2097,13 @@ the media-dependent `physical' address.
 <table>
 <tr class="label"><th>Name</th><th>Type</th><th>Access</th><th>Description</th></tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6NetToMediaPhysAddress" />
 2
 <br /><b>ipv6NetToMediaPhysAddress</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   OCTETSTR
  <br>
  <a href="#PhysAddress">PhysAddress</a>
@@ -1855,16 +2115,18 @@ Note: this object is based on the <a href="#PhysAddress"> PhysAddress TEXTUAL-CO
 </p>
 <pre>
 The media-dependent `physical' address.
+This object is obsoleted by IP-MIB::ipNetToPhysicalPhysAddress.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6NetToMediaType" />
 3
 <br /><b>ipv6NetToMediaType</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   INTEGER
       <table class="enum">
       <tr><th>Value</th><th>Label/Meaning</th></tr>
@@ -1877,24 +2139,27 @@ The media-dependent `physical' address.
   </td><td>ReadOnly</td>
 <td>
 <pre>
-The type of the mapping. The 'dynamic(2)' type
+The type of the mapping.  The 'dynamic(2)' type
 indicates that the IPv6 address to physical
 addresses mapping has been dynamically
 resolved using the IPv6 Neighbor Discovery
-protocol. The static(3)' types indicates that
+protocol.  The static(3)' types indicates that
 the mapping has been statically configured.
 The local(4) indicates that the mapping is
 provided for an entity's own interface address.
+
+This object is obsoleted by IP-MIB::ipNetToPhysicalType.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfNetToMediaState" />
 4
 <br /><b>ipv6IfNetToMediaState</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   INTEGER
       <table class="enum">
       <tr><th>Value</th><th>Label/Meaning</th></tr>
@@ -1909,19 +2174,22 @@ provided for an entity's own interface address.
   </td><td>ReadOnly</td>
 <td>
 <pre>
-The Neighbor Unreachability Detection [8] state
+The Neighbor Unreachability Detection [RFC2461] state
 for the interface when the address mapping in
 this entry is used.
+
+This object is obsoleted by IP-MIB::ipNetToPhysicalState.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6IfNetToMediaLastUpdated" />
 5
 <br /><b>ipv6IfNetToMediaLastUpdated</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   TICKS
  <br>
  <a href="#TimeStamp">TimeStamp</a>
@@ -1937,16 +2205,19 @@ was last updated.  If this entry was updated prior
 to the last re-initialization of the local network
 management subsystem, then this object contains
 a zero value.
+
+This object is obsoleted by IP-MIB::ipNetToPhysicalLastUpdated.
 </pre>
 </td>
   </tr>
   <tr>
-  <td>
+  <td class="deprecated">
 <a name="ipv6NetToMediaValid" />
 6
 <br /><b>ipv6NetToMediaValid</b>
 
 </td><td>
+<font color="red">DEPRECATED</font><br />
   INTEGER
  <br>
  <a href="#TruthValue">TruthValue</a>
@@ -1964,7 +2235,6 @@ in the ipv6NetToMediaTable.  That is, it effectively
 disassociates the interface identified with said
 entry from the mapping identified with said entry.
 It is an implementation-specific matter as to
-
 whether the agent removes an invalidated entry
 from the table.  Accordingly, management stations
 must be prepared to receive tabular information
@@ -1972,25 +2242,13 @@ from agents that corresponds to entries not
 currently in use.  Proper interpretation of such
 entries requires examination of the relevant
 ipv6NetToMediaValid object.
+
+This object is obsoleted by IP-MIB::ipNetToPhysicalRowStatus.
 </pre>
 </td>
   </tr>
 </table>
 </ul>
-<a name="objects_Deprecated" />
-  <hr />
-  <h1><font color="red">DEPRECATED OR OBSOLETE OR HISTORIC OBJECTS</font></h1>
-  <br>
-  <table class="deprecated"><tr><td>
-<a name="scalar_notcurrent" />
-<h2>SCALAR OBJECTS</h2>
-<ul>
-<table>
-<tr><th>Name</th><th>Type</th><th>Access</th><th>OID</th><th>Description</th></tr>
-</table>
-</ul>
-
-<h2>TABLE OBJECTS</h2>
 
 <br>
   </table>
@@ -2013,6 +2271,9 @@ that there has been a change in the state of
 an ipv6 interface.  This notification should
 be generated when the interface's operational
 status transitions to or from the up(1) state.
+
+This object is obsoleted by IF-MIB::linkUp
+and IF-MIB::linkDown notifications.
 </pre>
 </td>
   </tr>
@@ -2038,6 +2299,27 @@ objects that use one of these definitions must follow its DESCRIPTION
 clause as well as the DESCRIPTION clause of the object itself.
 </p>
 <table><tr class="label"><th>Name</th><th>Type</th><th>Description</th></tr>
+<tr><td><a name="Ipv6IfIndex">Ipv6IfIndex</td><td>INTEGER32</td><td><pre>A unique value, greater than zero for each
+internetwork-layer interface in the managed
+system.  It is recommended that values are assigned
+contiguously starting from 1.  The value for each
+internetwork-layer interface must remain constant
+at least from one re-initialization of the entity's
+network management system to the next
+re-initialization.
+
+This object is obsoleted by IF-MIB::InterfaceIndex.</pre></td></tr>
+<tr><td><a name="PhysAddress">PhysAddress</td><td>OCTETSTR</td><td><pre>Represents media- or physical-level addresses.</pre></td></tr>
+<tr><td><a name="TruthValue">TruthValue</td><td>INTEGER<table class="enums"><tr><th>Value</th><th>Label/Meaning</th></tr><tr><td>1</td><td>true</td></tr><tr><td>2</td><td>false</td></tr></table></td><td><pre>Represents a boolean value.</pre></td></tr>
+<tr><td><a name="Ipv6Address">Ipv6Address</td><td>OCTETSTR</td><td><pre>This data type is used to model IPv6 addresses.
+This is a binary string of 16 octets in network
+byte-order.
+
+This object is obsoleted by INET-ADDRESS-MIB::InetAddress.</pre></td></tr>
+<tr><td><a name="Ipv6AddressPrefix">Ipv6AddressPrefix</td><td>OCTETSTR</td><td><pre>This data type is used to model IPv6 address
+prefixes.  This is a binary string of up to 16
+octets in network byte-order.
+This object is obsoleted by INET-ADDRESS-MIB::InetAddress.</pre></td></tr>
 <tr><td><a name="TimeStamp">TimeStamp</td><td>TICKS</td><td><pre>The value of the sysUpTime object at which a specific
 occurrence happened.  The specific occurrence must be
 
@@ -2052,6 +2334,26 @@ initialization, the sysUpTime object will reach 2^^32-1 and
 then increment around to zero; in this case, existing values
 of TimeStamp objects do not change.  This can lead to
 ambiguities in the value of TimeStamp objects.</pre></td></tr>
+<tr><td><a name="VariablePointer">VariablePointer</td><td>OBJECTID</td><td><pre>A pointer to a specific object instance.  For example,
+sysContact.0 or ifInOctets.3.</pre></td></tr>
+<tr><td><a name="Ipv6AddressIfIdentifier">Ipv6AddressIfIdentifier</td><td>OCTETSTR</td><td><pre>This data type is used to model IPv6 address
+interface identifiers.  This is a binary string
+ of up to 8 octets in network byte-order.
+
+This object is obsoleted by IP-MIB::Ipv6AddressIfIdentifierTC.</pre></td></tr>
+<tr><td><a name="Ipv6IfIndexOrZero">Ipv6IfIndexOrZero</td><td>INTEGER32</td><td><pre>This textual convention is an extension of the
+Ipv6IfIndex convention.  The latter defines
+a greater than zero value used to identify an IPv6
+interface in the managed system.  This extension
+permits the additional value of zero.  The value
+zero is object-specific and must therefore be
+defined as part of the description of any object
+which uses this syntax.  Examples of the usage of
+zero might include situations where interface was
+unknown, or when none or all interfaces need to be
+referenced.
+
+This object is obsoleted by IF-MIB::InterfaceIndexOrZero.</pre></td></tr>
 <tr><td><a name="DisplayString">DisplayString</td><td>OCTETSTR</td><td><pre>Represents textual information taken from the NVT ASCII
 character set, as defined in pages 4, 10-11 of RFC 854.
 To summarize RFC 854, the NVT ASCII repertoire specifies:
@@ -2070,37 +2372,6 @@ To summarize RFC 854, the NVT ASCII repertoire specifies:
                 end with either 'CR LF' or 'CR NUL', but not with CR.)
 Any object defined using this syntax may not exceed 255
             characters in length.</pre></td></tr>
-<tr><td><a name="PhysAddress">PhysAddress</td><td>OCTETSTR</td><td><pre>Represents media- or physical-level addresses.</pre></td></tr>
-<tr><td><a name="Ipv6AddressPrefix">Ipv6AddressPrefix</td><td>OCTETSTR</td><td><pre>This data type is used to model IPv6 address
-prefixes. This is a binary string of up to 16
-octets in network byte-order.</pre></td></tr>
-<tr><td><a name="Ipv6IfIndexOrZero">Ipv6IfIndexOrZero</td><td>INTEGER32</td><td><pre>This textual convention is an extension of the
-Ipv6IfIndex convention.  The latter defines
-a greater than zero value used to identify an IPv6
-interface in the managed system.  This extension
-permits the additional value of zero.  The value
-zero is object-specific and must therefore be
-defined as part of the description of any object
-which uses this syntax.  Examples of the usage of
-zero might include situations where interface was
-unknown, or when none or all interfaces need to be
-referenced.</pre></td></tr>
-<tr><td><a name="Ipv6IfIndex">Ipv6IfIndex</td><td>INTEGER32</td><td><pre>A unique value, greater than zero for each
-internetwork-layer interface in the managed
-system. It is recommended that values are assigned
-contiguously starting from 1. The value for each
-internetwork-layer interface must remain constant
-at least from one re-initialization of the entity's
-network management system to the next
-
-re-initialization.</pre></td></tr>
-<tr><td><a name="Ipv6Address">Ipv6Address</td><td>OCTETSTR</td><td><pre>This data type is used to model IPv6 addresses.
-This is a binary string of 16 octets in network
-byte-order.</pre></td></tr>
-<tr><td><a name="TruthValue">TruthValue</td><td>INTEGER<table class="enums"><tr><th>Value</th><th>Label/Meaning</th></tr><tr><td>1</td><td>true</td></tr><tr><td>2</td><td>false</td></tr></table></td><td><pre>Represents a boolean value.</pre></td></tr>
-<tr><td><a name="Ipv6AddressIfIdentifier">Ipv6AddressIfIdentifier</td><td>OCTETSTR</td><td><pre>This data type is used to model IPv6 address
-interface identifiers. This is a binary string
- of up to 8 octets in network byte-order.</pre></td></tr>
 <tr><td><a name="RowPointer">RowPointer</td><td>OBJECTID</td><td><pre>Represents a pointer to a conceptual row.  The value is the
 name of the instance of the first accessible columnar object
 in the conceptual row.
@@ -2108,8 +2379,6 @@ in the conceptual row.
 For example, ifIndex.3 would point to the 3rd row in the
 ifTable (note that if ifIndex were not-accessible, then
 ifDescr.3 would be used instead).</pre></td></tr>
-<tr><td><a name="VariablePointer">VariablePointer</td><td>OBJECTID</td><td><pre>A pointer to a specific object instance.  For example,
-sysContact.0 or ifInOctets.3.</pre></td></tr>
 </table></ul>
 
 <a name="treeview" />
